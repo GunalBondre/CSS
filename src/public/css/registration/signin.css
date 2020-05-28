@@ -1,0 +1,73 @@
+@font-face {
+  font-family: nexa-bold;
+  src: url("../../../../font/Nexa-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url("../../../../font/Nexa-light.otf") format("opentype");
+}
+
+body {
+  background-color: skyblue;
+}
+
+.nav-parent {
+  text-align: center;
+}
+
+@media (min-width: 300px) {
+  .signin {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20%;
+  }
+  .signin .form-group {
+    width: 90%;
+    padding: 10px;
+    margin: 0 auto;
+    background-color: white;
+  }
+  .signin .form-group .form-control {
+    margin-top: 10px;
+  }
+  .signin .form-group header {
+    text-align: center;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+  }
+  .signin .form-group #btn {
+    width: 100%;
+    margin-top: 10px;
+  }
+  .signin .form-group p {
+    text-align: center;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 576px) {
+  .signin {
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  .signin .form-group {
+    width: 70%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+}
+
+@media (min-width: 767px) {
+  .signin .form-group {
+    width: 40%;
+    margin-top: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+/*# sourceMappingURL=signin.css.map */

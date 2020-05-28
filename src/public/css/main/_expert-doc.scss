@@ -1,0 +1,83 @@
+.card-img-top {
+  width: 100%;
+  object-fit: cover;
+}
+
+.expert-doc {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  padding: 1rem;
+  width: 100%;
+  background-color: rgba($color: #00004d, $alpha: 1);
+  header,
+  p {
+    color: white;
+  }
+  .card-text {
+    color: black;
+  }
+  .card-group {
+    margin: 0 auto;
+  }
+  .card-body {
+    padding-left: 3rem;
+    width: 100%;
+  }
+  .card-body {
+    color: skyblue;
+    position: relative;
+    max-width: 600px;
+  }
+
+  .card-title {
+    &::before {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: skyblue;
+      position: absolute;
+      left: 0;
+      top: 20%;
+    }
+  }
+  @include xs {
+    header,
+    .info {
+      text-align: center;
+    }
+    .card {
+      width: 22rem;
+    }
+  }
+  @include sm {
+    .card {
+      width: 20rem;
+    }
+    header,
+    .info {
+      text-align: center;
+    }
+    .card-image-top {
+      height: 20rem;
+    }
+    .card-group {
+      width: 90%;
+      margin: 0 auto;
+    }
+  }
+  @include md {
+    header,
+    .info {
+      text-align: left;
+    }
+  }
+}
+
+.card-group {
+  @include md {
+    .card {
+      width: 18rem;
+    }
+  }
+}

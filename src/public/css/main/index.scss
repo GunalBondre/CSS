@@ -1,0 +1,173 @@
+@import "./breakpoint";
+@import "./HIW";
+@import "./grids";
+@import "./expert-doc";
+@import "./_fmt";
+@import "./variables";
+@import "./exclusive-services";
+@import "./footer-section";
+
+@font-face {
+  font-family: nexa-bold;
+  src: url("../../../../font/Nexa-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: nexa-light;
+  src: url("../../../../font/Nexa-light.otf") format("opentype");
+}
+
+html {
+  box-sizing: border-box;
+}
+
+header {
+  font-family: nexa-bold;
+  font-size: 2rem;
+}
+p {
+  font-family: nexa-light;
+}
+
+.nav-parent {
+  text-align: center;
+  @include xs {
+    img {
+      width: 7rem;
+      height: 3rem;
+    }
+  }
+}
+// adding marker inside textfield
+
+.inputSection #marker {
+  position: absolute;
+}
+#marker {
+  padding: 15px;
+  min-width: 30px;
+}
+
+// adding marker inside textfield end
+
+.FAH {
+  background-image: url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.jpg");
+  background-size: cover;
+
+  @include xs {
+    text-align: center;
+
+    h1 {
+      font-family: nexa-bold, sans-serif;
+    }
+    p {
+      font-size: 1.3rem;
+      font-family: nexa-light;
+    }
+    .inputSection {
+      width: 100%;
+      display: inline-block;
+      padding: 5px;
+    }
+    input[type="text"] {
+      width: 90%;
+      box-sizing: border-box;
+      padding: 10px;
+      margin: 5px;
+    }
+    #searchBtn {
+      width: 30%;
+      margin: 5px;
+      padding: 10px;
+      margin-top: 5px;
+      background-color: rgba($color: #00004d, $alpha: 1);
+      color: white;
+      border-radius: 0px;
+    }
+  }
+
+  @include sm {
+    text-align: center;
+    h1 {
+      text-align: center;
+      font-family: nexa-bold;
+      font-weight: 1.5rem;
+    }
+    p {
+      text-align: center;
+      font-size: 1.3rem;
+      font-family: nexa-light;
+    }
+    .inputSection {
+      width: 100%;
+      display: inline-block;
+      padding: 5px;
+    }
+    #searchPlace {
+      width: 25%;
+      padding: 10px;
+      margin-right: -10px;
+    }
+    #searchDoc {
+      width: 50%;
+      padding: 10px;
+      margin-right: -10px;
+    }
+    #searchBtn {
+      width: 15%;
+      padding: 10px;
+      margin-top: -1px;
+      background-color: rgba($color: #00004d, $alpha: 1);
+      color: white;
+      border-radius: 0px;
+    }
+  }
+
+  @include md {
+    text-align: left;
+    h1 {
+      text-align: left;
+      font-family: nexa-bold;
+      font-weight: 1.5rem;
+    }
+    p {
+      text-align: left;
+      font-size: 1.3rem;
+      font-family: nexa-light;
+    }
+    .inputSection {
+      width: 70%;
+      padding-left: 8%;
+      padding-bottom: 3%;
+    }
+  }
+}
+.container {
+  padding: 3%;
+
+  @include md {
+    input[type="text"] {
+      width: 100%;
+    }
+  }
+}
+
+// Help section style
+.bottom {
+  background-color: skyblue;
+  padding: 1rem;
+}
+.help {
+  text-align: center;
+
+  header {
+    color: white;
+  }
+}
+
+@include md {
+  .help {
+    p {
+      text-align: center;
+    }
+  }
+}

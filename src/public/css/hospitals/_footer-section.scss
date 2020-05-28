@@ -1,0 +1,147 @@
+.footer-section {
+  @include xs {
+    padding: 20px;
+    background-color: #00004d;
+    text-align: center;
+    .footer-menu {
+      img {
+        display: inline-block;
+      }
+      .links a {
+        display: block;
+        padding: 5px;
+        color: white;
+      }
+    }
+    .social-icons {
+      a {
+        display: flex;
+        flex-direction: row;
+        padding: 5px;
+        color: white;
+        justify-content: center;
+      }
+      img {
+        width: 25px;
+        height: 25px;
+      }
+      p {
+        color: white;
+      }
+    }
+
+    header {
+      font-family: nexa-bold;
+      font-size: 2rem;
+      color: white;
+    }
+  }
+  .footer-menu {
+    @include sm {
+      img {
+        float: right;
+      }
+      .links a {
+        float: left;
+        padding-right: 5px;
+        padding-top: 35px;
+      }
+    }
+  }
+}
+
+.bottom {
+  background-color: skyblue;
+  padding: 1.5rem;
+  @include xs {
+    // Help section style
+
+    .help {
+      text-align: center;
+
+      header {
+        color: white;
+        padding: 5px;
+      }
+      p {
+        padding: 5px;
+      }
+    }
+  }
+  @include sm {
+    padding: 20px;
+  }
+}
+
+@include md {
+  .bottom {
+    padding-bottom: 5%;
+  }
+}
+
+@include sm {
+}
+
+.bottom {
+  .help {
+    @include md {
+      padding: 30px;
+
+      header {
+        float: left;
+        color: white;
+        font-size: 2rem;
+      }
+      p {
+        float: left;
+        position: absolute;
+        padding-top: 3%;
+      }
+      button {
+        float: right;
+      }
+    }
+  }
+}
+
+@include md {
+  .social-icons {
+    padding-bottom: 5%;
+    .social-icon-items {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      padding-top: 4%;
+    }
+    p {
+      text-align: right;
+      padding-top: 5%;
+    }
+  }
+  .footer-section {
+    #follow {
+      display: none;
+    }
+  }
+}
+
+@include sm {
+  .social-icons {
+    padding-bottom: 5%;
+    .social-icon-items {
+      display: flex;
+      flex-direction: row;
+      position: absolute;
+      padding-top: 5%;
+    }
+    p {
+      text-align: right;
+      padding-top: 5%;
+    }
+  }
+  .footer-section {
+    #follow {
+      display: none;
+    }
+  }
+}

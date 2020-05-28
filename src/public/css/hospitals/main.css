@@ -1,0 +1,351 @@
+@media (min-width: 300px) {
+  .container-fluid header {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .container-fluid header {
+    display: none;
+  }
+}
+
+@media (min-width: 300px) {
+  .wrapper .left {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .wrapper .left {
+    display: none;
+  }
+}
+
+@media (min-width: 767px) {
+  .wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .wrapper .left {
+    display: block;
+    text-align: left;
+  }
+}
+
+.sort-section {
+  padding: 20px;
+}
+
+.sort-section h4 {
+  float: left;
+}
+
+.sort-section #dropdownMenuButton {
+  float: right;
+}
+
+.right {
+  margin-top: 5%;
+}
+
+@media (min-width: 300px) {
+  .right {
+    padding-bottom: 20px;
+    text-align: center;
+  }
+  .right .hosp-list {
+    padding-top: 10px;
+    display: inline-block;
+  }
+  .right .hosp-list .card-body {
+    text-align: left;
+  }
+  .right .hosp-list .card-body p {
+    padding: 5px;
+  }
+  .right .hosp-list .card-body p i {
+    padding-right: 10px;
+  }
+  .right .hosp-list .card-body #btn {
+    width: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+  }
+  .right .hosp-list img {
+    width: 18rem;
+  }
+  .right .card {
+    width: 18rem;
+  }
+  .right .card .card-img-top {
+    height: 20rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .wrapper .hosp-list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .wrapper .hosp-list img {
+    width: 18rem;
+  }
+}
+
+@media (min-width: 767px) {
+  .wrapper {
+    text-align: center;
+  }
+}
+
+@media (min-width: 300px) {
+  .card-body .specialities {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    row-gap: 30px;
+  }
+  .card-body .specialities #speciality {
+    margin: 5px;
+    border: 1px;
+    border-style: solid;
+    border-color: black;
+    padding: 1em;
+    border-radius: 15px;
+  }
+  .card-body .call-now-button {
+    text-align: center;
+  }
+  .card-body .call-now-button #call-now {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 767px) {
+  .card-body .specialities {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    row-gap: 30px;
+  }
+  .card-body #speciality {
+    border: 1px;
+    margin-top: 15px;
+    border-style: solid;
+    border-color: black;
+    padding: 1em;
+    border-radius: 15px;
+  }
+  .card-body .multi-organ {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  .card-body .call-now-button {
+    text-align: center;
+  }
+  .card-body .call-now-button #call-now {
+    padding: 10px;
+  }
+}
+
+@media (min-width: 767px) {
+  .right {
+    width: 100%;
+  }
+  .right .card {
+    width: 80%;
+  }
+}
+
+@media (min-width: 767px) {
+  .wrapper {
+    padding-left: 4%;
+    padding-top: 4%;
+  }
+}
+
+.wrapper .right {
+  padding-left: 4%;
+}
+
+@media (min-width: 300px) {
+  .footer-section {
+    padding: 20px;
+    background-color: #00004d;
+    text-align: center;
+  }
+  .footer-section .footer-menu img {
+    display: inline-block;
+  }
+  .footer-section .footer-menu .links a {
+    display: block;
+    padding: 5px;
+    color: white;
+  }
+  .footer-section .social-icons a {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    padding: 5px;
+    color: white;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .footer-section .social-icons img {
+    width: 25px;
+    height: 25px;
+  }
+  .footer-section .social-icons p {
+    color: white;
+  }
+  .footer-section header {
+    font-family: nexa-bold;
+    font-size: 2rem;
+    color: white;
+  }
+}
+
+@media (min-width: 576px) {
+  .footer-section .footer-menu img {
+    float: right;
+  }
+  .footer-section .footer-menu .links a {
+    float: left;
+    padding-right: 5px;
+    padding-top: 35px;
+  }
+}
+
+.bottom {
+  background-color: skyblue;
+  padding: 1.5rem;
+}
+
+@media (min-width: 300px) {
+  .bottom .help {
+    text-align: center;
+  }
+  .bottom .help header {
+    color: white;
+    padding: 5px;
+  }
+  .bottom .help p {
+    padding: 5px;
+  }
+}
+
+@media (min-width: 576px) {
+  .bottom {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 767px) {
+  .bottom {
+    padding-bottom: 5%;
+  }
+}
+
+@media (min-width: 767px) {
+  .bottom .help {
+    padding: 30px;
+  }
+  .bottom .help header {
+    float: left;
+    color: white;
+    font-size: 2rem;
+  }
+  .bottom .help p {
+    float: left;
+    position: absolute;
+    padding-top: 3%;
+  }
+  .bottom .help button {
+    float: right;
+  }
+}
+
+@media (min-width: 767px) {
+  .social-icons {
+    padding-bottom: 5%;
+  }
+  .social-icons .social-icon-items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: absolute;
+    padding-top: 4%;
+  }
+  .social-icons p {
+    text-align: right;
+    padding-top: 5%;
+  }
+  .footer-section #follow {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .social-icons {
+    padding-bottom: 5%;
+  }
+  .social-icons .social-icon-items {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    position: absolute;
+    padding-top: 5%;
+  }
+  .social-icons p {
+    text-align: right;
+    padding-top: 5%;
+  }
+  .footer-section #follow {
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: nexa-bold;
+  src: url("../../../../font/Nexa-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url("../../../../font/Nexa-light.otf") format("opentype");
+}
+
+.nav-parent {
+  text-align: center;
+}
+/*# sourceMappingURL=main.css.map */

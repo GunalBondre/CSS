@@ -1,0 +1,70 @@
+@import "../main/breakpoint";
+
+@font-face {
+  font-family: nexa-bold;
+  src: url("../../../../font/Nexa-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: nexa-light;
+  src: url("../../../../font/Nexa-light.otf") format("opentype");
+}
+
+body {
+  background-color: skyblue;
+}
+
+.nav-parent {
+  text-align: center;
+}
+
+.signin {
+  @include xs {
+    width: 100%;
+    padding: 10px;
+    margin-top: 20%;
+    .form-group {
+      width: 90%;
+      padding: 10px;
+      margin: 0 auto;
+      background-color: white;
+      .form-control {
+        margin-top: 10px;
+      }
+      header {
+        text-align: center;
+        font-family: nexa-bold;
+        font-size: 1.5rem;
+      }
+      #btn {
+        width: 100%;
+        margin-top: 10px;
+      }
+      p {
+        text-align: center;
+        padding: 5px;
+      }
+    }
+  }
+
+  @include sm {
+    margin-top: 10%;
+    margin-bottom: 10%;
+    .form-group {
+      width: 70%;
+      margin: 0 auto;
+      margin-top: 20px;
+    }
+  }
+  @include md {
+    .form-group {
+      width: 40%;
+      margin-top: 30px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}

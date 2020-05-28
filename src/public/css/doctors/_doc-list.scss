@@ -1,0 +1,140 @@
+.left {
+  @include xs {
+    display: none;
+  }
+  @include sm {
+    display: block;
+  }
+  @include md {
+    display: block;
+  }
+}
+.doc-wrapper {
+  @include xs {
+    padding-bottom: 20px;
+    text-align: center;
+    .doc-list {
+      padding-top: 10px;
+      display: inline-block;
+      .card-body {
+        text-align: left;
+
+        p {
+          padding: 5px;
+
+          i {
+            padding-right: 10px;
+          }
+        }
+        #btn {
+          width: 100%;
+          margin: 0 auto;
+          margin-top: 10px;
+        }
+      }
+    }
+    .card {
+      width: 18rem;
+      .card-img-top {
+        height: 20rem;
+      }
+    }
+  }
+}
+.bottom {
+  background-color: skyblue;
+  padding: 1.5rem;
+  @include xs {
+    // Help section style
+
+    .help {
+      text-align: center;
+
+      header {
+        color: white;
+        padding: 5px;
+      }
+      p {
+        padding: 5px;
+      }
+    }
+  }
+  @include sm {
+    padding: 20px;
+  }
+}
+.card-body {
+  h5 {
+    font-family: nexa-bold;
+    font-size: 2rem;
+    color: skyblue;
+  }
+  p {
+    font-family: nexa-light;
+    font-size: 1rem;
+  }
+  i {
+    color: skyblue;
+  }
+}
+
+// styles for tabs
+.main {
+  padding: 20px;
+  @include sm {
+    display: flex;
+    flex-direction: row;
+    .left {
+      position: absolute;
+      left: 5%;
+    }
+  }
+}
+.doc-wrapper {
+  @include sm {
+    .card {
+      width: 25rem;
+      display: flex;
+      flex-direction: row;
+      .card-img-top {
+        width: 12rem;
+        height: 15rem;
+        padding-left: 1.5rem;
+      }
+    }
+  }
+}
+
+.doc-list {
+  @include lg {
+    .doc-list {
+      display: flex;
+      flex-direction: column;
+    }
+    .card {
+      width: 100%;
+      padding-left: 2rem;
+    }
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+    #btn {
+      width: 50%;
+    }
+  }
+}
+.bottom {
+  padding: 5x;
+  @include lg {
+    padding: 2rem;
+    header {
+      font-family: nexa-bold;
+      font-size: 1.5rem;
+    }
+    p {
+      font-family: nexa-light;
+      font-size: 1rem;
+    }
+  }
+}

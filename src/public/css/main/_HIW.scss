@@ -1,0 +1,27 @@
+.HIW {
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+}
+
+.HIW header,
+p {
+  @include lg {
+    text-align: left;
+  }
+}
+
+.section_button_label {
+  font-family: nexa-bold;
+}
+.section_button {
+  @include xs {
+    padding: 20px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 90%;
+    text-align: left;
+  }
+}

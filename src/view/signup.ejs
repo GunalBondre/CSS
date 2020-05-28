@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <%- include('partials/bootstrap') %>
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/registration/signup.css" type="text/css" />
+  </head>
+  <body>
+    <!-- navbar included -->
+    <div class="nav-parent">
+      <%- include('partials/navbar') %>
+    </div>
+    <!-- navbar included -->
+
+    <!-- signup form -->
+    <section class="signup">
+      <div class="form-wrapper">
+        <div class="form-group">
+          <header>Sign Up</header>
+          <hr />
+          <form action="/users/signup" method="POST">
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              aria-describedby="emailHelp"
+              placeholder="Enter your name"
+              name="name"
+            />
+            <input
+              type="email"
+              class="form-control"
+              id="exampleInputEmail1"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+              name="email"
+            />
+            <small id="emailHelp" class="form-text text-muted"
+              >We'll never share your email with anyone else.</small
+            >
+            <input
+              type="password"
+              class="form-control"
+              id="exampleInputPassword1"
+              placeholder="Password"
+              name="password"
+            />
+            <select
+              class="custom-select my-1 mr-sm-2"
+              id="inlineFormCustomSelectPref"
+              name="select"
+            >
+              <option selected>Choose...</option>
+              <option value="1">Male</option>
+              <option value="2">Female</option>
+              <option value="3">Other</option>
+            </select>
+            <input
+              type="date"
+              name="date"
+              placeholder="dd/mm/yyyy"
+              class="form-control"
+            />
+            <input
+              type="number"
+              name="phone"
+              placeholder="phone"
+              class="form-control"
+            />
+            <div class="form-row">
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="city"
+                  name="city"
+                />
+              </div>
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="state"
+                  name="state"
+                />
+              </div>
+            </div>
+            <p style="text-align: center;">
+              Already registered <a href="signin">Signin</a>
+            </p>
+
+            <button type="submit" class="btn btn-primary" id="btn">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer>All rights reserved &copy; Tvstra.com</footer>
+  </body>
+</html>

@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Doctors</title>
+    <%- include('partials/bootstrap') %>
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/doctors/doctors.css" type="text/css" />
+  </head>
+  <body>
+    <!-- navbar included -->
+    <div class="nav-parent">
+      <%- include('partials/navbar') %>
+    </div>
+    <!-- navbar included -->
+    <!-- first div started -->
+    <div class="container-fluid">
+      <header>Cardiac surgeon in <u>Delhi</u></header>
+    </div>
+    <div class="sort-section">
+      <h4><a href="#">Home</a>/Doctor List</h4>
+      <div class="dropdown">
+        <button
+          class="btn btn-secondary dropdown-toggle"
+          type="button"
+          id="dropdownMenuButton"
+          data-toggle="dropdown"
+          aria-haspopup="true"
+          aria-expanded="false"
+        >
+          Sort By
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="#">Name</a>
+          <a class="dropdown-item" href="#">Experience</a>
+          <a class="dropdown-item" href="#">City</a>
+        </div>
+      </div>
+    </div>
+
+    <section class="main">
+      <div class="left">
+        <h5>Filter by</h5>
+        <p>Location</p>
+        <div class="form-check">
+          <input
+            class="form-check-input-position-static"
+            type="checkbox"
+            checked
+          />
+          <label>DLF cyber city</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>Dwarka</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>lajpat nagar</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>panjabi baug</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>pusa road</label><br />
+          <a id="toggleButton" onclick="toggleText()" href="javascript:void(0)"
+            >+Show more</a
+          >
+        </div>
+        <hr />
+        <p>Treatment</p>
+        <div class="form-check">
+          <input
+            class="form-check-input-position-static"
+            type="checkbox"
+            checked
+          />
+          <label>Multi Organ Transplant</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>Orthopedic surgery</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>Infertility Treatment</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>Dentistry</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>Cardiology</label><br />
+          <a id="toggleButton" onclick="toggleText2()" href="javascript:void(0)"
+            >+Show more</a
+          >
+        </div>
+        <hr />
+        <p>Hospitals</p>
+        <div class="form-check">
+          <input
+            class="form-check-input-position-static"
+            type="checkbox"
+            checked
+          />
+          <label>Apollo Hospital</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>Sahyadri Hospital</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>jehangir hospital</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>Ruby hospital</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>Sasoon Hospital</label><br />
+          <a id="toggleButton" onclick="toggleText3()" href="javascript:void(0)"
+            >+Show more</a
+          >
+        </div>
+        <hr />
+        <p>Experience</p>
+        <div class="form-check">
+          <input
+            class="form-check-input-position-static"
+            type="checkbox"
+            checked
+          />
+          <label>30+</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>25+</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>20+</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>15+</label><br />
+          <input class="form-check-input-position-static" type="checkbox" />
+          <label>10+</label><br />
+          <a id="toggleButton" onclick="toggleText4()" href="javascript:void(0)"
+            >+Show more</a
+          >
+        </div>
+        <hr />
+      </div>
+      <div class="doc-wrapper">
+        <div class="doc-list">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Duke sanon</h5>
+              <div class="info-grid">
+                <p class="card-text">
+                  <i class="fas fa-medal"></i>Cardiac Surgeon
+                </p>
+                <p class="card-text">
+                  <i class="fas fa-certificate"> </i>MBBS, MD, FRCP
+                </p>
+                <p class="card-text">
+                  <i class="fas fa-clock"></i>8 Years of experience
+                </p>
+                <span class="info"
+                  ><p class="card-text">
+                    <i class="fas fa-hospital"></i>Apollo hospital delhi
+                  </p></span
+                >
+              </div>
+              <button class="btn btn-primary" id="btn" type="submit">
+                Book Appointment
+              </button>
+            </div>
+
+            <img
+              class="card-img-top"
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg"
+              class="img-fluid w-100"
+              alt="Card image cap"
+              alt="Card image cap"
+            />
+          </div>
+        </div>
+
+        <div class="doc-list">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Duke sanon</h5>
+              <div class="info-grid">
+                <p class="card-text">
+                  <i class="fas fa-medal"></i>Cardiac Surgeon
+                </p>
+                <p class="card-text">
+                  <i class="fas fa-certificate"> </i>MBBS, MD, FRCP
+                </p>
+                <p class="card-text">
+                  <i class="fas fa-clock"></i>8 Years of experience
+                </p>
+                <span class="info"
+                  ><p class="card-text">
+                    <i class="fas fa-hospital"></i>Apollo hospital delhi
+                  </p></span
+                >
+              </div>
+              <button class="btn btn-primary" id="btn" type="submit">
+                Book Appointment
+              </button>
+            </div>
+
+            <img
+              class="card-img-top"
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg"
+              class="img-fluid w-100"
+              alt="Card image cap"
+              alt="Card image cap"
+            />
+          </div>
+        </div>
+
+        <div class="doc-list">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Duke sanon</h5>
+              <div class="info-grid">
+                <p class="card-text">
+                  <i class="fas fa-medal"></i>Cardiac Surgeon
+                </p>
+                <p class="card-text">
+                  <i class="fas fa-certificate"> </i>MBBS, MD, FRCP
+                </p>
+                <p class="card-text">
+                  <i class="fas fa-clock"></i>8 Years of experience
+                </p>
+                <span class="info"
+                  ><p class="card-text">
+                    <i class="fas fa-hospital"></i>Apollo hospital delhi
+                  </p></span
+                >
+              </div>
+              <button class="btn btn-primary" id="btn" type="submit">
+                Book Appointment
+              </button>
+            </div>
+
+            <img
+              class="card-img-top"
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg"
+              class="img-fluid w-100"
+              alt="Card image cap"
+              alt="Card image cap"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bottom">
+      <div class="help">
+        <header>Need Help?</header>
+        <p>Just let us know we will happy to assist you</p>
+        <button class="btn btn-primary">Submit your query</button>
+      </div>
+    </section>
+    <section class="footer-section">
+      <div class="footer-menu">
+        <img src="/footer.png" alt="" id="img-footer" />
+        <div class="links">
+          <a href="#">Doctor</a>
+          <a href="#">Hospital</a>
+          <a href="#">Treatment</a>
+          <a href="#">Other-Services</a>
+          <a href="#">FAQs</a>
+        </div>
+      </div>
+      <header>Follow Us</header>
+
+      <div class="social-icons">
+        <div class="social-icon-items">
+          <a href="#"><img src="/facebook.png" alt="" /></a>
+          <a href="#"><img src="/twitter.png" alt="" /></a>
+          <a href="#"><img src="/pinterest.png" alt="" /></a>
+          <a href="#"><img src="/google-plus.png" alt="" /></a>
+          <a href="#"><img src="/youtube.png" alt="" /></a>
+          <p>All rights reserved &copy; tcstra 2020</p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

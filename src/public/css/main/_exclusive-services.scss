@@ -1,0 +1,28 @@
+// exclusive services
+
+.exclusive-services {
+  background-color: lightgray;
+  width: 100%;
+  padding: 10px;
+  header,
+  p {
+    text-align: center;
+  }
+}
+.es-wrapper {
+  p {
+    text-align: center;
+  }
+
+  width: 90%;
+  margin: 0 auto;
+  div {
+    padding: 15px;
+    background-color: white;
+    img {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+}

@@ -1,0 +1,716 @@
+.HIW {
+  width: 100%;
+  text-align: center;
+  background-color: white;
+  padding: 20px;
+}
+
+@media (min-width: 992px) {
+  .HIW header,
+  p {
+    text-align: left;
+  }
+}
+
+.section_button_label {
+  font-family: nexa-bold;
+}
+
+@media (min-width: 300px) {
+  .section_button {
+    padding: 20px;
+    margin: 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    width: 90%;
+    text-align: left;
+  }
+}
+
+@media (min-width: 576px) {
+  .innerWrapper {
+    display: -ms-grid;
+    display: grid;
+    gap: 20px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 767px) {
+  .innerWrapper {
+    display: -ms-grid;
+    display: grid;
+    gap: 20px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .innerWrapper {
+    display: -ms-grid;
+    display: grid;
+    gap: 20px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .innerWrapper {
+    display: -ms-grid;
+    display: grid;
+    gap: 20px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 576px) {
+  .row .card-group {
+    display: -ms-grid;
+    display: grid;
+    gap: 10px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 767px) {
+  .row .card-group {
+    display: -ms-grid;
+    display: grid;
+    row-gap: 1rem;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 992px) {
+  .row .card-group {
+    display: -ms-grid;
+    display: grid;
+    gap: 10px;
+    -ms-grid-columns: (1fr)[4];
+        grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 300px) {
+  .FMT .img-wrapper {
+    display: -ms-grid;
+    display: grid;
+    gap: 20px;
+    -ms-grid-columns: (1fr)[1];
+        grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+@media (min-width: 576px) {
+  .FMT .img-wrapper {
+    display: -ms-grid;
+    display: grid;
+    gap: 10px;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 767px) {
+  .FMT .img-wrapper {
+    display: -ms-grid;
+    display: grid;
+    gap: 10px;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.es-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.es-wrapper p {
+  text-align: center;
+}
+
+.es-wrapper div {
+  padding: 15px;
+  background-color: white;
+}
+
+.es-wrapper div img {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@media (min-width: 300px) {
+  .es-wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 576px) {
+  .es-wrapper {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (min-width: 767px) {
+  .es-wrapper {
+    display: -ms-grid;
+    display: grid;
+    gap: 4px;
+    -ms-grid-columns: (1fr)[6];
+        grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+.card-img-top {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.expert-doc {
+  margin-top: 1rem;
+  padding-bottom: 1rem;
+  padding: 1rem;
+  width: 100%;
+  background-color: #00004d;
+}
+
+.expert-doc header,
+.expert-doc p {
+  color: white;
+}
+
+.expert-doc .card-text {
+  color: black;
+}
+
+.expert-doc .card-group {
+  margin: 0 auto;
+}
+
+.expert-doc .card-body {
+  padding-left: 3rem;
+  width: 100%;
+}
+
+.expert-doc .card-body {
+  color: skyblue;
+  position: relative;
+  max-width: 600px;
+}
+
+.expert-doc .card-title::before {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: skyblue;
+  position: absolute;
+  left: 0;
+  top: 20%;
+}
+
+@media (min-width: 300px) {
+  .expert-doc header,
+  .expert-doc .info {
+    text-align: center;
+  }
+  .expert-doc .card {
+    width: 22rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .expert-doc .card {
+    width: 20rem;
+  }
+  .expert-doc header,
+  .expert-doc .info {
+    text-align: center;
+  }
+  .expert-doc .card-image-top {
+    height: 20rem;
+  }
+  .expert-doc .card-group {
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 767px) {
+  .expert-doc header,
+  .expert-doc .info {
+    text-align: left;
+  }
+}
+
+@media (min-width: 767px) {
+  .card-group .card {
+    width: 18rem;
+  }
+}
+
+.FMT {
+  width: 100%;
+  padding: 15px;
+}
+
+@media (min-width: 300px) {
+  .FMT header,
+  .FMT p {
+    text-align: center;
+  }
+}
+
+.background1 {
+  height: 20rem;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black)), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg");
+  background: linear-gradient(to bottom, transparent, black), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.background1 #para1 {
+  font-size: 20px;
+  position: absolute;
+  top: 80%;
+  left: 25%;
+  color: white;
+  font-family: nexa-bold;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.background2 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black)), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg");
+  background: linear-gradient(to bottom, transparent, black), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.background2 #para2 {
+  font-size: 20px;
+  position: absolute;
+  top: 80%;
+  left: 25%;
+  color: white;
+  font-family: nexa-bold;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.background3 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black)), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg");
+  background: linear-gradient(to bottom, transparent, black), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.background3 #para3 {
+  font-size: 20px;
+  position: absolute;
+  top: 80%;
+  left: 35%;
+  color: white;
+  font-family: nexa-bold;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.background4 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black)), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg");
+  background: linear-gradient(to bottom, transparent, black), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.background4 #para4 {
+  font-size: 20px;
+  position: absolute;
+  top: 80%;
+  left: 35%;
+  color: white;
+  font-family: nexa-bold;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.background5 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black)), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg");
+  background: linear-gradient(to bottom, transparent, black), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.background5 #para5 {
+  padding-left: 10px;
+  font-size: 20px;
+  position: absolute;
+  top: 80%;
+  left: 35%;
+  color: white;
+  font-family: nexa-bold;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.background6 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black)), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg");
+  background: linear-gradient(to bottom, transparent, black), url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.background6 #para6 {
+  font-size: 20px;
+  position: absolute;
+  top: 80%;
+  left: 35%;
+  color: white;
+  font-family: nexa-bold;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.exclusive-services {
+  background-color: lightgray;
+  width: 100%;
+  padding: 10px;
+}
+
+.exclusive-services header,
+.exclusive-services p {
+  text-align: center;
+}
+
+.es-wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.es-wrapper p {
+  text-align: center;
+}
+
+.es-wrapper div {
+  padding: 15px;
+  background-color: white;
+}
+
+.es-wrapper div img {
+  text-align: center;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer-section {
+  background-color: #00004d;
+  padding: 20px;
+}
+
+.social-icons img {
+  width: 20px;
+}
+
+.footer-menu {
+  width: 100%;
+}
+
+@media (min-width: 300px) {
+  .footer-menu {
+    text-align: center;
+  }
+  .footer-menu .links a {
+    display: block;
+    color: white;
+  }
+}
+
+@media (min-width: 576px) {
+  .footer-menu img {
+    float: right;
+  }
+  .footer-menu .links a {
+    float: left;
+    padding-right: 5px;
+    padding-top: 25px;
+  }
+}
+
+@media (min-width: 767px) {
+  .footer-menu img {
+    padding-top: 2%;
+  }
+  .footer-menu .links a {
+    padding-right: 5px;
+    padding-top: 35px;
+  }
+}
+
+@media (min-width: 300px) {
+  .social-icons .social-icon-items {
+    text-align: center;
+  }
+}
+
+@media (min-width: 576px) {
+  .social-icons .social-icon-items {
+    text-align: right;
+    padding-top: 10%;
+    margin-right: 15px;
+  }
+}
+
+@media (min-width: 767px) {
+  .social-icons .social-icon-items {
+    text-align: right;
+    padding-top: 10%;
+    margin-right: 15px;
+  }
+}
+
+.social-icons p {
+  color: white;
+}
+
+@media (min-width: 576px) {
+  .social-icons p {
+    float: left;
+  }
+}
+
+@media (min-width: 300px) {
+  .social-icons p {
+    text-align: center;
+  }
+}
+
+footer {
+  color: white;
+}
+
+@media (min-width: 300px) {
+  footer {
+    text-align: center;
+  }
+}
+
+@media (min-width: 576px) {
+  footer {
+    text-align: left;
+    padding-bottom: 15px;
+  }
+}
+
+@font-face {
+  font-family: nexa-bold;
+  src: url("../../../../font/Nexa-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url("../../../../font/Nexa-light.otf") format("opentype");
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+header {
+  font-family: nexa-bold;
+  font-size: 2rem;
+}
+
+p {
+  font-family: nexa-light;
+}
+
+.nav-parent {
+  text-align: center;
+}
+
+@media (min-width: 300px) {
+  .nav-parent img {
+    width: 7rem;
+    height: 3rem;
+  }
+}
+
+.inputSection #marker {
+  position: absolute;
+}
+
+#marker {
+  padding: 15px;
+  min-width: 30px;
+}
+
+.FAH {
+  background-image: url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.jpg");
+  background-size: cover;
+}
+
+@media (min-width: 300px) {
+  .FAH {
+    text-align: center;
+  }
+  .FAH h1 {
+    font-family: nexa-bold, sans-serif;
+  }
+  .FAH p {
+    font-size: 1.3rem;
+    font-family: nexa-light;
+  }
+  .FAH .inputSection {
+    width: 100%;
+    display: inline-block;
+    padding: 5px;
+  }
+  .FAH input[type="text"] {
+    width: 90%;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+    padding: 10px;
+    margin: 5px;
+  }
+  .FAH #searchBtn {
+    width: 30%;
+    margin: 5px;
+    padding: 10px;
+    margin-top: 5px;
+    background-color: #00004d;
+    color: white;
+    border-radius: 0px;
+  }
+}
+
+@media (min-width: 576px) {
+  .FAH {
+    text-align: center;
+  }
+  .FAH h1 {
+    text-align: center;
+    font-family: nexa-bold;
+    font-weight: 1.5rem;
+  }
+  .FAH p {
+    text-align: center;
+    font-size: 1.3rem;
+    font-family: nexa-light;
+  }
+  .FAH .inputSection {
+    width: 100%;
+    display: inline-block;
+    padding: 5px;
+  }
+  .FAH #searchPlace {
+    width: 25%;
+    padding: 10px;
+    margin-right: -10px;
+  }
+  .FAH #searchDoc {
+    width: 50%;
+    padding: 10px;
+    margin-right: -10px;
+  }
+  .FAH #searchBtn {
+    width: 15%;
+    padding: 10px;
+    margin-top: -1px;
+    background-color: #00004d;
+    color: white;
+    border-radius: 0px;
+  }
+}
+
+@media (min-width: 767px) {
+  .FAH {
+    text-align: left;
+  }
+  .FAH h1 {
+    text-align: left;
+    font-family: nexa-bold;
+    font-weight: 1.5rem;
+  }
+  .FAH p {
+    text-align: left;
+    font-size: 1.3rem;
+    font-family: nexa-light;
+  }
+  .FAH .inputSection {
+    width: 70%;
+    padding-left: 8%;
+    padding-bottom: 3%;
+  }
+}
+
+.container {
+  padding: 3%;
+}
+
+@media (min-width: 767px) {
+  .container input[type="text"] {
+    width: 100%;
+  }
+}
+
+.bottom {
+  background-color: skyblue;
+  padding: 1rem;
+}
+
+.help {
+  text-align: center;
+}
+
+.help header {
+  color: white;
+}
+
+@media (min-width: 767px) {
+  .help p {
+    text-align: center;
+  }
+}
+/*# sourceMappingURL=index.css.map */

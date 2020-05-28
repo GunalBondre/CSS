@@ -1,0 +1,168 @@
+// display section-first class in row
+.container-fluid {
+  @include xs {
+    header {
+      display: none;
+    }
+  }
+  @include sm {
+    header {
+      display: none;
+    }
+  }
+}
+
+.wrapper {
+  @include xs {
+    .left {
+      display: none;
+    }
+  }
+  @include sm {
+    .left {
+      display: none;
+    }
+  }
+  @include md {
+    display: flex;
+    flex-direction: row;
+    .left {
+      display: block;
+      text-align: left;
+    }
+  }
+}
+
+.sort-section {
+  padding: 20px;
+  h4 {
+    float: left;
+  }
+  #dropdownMenuButton {
+    float: right;
+  }
+}
+
+.right {
+  margin-top: 5%;
+  @include xs {
+    padding-bottom: 20px;
+    text-align: center;
+    .hosp-list {
+      padding-top: 10px;
+      display: inline-block;
+      .card-body {
+        text-align: left;
+
+        p {
+          padding: 5px;
+
+          i {
+            padding-right: 10px;
+          }
+        }
+        #btn {
+          width: 100%;
+          margin: 0 auto;
+          margin-top: 10px;
+        }
+      }
+      img {
+        width: 18rem;
+      }
+    }
+    .card {
+      width: 18rem;
+      .card-img-top {
+        height: 20rem;
+      }
+    }
+  }
+}
+.wrapper {
+  @include sm {
+    .hosp-list {
+      display: flex;
+      flex-direction: row;
+      img {
+        width: 18rem;
+      }
+    }
+  }
+
+  @include md {
+    text-align: center;
+  }
+}
+.card-body {
+  @include xs {
+    .specialities {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      row-gap: 30px;
+      #speciality {
+        margin: 5px;
+        border: 1px;
+        border-style: solid;
+        border-color: black;
+        padding: 1em;
+        border-radius: 15px;
+      }
+    }
+
+    .call-now-button {
+      text-align: center;
+      #call-now {
+        padding: 10px;
+      }
+    }
+  }
+
+  @include md {
+    .specialities {
+      padding-top: 20px;
+      padding-bottom: 20px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 30px;
+    }
+    #speciality {
+      border: 1px;
+      margin-top: 15px;
+      border-style: solid;
+      border-color: black;
+      padding: 1em;
+      border-radius: 15px;
+    }
+    .multi-organ {
+      padding-top: 15px;
+      padding-bottom: 15px;
+    }
+    .call-now-button {
+      text-align: center;
+      #call-now {
+        padding: 10px;
+      }
+    }
+  }
+}
+.right {
+  @include md {
+    width: 100%;
+    .card {
+      width: 80%;
+    }
+  }
+}
+
+.wrapper {
+  @include md {
+    padding-left: 4%;
+    padding-top: 4%;
+  }
+  .right {
+    padding-left: 4%;
+  }
+}

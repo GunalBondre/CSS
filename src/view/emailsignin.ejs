@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signup</title>
+    <%- include('partials/bootstrap') %>
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/registration/signin.css" type="text/css" />
+  </head>
+  <body>
+    <!-- navbar included -->
+    <div class="nav-parent">
+      <%- include('partials/navbar') %>
+    </div>
+    <!-- navbar included -->
+
+    <!-- signup form -->
+    <section class="signin">
+      <div class="form-wrapper">
+        <div class="form-group">
+          <header>Sign In</header>
+          <hr />
+          <form action="/users/signin" method="POST">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              aria-describedby="emailHelp"
+              placeholder="Enter Email"
+              name="email"
+            />
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              aria-describedby="emailHelp"
+              placeholder="Enter password"
+              name="password"
+            />
+            <p>Not registered <a href="signup">Signup</a></p>
+            <p>Sign in using Mobile no <a href="signin">Mobile Signin</a></p>
+            <button type="submit" class="btn btn-primary" id="btn">
+              Submit
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+    <footer>All rights reserved &copy; Tvstra.com</footer>
+  </body>
+</html>

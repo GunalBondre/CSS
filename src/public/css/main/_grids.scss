@@ -1,0 +1,94 @@
+.innerWrapper {
+  @include sm {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include md {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include lg {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @include xl {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+.row {
+  .card-group {
+    @include sm {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include md {
+      display: grid;
+      row-gap: 1rem;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @include lg {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}
+
+.FMT {
+  .img-wrapper {
+    @include xs {
+      display: grid;
+      gap: 20px;
+      grid-template-columns: repeat(1, 1fr);
+    }
+    @include sm {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include md {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+.es-wrapper {
+  p {
+    text-align: center;
+  }
+
+  width: 90%;
+  margin: 0 auto;
+  div {
+    padding: 15px;
+    background-color: white;
+    img {
+      text-align: center;
+      width: 100%;
+      margin: 0 auto;
+    }
+  }
+  @include xs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+
+  @include sm {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @include md {
+    display: grid;
+    gap: 4px;
+    grid-template-columns: repeat(6, 1fr);
+  }
+}

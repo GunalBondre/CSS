@@ -1,0 +1,36 @@
+.sort-section {
+  padding: 10px;
+  h4 {
+    float: left;
+  }
+  #dropdownMenuButton {
+    float: right;
+  }
+}
+
+.container-fluid {
+  @include xs {
+    header {
+      display: none;
+    }
+  }
+  @include sm {
+    header {
+      font-size: 1.5rem;
+      font-family: nexa-bold;
+      display: block;
+      background-color: skyblue;
+      padding: 5rem;
+    }
+  }
+
+  @include md {
+    header {
+      font-size: 2rem;
+      font-family: nexa-bold;
+      display: block;
+      background-color: skyblue;
+      padding: 5rem;
+    }
+  }
+}

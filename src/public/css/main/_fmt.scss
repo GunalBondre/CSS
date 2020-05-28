@@ -1,0 +1,130 @@
+.FMT {
+  width: 100%;
+  padding: 15px;
+
+  @include xs {
+    header,
+    p {
+      text-align: center;
+    }
+  }
+}
+
+.background1 {
+  height: 20rem;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(to bottom, transparent, black),
+    url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  #para1 {
+    font-size: 20px;
+    position: absolute;
+    top: 80%;
+    left: 25%;
+    color: white;
+    font-family: nexa-bold;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.background2 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(to bottom, transparent, black),
+    url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  #para2 {
+    font-size: 20px;
+    position: absolute;
+    top: 80%;
+    left: 25%;
+    color: white;
+    font-family: nexa-bold;
+    transform: translate(-50%, -50%);
+  }
+}
+.background3 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(to bottom, transparent, black),
+    url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  #para3 {
+    font-size: 20px;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    color: white;
+    font-family: nexa-bold;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.background4 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(to bottom, transparent, black),
+    url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  #para4 {
+    font-size: 20px;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    color: white;
+    font-family: nexa-bold;
+    transform: translate(-50%, -50%);
+  }
+}
+.background5 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(to bottom, transparent, black),
+    url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  #para5 {
+    padding-left: 10px;
+    font-size: 20px;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    color: white;
+    font-family: nexa-bold;
+    transform: translate(-50%, -50%);
+  }
+}
+.background6 {
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+  background: linear-gradient(to bottom, transparent, black),
+    url("https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  #para6 {
+    font-size: 20px;
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    color: white;
+    font-family: nexa-bold;
+    transform: translate(-50%, -50%);
+  }
+}

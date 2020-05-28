@@ -1,0 +1,15 @@
+@import "../main/breakpoint";
+@import "./first";
+@import "./footer-section";
+@font-face {
+  font-family: nexa-bold;
+  src: url("../../../../font/Nexa-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: nexa-light;
+  src: url("../../../../font/Nexa-light.otf") format("opentype");
+}
+
+.nav-parent {
+  text-align: center;
+}

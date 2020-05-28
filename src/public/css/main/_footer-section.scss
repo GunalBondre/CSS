@@ -1,0 +1,80 @@
+.footer-section {
+  background-color: #00004d;
+  padding: 20px;
+}
+.social-icons {
+  img {
+    width: 20px;
+  }
+}
+
+.footer-menu {
+  width: 100%;
+  @include xs {
+    text-align: center;
+    .links {
+      a {
+        display: block;
+        color: white;
+      }
+    }
+  }
+
+  @include sm {
+    img {
+      float: right;
+    }
+    .links a {
+      float: left;
+      padding-right: 5px;
+      padding-top: 25px;
+    }
+  }
+  @include md {
+    img {
+      padding-top: 2%;
+    }
+    .links a {
+      padding-right: 5px;
+      padding-top: 35px;
+    }
+  }
+}
+
+.social-icons {
+  .social-icon-items {
+    @include xs {
+      text-align: center;
+    }
+    @include sm {
+      text-align: right;
+      padding-top: 10%;
+      margin-right: 15px;
+    }
+    @include md {
+      text-align: right;
+      padding-top: 10%;
+      margin-right: 15px;
+    }
+  }
+  p {
+    color: white;
+    @include sm {
+      float: left;
+    }
+    @include xs {
+      text-align: center;
+    }
+  }
+}
+
+footer {
+  color: white;
+  @include xs {
+    text-align: center;
+  }
+  @include sm {
+    text-align: left;
+    padding-bottom: 15px;
+  }
+}
