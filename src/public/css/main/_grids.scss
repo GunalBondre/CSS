@@ -29,36 +29,27 @@
     }
     @include md {
       display: grid;
-      row-gap: 1rem;
-      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      grid-template-columns: repeat(2, 1fr);
     }
     @include lg {
       display: grid;
       gap: 10px;
       grid-template-columns: repeat(4, 1fr);
     }
-  }
-}
-
-.FMT {
-  .img-wrapper {
-    @include xs {
-      display: grid;
-      gap: 20px;
-      grid-template-columns: repeat(1, 1fr);
-    }
-    @include sm {
+    @media only screen and (min-device-width: 1024px) and (max-device-height: 1366px) and (-webkit-min-device-pixel-ratio: 2) and (orientation: portrait) {
       display: grid;
       gap: 10px;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
     }
-    @include md {
+    @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
       display: grid;
       gap: 10px;
       grid-template-columns: repeat(3, 1fr);
     }
   }
 }
+
 .es-wrapper {
   p {
     text-align: center;

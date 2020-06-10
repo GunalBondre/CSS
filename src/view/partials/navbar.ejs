@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-white">
   <a class="navbar-brand" href="#"
-    ><img id="brandImg" src="/logo.jpg" style="width: 10rem; height: 3rem;"
+    ><img id="brandImg" src="/logo.jpg" style="width: 8rem; height: 2rem;"
   /></a>
   <button
     class="navbar-toggler"
@@ -16,10 +16,10 @@
   <div class="collapse navbar-collapse" id="navbarText">
     <ul class="navbar-nav mr-auto" style="text-align: center;">
       <li class="nav-item">
-        <a class="nav-link" href="doctors">Doctors </a>
+        <a class="nav-link" href="/doctors">Doctors </a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="hospitals.html">Hospitals</a>
+        <a class="nav-link" href="/hospitals">Hospitals</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="#">Treatment</a>
@@ -31,13 +31,22 @@
         <a class="nav-link" href="#">About</a>
       </li>
     </ul>
+
     <span class="navbar-text">
-      <a href="users/signin">
+      <% if(isAuthenticated ) { %>
+      <a href="users/logout">
         <button class="btn btn-outline-success" type="button">
-          Login
+          Logout
         </button></a
       >
-      <button class="btn btn-outline-success" type="button">
+      <% } else { %>
+      <a href="users/emailsignin">
+        <button class="btn btn-outline-success" type="button">
+          Login/Signup
+        </button></a
+      >
+      <% } %>
+      <button class="btn btn-dark" type="button">
         Get a Quote
       </button>
     </span>

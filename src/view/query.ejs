@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Treatments</title>
+    <%- include('partials/bootstrap') %>
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/query/query.css" type="text/css" />
+
+    <!-- Compiled and minified CSS -->
+  </head>
+  <body>
+    <!-- navbar included -->
+    <div class="nav-parent">
+      <%- include('partials/navbar') %>
+      <!-- navbar included -->
+    </div>
+    <div class="wrapper">
+      <div class="inner-wrapper">
+        <header>Submit your query</header>
+        <hr />
+        <form action="/query" method="post">
+          <input type="text" placeholder="Enter your name" name="name" />
+          <input type="tel" placeholder="Enter your phone" , name="phone" />
+          <input type="email" placeholder="Enter your email" , name="email" />
+          <textarea
+            name="Enter your query"
+            id="query"
+            cols="30"
+            rows="10"
+            name="query"
+          ></textarea>
+          <button class="btn btn-primary" type="submit">
+            Submit your query
+          </button>
+        </form>
+      </div>
+    </div>
+    <footer>All rights reserved &copy Tvstra 2020</footer>
+  </body>
+</html>

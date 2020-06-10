@@ -1,18 +1,17 @@
+@import "../theme/config";
 .card-img-top {
   width: 100%;
   object-fit: cover;
+  height: auto;
 }
 
 .expert-doc {
-  margin-top: 1rem;
-  padding-bottom: 1rem;
-  padding: 1rem;
   width: 100%;
-  background-color: rgba($color: #00004d, $alpha: 1);
-  header,
-  p {
-    color: white;
+  overflow: hidden;
+  .card {
+    border-bottom: 5px solid $bg-light-blue;
   }
+
   .card-text {
     color: black;
   }
@@ -24,9 +23,12 @@
     width: 100%;
   }
   .card-body {
-    color: skyblue;
     position: relative;
+    color: $button-blue;
     max-width: 600px;
+  }
+  .card-title {
+    font-family: nexa-bold;
   }
 
   .card-title {
@@ -35,7 +37,7 @@
       display: block;
       width: 40px;
       height: 2px;
-      background: skyblue;
+      background: $button-blue;
       position: absolute;
       left: 0;
       top: 20%;
@@ -52,7 +54,8 @@
   }
   @include sm {
     .card {
-      width: 20rem;
+      width: 21rem;
+      // width: 100%;
     }
     header,
     .info {

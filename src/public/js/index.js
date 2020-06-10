@@ -60,3 +60,31 @@ function div7() {
     x.style.display = "none";
   }
 }
+//
+// (function () {
+//   const buttons = document.getElementsByClassName("section_button");
+
+//   if (buttons !== null) {
+//     for (let i = 0; i < buttons.length; i++) {
+//       buttons.item(i).addEventListener("click", function () {
+//         const div_id = this.getAttribute("data-image-id");
+
+//         // remove the following line and the complete following if to keep all
+//         // // images visible
+//         const images = document.querySelectorAll(
+//           ".image-wrapper > div.shown:not(#" + div_id + ")"
+//         );
+//         if (images !== null) {
+//           for (let j = 0; j < images.length; j++) {
+//             images.item(j).classList.remove("shown");
+//           }
+//         }
+
+//         if (typeof div_id == "string") {
+//           const img = document.getElementById(div_id);
+//           img.classList.add("shown");
+//         }
+//       });
+//     }
+//   }
+// })();

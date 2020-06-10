@@ -1,0 +1,14 @@
+.bg {
+  &-white {
+    @include set-background($white);
+  }
+  &-dark-blue {
+    @include set-background($bg-dark-blue);
+  }
+  &-light-blue {
+    @include set-background($bg-light-blue);
+  }
+  &-light-grey {
+    @include set-background($bg-light-grey);
+  }
+}

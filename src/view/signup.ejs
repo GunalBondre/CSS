@@ -11,7 +11,7 @@
   <body>
     <!-- navbar included -->
     <div class="nav-parent">
-      <%- include('partials/navbar') %>
+      <!-- <%- include('partials/navbar') %> -->
     </div>
     <!-- navbar included -->
 
@@ -19,6 +19,7 @@
     <section class="signup">
       <div class="form-wrapper">
         <div class="form-group">
+          <%- include('partials/messages') %>
           <header>Sign Up</header>
           <hr />
           <form action="/users/signup" method="POST">
@@ -54,9 +55,9 @@
               name="select"
             >
               <option selected>Choose...</option>
-              <option value="1">Male</option>
-              <option value="2">Female</option>
-              <option value="3">Other</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Other">Other</option>
             </select>
             <input
               type="date"
@@ -65,7 +66,7 @@
               class="form-control"
             />
             <input
-              type="number"
+              type="tel"
               name="phone"
               placeholder="phone"
               class="form-control"

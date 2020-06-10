@@ -1,0 +1,300 @@
+@import "../main/breakpoint";
+@import "../font";
+
+.top-container {
+  background-image: linear-gradient(transparent, black),
+    url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/aboutUs_hero.jpeg);
+  background-size: cover;
+  width: 100%;
+  max-height: 600px;
+  text-align: center;
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+  .inner-container-for-header {
+    padding-top: 20%;
+    padding-bottom: 20%;
+  }
+  header {
+    font-style: nexa-bold;
+    font-size: 2rem;
+  }
+  .top-container__paragraph {
+    font-family: nexa-light;
+    font-size: 1rem;
+    padding-top: 5px;
+  }
+}
+article {
+  width: 100%;
+  text-align: center;
+  padding: 5%;
+  header {
+    font-family: nexa-bold;
+    font-size: 2rem;
+
+    font-weight: bold;
+  }
+  .article__paragraph {
+    font-family: nexa-light;
+    font-size: 1rem;
+    padding-top: 15px;
+  }
+}
+
+.doctor-img {
+  text-align: center;
+
+  img {
+    padding: 5px;
+  }
+}
+@include sm {
+  .content {
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+  .doctor-img {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.black-container {
+  text-align: center;
+  padding: 10px;
+  @include xs {
+    width: 100%;
+    margin: 0 auto;
+    background-color: black;
+    .inner-container {
+      padding: 20px;
+      header,
+      p {
+        color: white;
+        padding: 5px;
+      }
+
+      header {
+        font-family: nexa-bold;
+        font-size: 1.5rem;
+      }
+      p {
+        font-size: 1rem;
+        font-family: nexa-light;
+      }
+    }
+    .info-container {
+      width: 90%;
+      margin: 0 auto;
+      .info {
+        padding: 7%;
+        border: 1px solid white;
+        margin: 3%;
+      }
+      h2 {
+        color: white;
+      }
+      p {
+        color: grey;
+      }
+    }
+  }
+}
+@include xs {
+  .bottom {
+    text-align: center;
+  }
+}
+.help {
+  @include xs {
+    background-color: skyblue;
+    padding: 10px;
+    header,
+    p,
+    button {
+      padding: 5px;
+    }
+    header {
+      font-family: nexa-bold;
+      font-size: 1.5rem;
+      color: white;
+    }
+    p {
+      font-family: nexa-light;
+      font-size: 1rem;
+    }
+  }
+}
+
+@include sm {
+  .video-container {
+    display: none;
+  }
+  .info-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+@include md {
+  .black-container {
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+    .video-container {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .inner-container,
+    .info-container {
+      padding: 5%;
+      z-index: 1;
+    }
+    .inner-container {
+      text-align: left;
+    }
+    .info-container {
+      .info {
+        padding: 15%;
+      }
+    }
+  }
+
+  .img {
+    width: 20%;
+  }
+}
+
+@include xs {
+  .video-container {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+
+    .help {
+      text-align: center;
+      padding: 5px;
+      header,
+      p,
+      button {
+        padding: 5px;
+      }
+      header {
+        color: white;
+        font-family: nexa-bold;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .footer-section {
+    text-align: center;
+    .links a {
+      display: block;
+      padding: 5px;
+    }
+  }
+}
+@media (min-width: 600px) {
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    text-align: center;
+    .help {
+      padding: 5px;
+      header,
+      p,
+      button {
+        padding: 5px;
+      }
+      header {
+        color: white;
+        font-family: nexa-bold;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .footer-menu {
+    img {
+      float: right;
+    }
+  }
+  .social-icons {
+    padding-top: 5%;
+  }
+
+  .social-icon-items {
+    text-align: right;
+    p {
+      float: left;
+    }
+  }
+  .links {
+    padding-top: 5%;
+  }
+}
+@media (min-width: 1200px) {
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    display: flex;
+    padding: 2% 5%;
+
+    .help {
+      padding: 5px;
+      header,
+      p,
+      .btn {
+        padding: 5px;
+      }
+      header {
+        color: white;
+        font-family: nexa-bold;
+        font-size: 1.5rem;
+      }
+    }
+    .btn {
+      position: absolute;
+      right: 10%;
+      width: 40%;
+    }
+  }
+  .footer-menu {
+    img {
+      float: right;
+    }
+  }
+  .social-icons {
+    padding-top: 3%;
+  }
+
+  .social-icon-items {
+    text-align: right;
+    p {
+      float: left;
+    }
+  }
+  .links {
+    padding-top: 2%;
+  }
+}

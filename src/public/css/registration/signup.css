@@ -1,11 +1,11 @@
 @font-face {
   font-family: nexa-bold;
-  src: url("../../../../font/Nexa-Bold.otf") format("opentype");
+  src: url(/Nexa-Bold.otf);
 }
 
 @font-face {
   font-family: nexa-light;
-  src: url("../../../../font/Nexa-light.otf") format("opentype");
+  src: url(/Nexa-light.otf);
 }
 
 body {

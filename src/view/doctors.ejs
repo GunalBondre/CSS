@@ -7,6 +7,7 @@
     <%- include('partials/bootstrap') %>
     <link rel="stylesheet" href="/reset.css" type="text/css" />
     <link rel="stylesheet" href="/doctors/doctors.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
   </head>
   <body>
     <!-- navbar included -->
@@ -128,16 +129,16 @@
         <hr />
       </div>
       <div class="doc-wrapper">
-        <div class="doc-list">
+        <div class="doc-list my-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Duke sanon</h5>
+              <h5 class="card-title"><span>Duke sanon</span></h5>
               <div class="info-grid">
                 <p class="card-text">
-                  <i class="fas fa-medal"></i>Cardiac Surgeon
+                  <i class="fas fa-medal"></i><span>Surgeon</span>
                 </p>
                 <p class="card-text">
-                  <i class="fas fa-certificate"> </i>MBBS, MD, FRCP
+                  <i class="fas fa-certificate"> </i><span>MBBS, MD, FRCP</span>
                 </p>
                 <p class="card-text">
                   <i class="fas fa-clock"></i>8 Years of experience
@@ -235,36 +236,6 @@
       </div>
     </section>
 
-    <section class="bottom">
-      <div class="help">
-        <header>Need Help?</header>
-        <p>Just let us know we will happy to assist you</p>
-        <button class="btn btn-primary">Submit your query</button>
-      </div>
-    </section>
-    <section class="footer-section">
-      <div class="footer-menu">
-        <img src="/footer.png" alt="" id="img-footer" />
-        <div class="links">
-          <a href="#">Doctor</a>
-          <a href="#">Hospital</a>
-          <a href="#">Treatment</a>
-          <a href="#">Other-Services</a>
-          <a href="#">FAQs</a>
-        </div>
-      </div>
-      <header>Follow Us</header>
-
-      <div class="social-icons">
-        <div class="social-icon-items">
-          <a href="#"><img src="/facebook.png" alt="" /></a>
-          <a href="#"><img src="/twitter.png" alt="" /></a>
-          <a href="#"><img src="/pinterest.png" alt="" /></a>
-          <a href="#"><img src="/google-plus.png" alt="" /></a>
-          <a href="#"><img src="/youtube.png" alt="" /></a>
-          <p>All rights reserved &copy; tcstra 2020</p>
-        </div>
-      </div>
-    </section>
+    <%- include('footer') %>
   </body>
 </html>

@@ -1,0 +1,318 @@
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.mx-2 {
+  margin: 0 2rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.px-2 {
+  padding: 0 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.mx-3 {
+  margin: 0 3rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.px-3 {
+  padding: 0 3rem;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.mx-4 {
+  margin: 0 4rem;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.py-4 {
+  padding: 4rem 0;
+}
+
+.px-4 {
+  padding: 0 4rem;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.my-5 {
+  margin: 5rem 0;
+}
+
+.mx-5 {
+  margin: 0 5rem;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+.px-5 {
+  padding: 0 5rem;
+}
+
+.m-6 {
+  margin: 6rem;
+}
+
+.my-6 {
+  margin: 6rem 0;
+}
+
+.mx-6 {
+  margin: 0 6rem;
+}
+
+.p-6 {
+  padding: 6rem;
+}
+
+.py-6 {
+  padding: 6rem 0;
+}
+
+.px-6 {
+  padding: 0 6rem;
+}
+
+.m-7 {
+  margin: 7rem;
+}
+
+.my-7 {
+  margin: 7rem 0;
+}
+
+.mx-7 {
+  margin: 0 7rem;
+}
+
+.p-7 {
+  padding: 7rem;
+}
+
+.py-7 {
+  padding: 7rem 0;
+}
+
+.px-7 {
+  padding: 0 7rem;
+}
+
+.m-8 {
+  margin: 8rem;
+}
+
+.my-8 {
+  margin: 8rem 0;
+}
+
+.mx-8 {
+  margin: 0 8rem;
+}
+
+.p-8 {
+  padding: 8rem;
+}
+
+.py-8 {
+  padding: 8rem 0;
+}
+
+.px-8 {
+  padding: 0 8rem;
+}
+
+header {
+  color: #fff;
+}
+
+.btn {
+  font-family: nexa-light;
+}
+
+@media (max-width: 599px) {
+  .bottom {
+    background-color: #99ccff;
+    text-align: center;
+  }
+  .footer-section {
+    background-color: #000033;
+    text-align: center;
+  }
+  .footer-section .links a {
+    display: block;
+    padding: 5px;
+    color: #fff;
+  }
+  .footer-section p {
+    color: #fff;
+  }
+  .footer-section i {
+    padding-right: 10px;
+    color: white;
+  }
+}
+
+@media (min-width: 600px) {
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    text-align: center;
+  }
+  .bottom .help {
+    padding: 5px;
+  }
+  .bottom .help header,
+  .bottom .help p,
+  .bottom .help button {
+    padding: 5px;
+  }
+  .bottom .help header {
+    color: white;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+  }
+  .bottom .btn {
+    text-align: center;
+  }
+  .footer-menu img {
+    float: right;
+  }
+  .footer-menu .links a {
+    color: black;
+    padding-right: 10px;
+    font-family: nexa-light;
+  }
+  .footer-menu p {
+    color: black;
+  }
+  .social-icons {
+    padding-top: 5%;
+  }
+  .social-icon-items {
+    text-align: right;
+  }
+  .social-icon-items i {
+    padding-right: 10px;
+    color: black;
+  }
+  .social-icon-items p {
+    float: left;
+  }
+  .links {
+    padding-top: 5%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 2% 5%;
+  }
+  .bottom .help {
+    padding: 5px;
+  }
+  .bottom .help header,
+  .bottom .help p,
+  .bottom .help .btn {
+    padding: 5px;
+  }
+  .bottom .help header {
+    color: white;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+  }
+  .bottom .btn {
+    position: absolute;
+    right: 10%;
+    width: 40%;
+  }
+  .footer-menu img {
+    float: right;
+  }
+  .social-icons {
+    padding-top: 3%;
+  }
+  .social-icon-items {
+    text-align: right;
+  }
+  .social-icon-items p {
+    float: left;
+  }
+  .links {
+    padding-top: 2%;
+  }
+}
+/*# sourceMappingURL=footer.css.map */

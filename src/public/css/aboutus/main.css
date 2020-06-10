@@ -1,0 +1,332 @@
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
+.top-container {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(transparent), to(black)), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/aboutUs_hero.jpeg);
+  background-image: linear-gradient(transparent, black), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/aboutUs_hero.jpeg);
+  background-size: cover;
+  width: 100%;
+  max-height: 600px;
+  text-align: center;
+  color: white;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.top-container .inner-container-for-header {
+  padding-top: 20%;
+  padding-bottom: 20%;
+}
+
+.top-container header {
+  font-style: nexa-bold;
+  font-size: 2rem;
+}
+
+.top-container .top-container__paragraph {
+  font-family: nexa-light;
+  font-size: 1rem;
+  padding-top: 5px;
+}
+
+article {
+  width: 100%;
+  text-align: center;
+  padding: 5%;
+}
+
+article header {
+  font-family: nexa-bold;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+article .article__paragraph {
+  font-family: nexa-light;
+  font-size: 1rem;
+  padding-top: 15px;
+}
+
+.doctor-img {
+  text-align: center;
+}
+
+.doctor-img img {
+  padding: 5px;
+}
+
+@media (min-width: 576px) {
+  .content {
+    padding: 10px;
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .doctor-img img {
+    width: 100%;
+  }
+}
+
+.black-container {
+  text-align: center;
+  padding: 10px;
+}
+
+@media (min-width: 300px) {
+  .black-container {
+    width: 100%;
+    margin: 0 auto;
+    background-color: black;
+  }
+  .black-container .inner-container {
+    padding: 20px;
+  }
+  .black-container .inner-container header,
+  .black-container .inner-container p {
+    color: white;
+    padding: 5px;
+  }
+  .black-container .inner-container header {
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+  }
+  .black-container .inner-container p {
+    font-size: 1rem;
+    font-family: nexa-light;
+  }
+  .black-container .info-container {
+    width: 90%;
+    margin: 0 auto;
+  }
+  .black-container .info-container .info {
+    padding: 7%;
+    border: 1px solid white;
+    margin: 3%;
+  }
+  .black-container .info-container h2 {
+    color: white;
+  }
+  .black-container .info-container p {
+    color: grey;
+  }
+}
+
+@media (min-width: 300px) {
+  .bottom {
+    text-align: center;
+  }
+}
+
+@media (min-width: 300px) {
+  .help {
+    background-color: skyblue;
+    padding: 10px;
+  }
+  .help header,
+  .help p,
+  .help button {
+    padding: 5px;
+  }
+  .help header {
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+    color: white;
+  }
+  .help p {
+    font-family: nexa-light;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 576px) {
+  .video-container {
+    display: none;
+  }
+  .info-container {
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[3];
+        grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 767px) {
+  .black-container {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    opacity: 0.85;
+  }
+  .black-container .video-container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .black-container .inner-container,
+  .black-container .info-container {
+    padding: 5%;
+    z-index: 1;
+  }
+  .black-container .inner-container {
+    text-align: left;
+  }
+  .black-container .info-container .info {
+    padding: 15%;
+  }
+  .img {
+    width: 20%;
+  }
+}
+
+@media (min-width: 300px) {
+  .video-container {
+    display: none;
+  }
+}
+
+@media (max-width: 599px) {
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+  }
+  .bottom .help {
+    text-align: center;
+    padding: 5px;
+  }
+  .bottom .help header,
+  .bottom .help p,
+  .bottom .help button {
+    padding: 5px;
+  }
+  .bottom .help header {
+    color: white;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+  }
+  .footer-section {
+    text-align: center;
+  }
+  .footer-section .links a {
+    display: block;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 600px) {
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    text-align: center;
+  }
+  .bottom .help {
+    padding: 5px;
+  }
+  .bottom .help header,
+  .bottom .help p,
+  .bottom .help button {
+    padding: 5px;
+  }
+  .bottom .help header {
+    color: white;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+  }
+  .footer-menu img {
+    float: right;
+  }
+  .social-icons {
+    padding-top: 5%;
+  }
+  .social-icon-items {
+    text-align: right;
+  }
+  .social-icon-items p {
+    float: left;
+  }
+  .links {
+    padding-top: 5%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 2% 5%;
+  }
+  .bottom .help {
+    padding: 5px;
+  }
+  .bottom .help header,
+  .bottom .help p,
+  .bottom .help .btn {
+    padding: 5px;
+  }
+  .bottom .help header {
+    color: white;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+  }
+  .bottom .btn {
+    position: absolute;
+    right: 10%;
+    width: 40%;
+  }
+  .footer-menu img {
+    float: right;
+  }
+  .social-icons {
+    padding-top: 3%;
+  }
+  .social-icon-items {
+    text-align: right;
+  }
+  .social-icon-items p {
+    float: left;
+  }
+  .links {
+    padding-top: 2%;
+  }
+}
+/*# sourceMappingURL=main.css.map */

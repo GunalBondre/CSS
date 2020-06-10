@@ -1,0 +1,189 @@
+@import "../main/breakpoint";
+@import "../font";
+
+.spheader {
+  width: 100%;
+  background: url(/Capture.JPG) no-repeat;
+  height: 40%;
+  background-size: cover;
+  background-position: center;
+}
+
+.social {
+  padding: 20px;
+}
+.fmenu {
+  text-align: left;
+  padding: 5px;
+}
+
+.ff {
+  float: right;
+  margin-top: -10px;
+}
+
+.icon {
+  float: right;
+  margin-top: 5px;
+  margin-right: -120px;
+}
+
+.copyright {
+  text-align: left;
+  padding-left: 25px;
+}
+
+#summary {
+  color: blue;
+}
+
+@media (max-width: 599px) {
+  .spheader {
+    color: white;
+    padding: 15%;
+  }
+  .detailFaq {
+    padding: 5%;
+  }
+  .fbottom {
+    text-align: center;
+    background-color: skyblue;
+    padding: 5%;
+    header {
+      font-family: nexa-bold;
+      font-size: 2rem;
+      font-weight: bold;
+      color: white;
+      padding: 5px;
+    }
+    p {
+      padding: 5px;
+    }
+  }
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    text-align: center;
+
+    .help {
+      padding: 5px;
+      header,
+      p,
+      button {
+        padding: 5px;
+      }
+      header {
+        color: white;
+        font-family: nexa-bold;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .footer-section {
+    text-align: center;
+    .links a {
+      display: block;
+      padding: 5px;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .spheader {
+    color: white;
+    padding: 15%;
+  }
+  .detailFaq {
+    padding: 5%;
+  }
+
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    text-align: center;
+    .help {
+      padding: 5px;
+      header,
+      p,
+      button {
+        padding: 5px;
+      }
+      header {
+        color: white;
+        font-family: nexa-bold;
+        font-size: 1.5rem;
+      }
+    }
+  }
+  .footer-menu {
+    img {
+      float: right;
+    }
+  }
+  .social-icons {
+    padding-top: 5%;
+  }
+
+  .social-icon-items {
+    text-align: right;
+    p {
+      float: left;
+    }
+  }
+  .links {
+    padding-top: 5%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .spheader {
+    color: white;
+    padding: 10%;
+  }
+  .detailFaq {
+    padding: 5%;
+  }
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    display: flex;
+    padding: 2% 5%;
+
+    .help {
+      padding: 5px;
+      header,
+      p,
+      .btn {
+        padding: 5px;
+      }
+      header {
+        color: white;
+        font-family: nexa-bold;
+        font-size: 1.5rem;
+      }
+    }
+    .btn {
+      position: absolute;
+      right: 10%;
+      width: 40%;
+    }
+  }
+  .footer-menu {
+    img {
+      float: right;
+    }
+  }
+  .social-icons {
+    padding-top: 3%;
+  }
+
+  .social-icon-items {
+    text-align: right;
+    p {
+      float: left;
+    }
+  }
+  .links {
+    padding-top: 2%;
+  }
+}

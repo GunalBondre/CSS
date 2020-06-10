@@ -1,0 +1,494 @@
+@import "../main/breakpoint";
+
+@font-face {
+  font-family: nexa-bold;
+  src: url("../../../../font/Nexa-Bold.otf") format("opentype");
+}
+@font-face {
+  font-family: nexa-light;
+  src: url("../../../../font/Nexa-light.otf") format("opentype");
+}
+
+header {
+  font-family: nexa-bold;
+}
+p {
+  font-family: nexa-light;
+}
+
+.top-header-image {
+  background: url(/tvstraplus.JPG) no-repeat;
+  background-size: cover;
+  height: 100vh;
+  max-height: 25rem;
+  padding-top: 10%;
+}
+.plan {
+  background: linear-gradient(to bottom, skyblue, white);
+  width: 100%;
+}
+
+.plan-wrapper {
+  background-color: white;
+
+  width: 90%;
+  position: absolute;
+  top: 65%;
+  left: 5%;
+  text-align: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.left {
+  width: 15%;
+  margin-top: 10px;
+}
+
+.right {
+  width: 85%;
+  float: right;
+  margin-top: -20px;
+}
+
+.bar5 {
+  width: 70%;
+  height: 18px;
+  background-color: rgb(76, 92, 182);
+  border-radius: 5px;
+}
+.bar4 {
+  width: 60%;
+  height: 18px;
+  background-color: rgb(76, 92, 182);
+  border-radius: 5px;
+}
+.bar3 {
+  width: 50%;
+  height: 18px;
+  background-color: rgb(76, 92, 182);
+  border-radius: 5px;
+}
+.bar2 {
+  width: 30%;
+  height: 18px;
+  background-color: rgb(76, 92, 182);
+  border-radius: 5px;
+}
+.bar1 {
+  width: 5%;
+  height: 18px;
+  background-color: rgb(76, 92, 182);
+  border-radius: 5px;
+}
+
+@media (max-width: 599px) {
+  .plan-wrapper {
+    top: 55%;
+  }
+  .plan-wrapper {
+    padding: 10%;
+  }
+  .more-info {
+    padding: 10px;
+    img {
+      width: 100%;
+      max-width: 400px;
+    }
+    i {
+      border: 1px;
+      padding: 5px;
+      border-radius: 50%;
+      background: skyblue;
+      color: white;
+    }
+    header {
+      text-align: center;
+    }
+  }
+
+  .plan {
+    height: 133rem;
+  }
+  .top-header-image {
+    text-align: center;
+  }
+  p {
+    font-size: 1.5rem;
+    padding: 10px;
+    line-height: 1.5;
+  }
+  .plustext {
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #0a04b7;
+    width: 15%;
+    margin: 0 auto;
+    color: white;
+  }
+  header {
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 5px;
+  }
+  .bottom {
+    padding-top: 10%;
+    #cost {
+      font-weight: bold;
+    }
+  }
+
+  .advance {
+    margin-top: 10%;
+    background: linear-gradient(to bottom, skyblue, white);
+    padding-top: 10%;
+    .populartext {
+      padding: 10px;
+      background-color: green;
+      width: 20%;
+      border-radius: 5px;
+      color: white;
+      margin: 0 auto;
+      position: absolute;
+      left: 40%;
+      top: 35.5%;
+    }
+  }
+  .comprehensive {
+    margin-top: 10%;
+  }
+  .rating {
+    text-align: center;
+    padding: 5%;
+  }
+  .rating_no {
+    font-size: 3rem;
+    font-weight: bolder;
+  }
+  .top-rating-part {
+    color: #2251a4;
+  }
+  .bar {
+    width: 100%;
+  }
+  .barchart {
+    padding-left: 15%;
+  }
+  .user-info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding-top: 10%;
+    i,
+    b {
+      padding: 5px;
+    }
+    .a,
+    .b,
+    .c,
+    .d {
+      padding-top: 5px;
+    }
+    b {
+      font-size: 1.5rem;
+    }
+  }
+  .plus-benefits {
+    padding: 5%;
+    p {
+      text-align: left;
+    }
+    hr {
+      border: 5px solid skyblue;
+      width: 80%;
+    }
+    i {
+      border: 1px;
+      padding: 5px;
+      border-radius: 50%;
+      background: skyblue;
+      color: white;
+    }
+  }
+  .rating-chart {
+    color: #304f86;
+  }
+}
+.hospitals_onboard {
+  table {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    td {
+      border: 1px solid skyblue;
+    }
+  }
+  header {
+    font-size: 1.5rem;
+    text-align: center;
+    font-weight: bold;
+  }
+  #img1 {
+    border-top: none;
+    border-left: none;
+  }
+  #img2 {
+    border-top: none;
+    border-right: none;
+  }
+  #img3 {
+    border-left: none;
+  }
+  #img4 {
+    border-right: none;
+  }
+  #img5 {
+    border-left: none;
+    border-bottom: none;
+  }
+  #img6 {
+    border-right: none;
+    border-bottom: none;
+  }
+}
+@media (min-width: 600px) {
+  .plan-wrapper {
+    padding: 10%;
+  }
+  p {
+    padding-top: 10px;
+    font-family: nexa-light;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+  .plan {
+    height: 40rem;
+  }
+  .top-header-image {
+    padding: 5%;
+    .plustext {
+      text-align: center;
+      border-radius: 5px;
+      padding: 5px;
+      background-color: #0a04b7;
+      width: 12%;
+      margin: 0 auto;
+      color: white;
+      float: left;
+    }
+    header {
+      padding-top: 30px;
+      font-family: nexa-bold;
+      font-size: 2rem;
+    }
+  }
+  .plan-description {
+    padding-right: 5px;
+    display: flex;
+    width: 100%;
+    .basic,
+    .advance,
+    .comprehensive {
+      width: 33%;
+    }
+  }
+  .plan-content {
+    header {
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding: 5px;
+    }
+  }
+  .advance {
+    background: linear-gradient(to bottom, skyblue, white);
+    .populartext {
+      padding: 3px;
+      background-color: green;
+      width: 10%;
+      border-radius: 10px;
+      color: white;
+      margin: 0 auto;
+      position: absolute;
+      left: 44%;
+      top: 22%;
+    }
+  }
+  .basic {
+    .bottom {
+      padding-top: 55%;
+    }
+  }
+  #cost {
+    font-weight: bold;
+    padding: 5px;
+  }
+
+  .top-rating-part {
+    display: flex;
+    width: 100%;
+  }
+  .rating-section {
+    width: 30%;
+    padding-left: 10%;
+  }
+  .barchart {
+    width: 70%;
+  }
+  .rating-chart {
+    color: #304f86;
+    padding-top: 10px;
+  }
+  .user-info {
+    display: flex;
+    text-align: center;
+    padding: 10px;
+    padding-left: 7%;
+
+    .a,
+    .b,
+    .c,
+    .d {
+      padding-top: 5px;
+    }
+    b {
+      font-size: 1.5rem;
+    }
+    p {
+      padding: 10px;
+    }
+  }
+  .rating {
+    text-align: center;
+    padding: 10px;
+    header {
+      font-family: nexa-bold;
+      font-size: 2rem;
+    }
+    p {
+      font-family: nexa-light;
+    }
+  }
+  .plus-benefits {
+    display: flex;
+  }
+  .benefit_plus_title {
+    text-align: center;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+  }
+  .benefit-desc {
+    header {
+      font-family: nexa-bold;
+      font-size: 1.5rem;
+    }
+    i {
+      border: 1px;
+      padding: 5px;
+      border-radius: 50%;
+      background: skyblue;
+      color: white;
+    }
+  }
+  .plus-benefits {
+    padding: 10px;
+  }
+  .more-info {
+    i {
+      border: 1px;
+      padding: 5px;
+      border-radius: 50%;
+      background: skyblue;
+      color: white;
+    }
+    padding: 15px;
+    .secondFlex {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    .thirdFlex {
+      display: flex;
+    }
+    .fourthflex {
+      display: flex;
+      flex-direction: row-reverse;
+    }
+    header {
+      font-family: nexa-bold;
+      font-size: 1.5rem;
+      font-weight: bold;
+    }
+  }
+}
+
+@media (min-width: 900px) {
+  .top-header-image {
+    padding-top: 15%;
+  }
+  .plan-wrapper {
+    padding: 5%;
+  }
+  .basic {
+    .bottom {
+      padding-top: 10%;
+    }
+  }
+  .plan-description {
+    header {
+      padding-top: 20px;
+    }
+    p {
+      font-family: nexa-light;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+    .populartext {
+      top: 28%;
+    }
+  }
+  .user-info {
+    padding-top: 5%;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+  }
+  .plus-benefits {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 10%;
+    .benefit-desc {
+      padding-right: 10%;
+    }
+  }
+  .more-info {
+    padding: 10%;
+    .secondFlex {
+      width: 80%;
+      margin: 0 auto;
+      .secondleft {
+        width: 30%;
+      }
+      .secondright {
+        width: 70%;
+      }
+    }
+    .thirdFlex {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .fourthflex {
+      width: 80%;
+      margin: 0 auto;
+    }
+    i {
+      border: 1px;
+      padding: 5px;
+      border-radius: 50%;
+      background: skyblue;
+      color: white;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .user-info {
+    text-align: center;
+  }
+}

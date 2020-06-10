@@ -1,14 +1,13 @@
 .HIW {
   width: 100%;
   text-align: center;
-  background-color: white;
   padding: 20px;
 }
 
 .HIW header,
 p {
   @include lg {
-    text-align: left;
+    text-align: center;
   }
 }
 

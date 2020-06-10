@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>View Treatments</title>
+    <%- include('partials/bootstrap') %>
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="/appointment/appointment.css"
+      type="text/css"
+    />
+
+    <!-- Compiled and minified CSS -->
+  </head>
+  <body>
+    <!-- navbar included -->
+    <%- include('partials/navbar') %>
+    <!-- navbar included -->
+    <div class="wrapper">
+      <div class="appoint">
+        <h4>Book an appointment</h4>
+        <hr />
+        <form action="/users/appointment" method="POST">
+          <label class="lb1"><b>Select an appointment date *</b></label
+          ><br />
+          <input type="date" class="date" required />
+          <label class="timeIntr"><b>Time Interval *</b></label
+          ><br />
+          <input type="radio" class="mrng" /> Morning <br />
+          <input type="radio" class="aftr" /> Afternoon <br />
+          <input type="radio" class="even" /> Evening <br />
+          <label class="status"><b>Appointment status/Urgency *</b></label
+          ><br />
+          <input type="radio" class="rch1" /> Routine Checkup <br />
+          <input type="radio" class="noUrgn" /> Non Urgent Checkup <br />
+          <input type="radio" class="Urgent" /> urgent Checkup <br />
+          <input type="radio" class="op" /> Surgical appointment <br />
+
+          <label class="record"><b>Upload Previous Health Record *</b></label>
+          <input type="file" /><br />
+          <label class="detail"><b>Appointment Details *</b></label
+          ><br />
+          <textarea class="textarea"></textarea><br />
+          <button class="button1">Submit</button>
+        </form>
+      </div>
+    </div>
+                <footer>All rights reserved &copy; tvstra 2020</footer>
+        
+    </body>
+  </html>
+  
+  </body>
+</html>

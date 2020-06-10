@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signup</title>
+    <title>Signin</title>
     <%- include('partials/bootstrap') %>
     <link rel="stylesheet" href="/reset.css" type="text/css" />
     <link rel="stylesheet" href="/registration/signin.css" type="text/css" />
@@ -11,33 +11,39 @@
   <body>
     <!-- navbar included -->
     <div class="nav-parent">
-      <%- include('partials/navbar') %>
+      <!-- <%- include('partials/navbar') %> -->
     </div>
     <!-- navbar included -->
 
     <!-- signup form -->
+    <% if(error) { %>
+
+    <p><%= error %></p>
+    <%}%>
     <section class="signin">
       <div class="form-wrapper">
         <div class="form-group">
+          <%- include('partials/messages') %>
+
           <header>Sign In</header>
           <hr />
-          <form action="/users/signin" method="POST">
+          <form action="/users/otpsignin" method="POST">
             <input
-              type="number"
+              type="tel"
               class="form-control"
               id="mobile"
-              aria-describedby="emailHelp"
+              aria-describedby="mobile"
               placeholder="Enter Mobile No"
               name="mobile"
             />
-            <input
+            <!-- <input
               type="number"
               class="form-control"
               id="otp"
               aria-describedby="emailHelp"
               placeholder="Enter Otp"
               name="otp"
-            />
+            /> -->
             <p>Not registered <a href="signup">Signup</a></p>
             <p>Sign in using Email <a href="emailsignin">Email Signin</a></p>
             <button type="submit" class="btn btn-primary" id="btn">

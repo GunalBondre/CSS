@@ -1,0 +1,209 @@
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
+.doc__header {
+  background-color: skyblue;
+}
+
+@media (min-width: 300px) {
+  .doc__header header {
+    padding: 20%;
+  }
+}
+
+@media (min-width: 767px) {
+  .doc__header header {
+    padding: 10%;
+  }
+}
+
+.wrapper {
+  padding: 10px;
+}
+
+.outer {
+  border: 1px dashed;
+  overflow: hidden;
+  width: 100%;
+  padding: 10px;
+}
+
+.outer summary {
+  color: #66b2ff;
+}
+
+@media (max-width: 599px) {
+  .doc__image {
+    text-align: center;
+  }
+  .outer .btn-dark {
+    width: 100%;
+  }
+  .outer img {
+    max-width: 400px;
+  }
+  .section1 {
+    padding-top: 15px;
+  }
+  .section1 header {
+    font-family: nexa-bold;
+    font-size: 2rem;
+    padding-left: 10%;
+    color: skyblue;
+  }
+  .section1 p {
+    padding-top: 10px;
+    font-family: nexa-light;
+    font-size: 1rem;
+    text-align: center;
+  }
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    text-align: center;
+  }
+  .bottom .help {
+    padding: 5px;
+  }
+  .bottom .help header,
+  .bottom .help p,
+  .bottom .help button {
+    padding: 5px;
+  }
+  .bottom .help header {
+    color: white;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+  }
+  .footer-section {
+    text-align: center;
+  }
+  .footer-section .links a {
+    display: block;
+    padding: 5px;
+  }
+}
+
+@media (min-width: 600px) {
+  .section1 header {
+    font-family: nexa-bold;
+    font-size: 2rem;
+    padding-left: 5%;
+    color: skyblue;
+  }
+  .outer {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+  }
+  .outer .pic {
+    width: 30%;
+  }
+  .outer .pic img {
+    max-width: 200px;
+  }
+  .outer .pic .btn-dark {
+    width: 100%;
+  }
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    text-align: center;
+  }
+  .bottom .help {
+    padding: 5px;
+  }
+  .bottom .help header,
+  .bottom .help p,
+  .bottom .help button {
+    padding: 5px;
+  }
+  .bottom .help header {
+    color: white;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+  }
+  .footer-menu img {
+    float: right;
+  }
+  .social-icons {
+    padding-top: 5%;
+  }
+  .social-icon-items {
+    text-align: right;
+  }
+  .social-icon-items p {
+    float: left;
+  }
+  .links {
+    padding-top: 5%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .section1 header {
+    font-family: nexa-bold;
+    font-size: 2rem;
+    padding-left: 10%;
+    color: skyblue;
+  }
+  .wrapper {
+    padding: 5%;
+  }
+  .wrapper .outer {
+    padding: 20px;
+  }
+  .bottom {
+    padding-top: 20px;
+    background-color: skyblue;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 2% 5%;
+  }
+  .bottom .help {
+    padding: 5px;
+  }
+  .bottom .help header,
+  .bottom .help p,
+  .bottom .help .btn {
+    padding: 5px;
+  }
+  .bottom .help header {
+    color: white;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+  }
+  .bottom .btn {
+    position: absolute;
+    right: 10%;
+    width: 40%;
+  }
+  .footer-menu img {
+    float: right;
+  }
+  .social-icons {
+    padding-top: 3%;
+  }
+  .social-icon-items {
+    text-align: right;
+  }
+  .social-icon-items p {
+    float: left;
+  }
+  .links {
+    padding-top: 2%;
+  }
+}
+/*# sourceMappingURL=docprofile.css.map */

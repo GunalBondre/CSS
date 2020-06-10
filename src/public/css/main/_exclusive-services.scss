@@ -1,9 +1,11 @@
+@import "../theme/config";
+@import "../theme/utilities";
+
 // exclusive services
 
 .exclusive-services {
-  background-color: lightgray;
+  // background-color: lightgray;
   width: 100%;
-  padding: 10px;
   header,
   p {
     text-align: center;
@@ -13,16 +15,17 @@
   p {
     text-align: center;
   }
-
-  width: 90%;
-  margin: 0 auto;
-  div {
-    padding: 15px;
-    background-color: white;
+  // div {
+  //   border-radius: 15px;
+  // }
+  .services {
+    width: 100%;
+    background-color: $white;
+    border-radius: 10px;
+    text-align: center;
     img {
-      text-align: center;
-      width: 100%;
-      margin: 0 auto;
+      width: 100px;
+      height: 100px;
     }
   }
 }
