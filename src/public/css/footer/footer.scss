@@ -1,11 +1,19 @@
 @import "../theme/config";
-header {
-  color: $white;
-}
+
 .btn {
   font-family: nexa-light;
 }
 @media (max-width: 599px) {
+  .help {
+    header {
+      font-size: 2rem;
+      font-family: nexa-bold;
+    }
+    p {
+      font-family: nexa-light;
+      font-size: 1rem;
+    }
+  }
   .bottom {
     background-color: $bg-light-blue;
     text-align: center;
@@ -31,7 +39,7 @@ header {
 @media (min-width: 600px) {
   .bottom {
     padding-top: 20px;
-    background-color: skyblue;
+    background-color: $bg-light-blue;
     text-align: center;
     .help {
       padding: 5px;
@@ -43,7 +51,11 @@ header {
       header {
         color: white;
         font-family: nexa-bold;
-        font-size: 1.5rem;
+        font-size: 2rem;
+      }
+      p {
+        font-size: 1rem;
+        font-family: nexa-light;
       }
     }
     .btn {
@@ -84,15 +96,16 @@ header {
 @media (min-width: 1200px) {
   .bottom {
     padding-top: 20px;
-    background-color: skyblue;
+    background-color: $bg-light-blue;
     display: flex;
     padding: 2% 5%;
 
     .help {
-      padding: 5px;
+      padding: 3% 0;
+      padding-left: 10%;
       header,
-      p,
-      .btn {
+      p {
+        text-align: left;
         padding: 5px;
       }
       header {
@@ -105,6 +118,10 @@ header {
       position: absolute;
       right: 10%;
       width: 40%;
+      padding: 15px;
+    }
+    #button {
+      padding-top: 3%;
     }
   }
   .footer-menu {

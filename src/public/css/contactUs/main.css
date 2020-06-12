@@ -8,6 +8,198 @@
   src: url(/Nexa-light.otf);
 }
 
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.mx-2 {
+  margin: 0 2rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.px-2 {
+  padding: 0 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.mx-3 {
+  margin: 0 3rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.px-3 {
+  padding: 0 3rem;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.mx-4 {
+  margin: 0 4rem;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.py-4 {
+  padding: 4rem 0;
+}
+
+.px-4 {
+  padding: 0 4rem;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.my-5 {
+  margin: 5rem 0;
+}
+
+.mx-5 {
+  margin: 0 5rem;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+.px-5 {
+  padding: 0 5rem;
+}
+
+.m-6 {
+  margin: 6rem;
+}
+
+.my-6 {
+  margin: 6rem 0;
+}
+
+.mx-6 {
+  margin: 0 6rem;
+}
+
+.p-6 {
+  padding: 6rem;
+}
+
+.py-6 {
+  padding: 6rem 0;
+}
+
+.px-6 {
+  padding: 0 6rem;
+}
+
+.m-7 {
+  margin: 7rem;
+}
+
+.my-7 {
+  margin: 7rem 0;
+}
+
+.mx-7 {
+  margin: 0 7rem;
+}
+
+.p-7 {
+  padding: 7rem;
+}
+
+.py-7 {
+  padding: 7rem 0;
+}
+
+.px-7 {
+  padding: 0 7rem;
+}
+
+.m-8 {
+  margin: 8rem;
+}
+
+.my-8 {
+  margin: 8rem 0;
+}
+
+.mx-8 {
+  margin: 0 8rem;
+}
+
+.p-8 {
+  padding: 8rem;
+}
+
+.py-8 {
+  padding: 8rem 0;
+}
+
+.px-8 {
+  padding: 0 8rem;
+}
+
 .cucover {
   background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/contactUs.png);
   background-repeat: no-repeat;
@@ -21,16 +213,147 @@
   padding: 10%;
 }
 
-@media (min-width: 300px) {
-  .info {
-    padding-left: 10%;
-    padding-top: 5%;
-    padding-bottom: 5%;
+.btn {
+  font-family: nexa-light;
+}
+
+@media (max-width: 599px) {
+  .footer-section {
+    background-color: #000033;
+    text-align: center;
+  }
+  .footer-section .links a {
+    display: block;
+    padding: 5px;
+    color: #fff;
+  }
+  .footer-section p {
+    color: #fff;
+  }
+  .footer-section i {
+    padding-right: 10px;
+    color: white;
   }
 }
 
-@media (min-width: 576px) {
-  .info {
+@media (min-width: 600px) {
+  .footer-menu img {
+    float: right;
+  }
+  .footer-menu .links a {
+    color: black;
+    padding-right: 10px;
+    font-family: nexa-light;
+  }
+  .footer-menu p {
+    color: black;
+  }
+  .social-icons {
+    padding-top: 5%;
+  }
+  .social-icon-items {
+    text-align: right;
+  }
+  .social-icon-items i {
+    padding-right: 10px;
+    color: black;
+  }
+  .social-icon-items p {
+    float: left;
+  }
+  .links {
+    padding-top: 5%;
+  }
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .main .left-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    padding: 2rem;
+  }
+  .main .left-wrapper p {
+    font-size: 12px;
+  }
+  .main form {
+    width: 100%;
+    padding: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .main form .group1 {
+    width: 50%;
+    padding-right: 10px;
+  }
+  .main form .group2 {
+    width: 50%;
+  }
+  .main form .group2 button {
+    float: right;
+  }
+}
+
+@media (min-width: 1200px) {
+  .footer-menu img {
+    float: right;
+  }
+  .social-icons {
+    padding-top: 3%;
+  }
+  .social-icon-items {
+    text-align: right;
+  }
+  .social-icon-items p {
+    float: left;
+  }
+  .links {
+    padding-top: 2%;
+  }
+}
+
+form {
+  background-color: #99ccff;
+}
+
+header {
+  font-family: nexa-bold;
+}
+
+p {
+  font-family: nexa-light;
+}
+
+@media (max-width: 599px) {
+  .main {
+    text-align: left;
+    padding: 1rem;
+  }
+  .main .left-wrapper {
+    padding: 1rem;
+  }
+  .main form {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .main {
+    padding: 3rem;
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -38,142 +361,43 @@
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
-    position: relative;
-    padding-bottom: 13%;
   }
-  .info .add {
-    position: absolute;
-    left: 5%;
+  .main .left-wrapper {
+    width: 25%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
   }
-  .info .phoneQ {
+  .main .left-wrapper header {
+    font-family: nexa-bold;
+  }
+  .main .left-wrapper p {
+    font-family: nexa-light;
+  }
+  .main form {
+    padding: 1rem;
+    width: 75%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .main form .group1 {
     width: 50%;
-    position: absolute;
-    left: 60%;
-    top: 60%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-  }
-  .info .emailQ {
-    position: absolute;
-    right: 5%;
-  }
-}
-
-.info1 {
-  width: 100%;
-  background-color: skyblue;
-  padding: 5%;
-  position: relative;
-}
-
-@media (min-width: 300px) {
-  .info1 input {
-    width: 95%;
-    margin: 5px;
     padding: 10px;
   }
-  .info1 textarea {
-    width: 95%;
-    margin: 5px;
-  }
-}
-
-.social {
-  background-color: navy;
-  text-align: center;
-}
-
-@media (min-width: 300px) {
-  .fmenu-item {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .fmenu-item a {
-    color: white;
-  }
-}
-
-@media (min-width: 576px) {
-  .fmenu {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-    overflow: hidden;
-  }
-  .fmenu-item {
-    width: 70%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    float: left;
-    padding-top: 10px;
-  }
-  .fmenu-item a {
-    padding: 5px;
-  }
-  .footer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: reverse;
-        -ms-flex-direction: row-reverse;
-            flex-direction: row-reverse;
-    width: 100%;
-  }
-  .footer .copyright {
-    width: 70%;
-    color: white;
-    text-align: left;
-  }
-}
-
-@media (min-width: 767px) {
-  .contact-form {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    width: 100%;
-  }
-  .contact-form .info {
-    width: 30%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-  }
-  .contact-form .input-fields {
+  .main form .group2 {
     width: 50%;
+    padding: 10px;
   }
-  .info1 {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+  .main form .btn {
+    float: right;
   }
 }
 /*# sourceMappingURL=main.css.map */

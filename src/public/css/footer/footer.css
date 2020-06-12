@@ -190,15 +190,19 @@
   padding: 0 8rem;
 }
 
-header {
-  color: #fff;
-}
-
 .btn {
   font-family: nexa-light;
 }
 
 @media (max-width: 599px) {
+  .help header {
+    font-size: 2rem;
+    font-family: nexa-bold;
+  }
+  .help p {
+    font-family: nexa-light;
+    font-size: 1rem;
+  }
   .bottom {
     background-color: #99ccff;
     text-align: center;
@@ -224,7 +228,7 @@ header {
 @media (min-width: 600px) {
   .bottom {
     padding-top: 20px;
-    background-color: skyblue;
+    background-color: #99ccff;
     text-align: center;
   }
   .bottom .help {
@@ -238,7 +242,11 @@ header {
   .bottom .help header {
     color: white;
     font-family: nexa-bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
+  }
+  .bottom .help p {
+    font-size: 1rem;
+    font-family: nexa-light;
   }
   .bottom .btn {
     text-align: center;
@@ -275,18 +283,19 @@ header {
 @media (min-width: 1200px) {
   .bottom {
     padding-top: 20px;
-    background-color: skyblue;
+    background-color: #99ccff;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     padding: 2% 5%;
   }
   .bottom .help {
-    padding: 5px;
+    padding: 3% 0;
+    padding-left: 10%;
   }
   .bottom .help header,
-  .bottom .help p,
-  .bottom .help .btn {
+  .bottom .help p {
+    text-align: left;
     padding: 5px;
   }
   .bottom .help header {
@@ -298,6 +307,10 @@ header {
     position: absolute;
     right: 10%;
     width: 40%;
+    padding: 15px;
+  }
+  .bottom #button {
+    padding-top: 3%;
   }
   .footer-menu img {
     float: right;

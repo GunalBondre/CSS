@@ -448,6 +448,12 @@
   }
 }
 
+@media (min-width: 767px) {
+  .card-text p {
+    text-align: left;
+  }
+}
+
 .FMT {
   width: 100%;
 }

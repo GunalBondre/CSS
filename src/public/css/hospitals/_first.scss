@@ -1,3 +1,5 @@
+@import "../theme/config";
+
 // display section-first class in row
 .container-fluid {
   @include xs {
@@ -9,6 +11,14 @@
     header {
       display: none;
     }
+  }
+}
+
+.hosp-list {
+  .card-title {
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+    color: $button-blue;
   }
 }
 
@@ -44,13 +54,9 @@
 }
 
 .right {
-  margin-top: 5%;
   @include xs {
     padding-bottom: 20px;
-    text-align: center;
     .hosp-list {
-      padding-top: 10px;
-      display: inline-block;
       .card-body {
         text-align: left;
 
@@ -115,7 +121,7 @@
     .call-now-button {
       text-align: center;
       #call-now {
-        padding: 10px;
+        padding: 10px 40px;
       }
     }
   }
@@ -148,6 +154,61 @@
     }
   }
 }
+
+//horizontal blue line code
+@media (max-width: 599px) {
+  .right {
+    margin-top: 5%;
+  }
+  .hosp-list {
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+  .card-body {
+    i {
+      color: $button-blue;
+    }
+    span {
+      font-family: nexa-light;
+    }
+  }
+}
+
+.card-title {
+  padding-left: 20px;
+
+  &::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: $button-blue;
+    position: absolute;
+    left: 0;
+    top: 7%;
+  }
+}
+
+@media (min-width: 600px) {
+  #call-now {
+    float: left;
+    width: 70%;
+    padding-top: 20px;
+  }
+  .card-body {
+    i {
+      color: $button-blue;
+    }
+    span {
+      font-family: nexa-light;
+    }
+  }
+  .sort-section {
+    padding: 10%;
+  }
+}
+
 .right {
   @include md {
     width: 100%;
@@ -164,5 +225,30 @@
   }
   .right {
     padding-left: 4%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .left {
+    width: 25%;
+    h5 {
+      padding: 15px;
+      background-color: $bg-light-grey;
+      color: $white;
+    }
+  }
+
+  .right {
+    width: 75%;
+  }
+  .hosp-list {
+    padding-bottom: 10px;
+    padding-right: 4rem;
+  }
+  .sort-section {
+    padding: 2.5rem 4rem;
+  }
+  #call-now {
+    width: 30%;
   }
 }

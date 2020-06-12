@@ -11,6 +11,7 @@
     <script type="text/javascript" src="./js/style.js"></script>
     <link rel="stylesheet" href="/reset.css" type="text/css" />
     <link rel="stylesheet" href="/contactUs/main.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
 
     <%- include('partials/bootstrap') %>
 
@@ -65,65 +66,91 @@
 
     <!-- contact us form start-->
 
-    <div class="wrapper">
-      <div class="contact-form">
-        <div class="info">
-          <div class="add">
-            <i class="fas fa-home"></i><b> Noida India</b>
-            <p>sector 45</p>
+    <section class="main">
+      <div class="left-wrapper">
+        <div class="place">
+          <header><i class="fas fa-home"></i>Noida</header>
+          <p>Sector 45</p>
+        </div>
+        <div class="phone">
+          <header><i class="fas fa-phone"></i> 00(440)9865562</header>
+          <p>Mon to fri 9.00 am to 6.00 pm</p>
+        </div>
+        <div class="email">
+          <header>
+            <i class="fas fa-envelope-square"></i> Support@tvstra.com
+          </header>
+          <p>Send us your query anytime</p>
+        </div>
+      </div>
+      <form action="#" method="post">
+        <div class="group1">
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput2"
+              placeholder="Enter your name"
+              name="name"
+            />
           </div>
-          <div class="phoneQ">
-            <i class="fas fa-phone"></i>
-            <b>022-8457898745</b>
-            <p>Mon to fri 9-5</p>
+          <div class="form-group">
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+              placeholder="name@example.com"
+              name="email"
+            />
           </div>
-          <div class="emailQ">
-            <i class="fas fa-home"></i>
-            <b>support@tvstra.com</b>
-            <p>Send us your query anytime</p>
+          <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="exampleFormControlInput3"
+              placeholder="Enter Subject"
+              name="subject"
+            />
           </div>
-        </div> 
-        <form action="post" method="#"></form>
-        <div class="info1">
-         
-            <div class="input-fields">
-              <input type="text" class="input" placeholder="name" />
-              <input type="email" class="input" placeholder="email" />
-              <input type="text" class="input" placeholder="subject" />
-            </div>
-            <div class="textarea">
-              <textarea name="text" id="">Message</textarea>
-            </div>
-              <button class="btn btn-primary">Send message</button>
-            </div>
-          </form>
+        </div>
+        <div class="group2">
+          <div class="form-group">
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="6"
+              name="message"
+              placeholder="Enter your message"
+            ></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- contact us form ends -->
+    <section class="footer-section p-3">
+      <div class="footer-menu">
+        <img src="/footer.png" alt="" id="img-footer" />
+        <div class="links">
+          <a href="#">Doctor</a>
+          <a href="#">Hospital</a>
+          <a href="#">Treatment</a>
+          <a href="#">Other Services</a>
+          <a href="#">FAQs</a>
         </div>
       </div>
 
-    <!--contact us form ends-->
-
-    <div class="social">
-      <div class="fmenu">
-        <div class="ff"><img src="/footer.png" /></div>
-        <div class="fmenu-item">
-          <span><a href="#">Doctor</a></span>
-          <span><a href="#">Hospital</a></span>
-          <span><a href="#">Treatment</a></span>
-          <span><a href="#">Other Services</a></span>
-          <span><a href="#">FAQ</a></span>
+      <div class="social-icons">
+        <div class="social-icon-items">
+          <a href="#"><i class="fab fa-facebook-f"></i> </a>
+          <a href="#"><i class="fab fa-pinterest-p"></i> </a>
+          <a href="#"> <i class="fab fa-twitter"></i> </a>
+          <a href="#"><i class="fab fa-google-plus-g"></i> </a>
+          <a href="#"><i class="fab fa-instagram"></i> </a>
+          <p>All rights reserved &copy; tvstra 2018</p>
         </div>
       </div>
-
-      <div class="footer">
-        <div class="icon">
-          <img src="/facebook.png" height="30px" width="30px" />
-          <img src="/google-plus.png" height="30px" width="30px" />
-          <img src="/pinterest.png" height="30px" width="30px" />
-          <img src="/twitter.png" height="30px" width="30px" />
-          <img src="/youtube.png" height="30px" width="30px" />
-        </div>
-        <div class="copyright">All rights reserved. &copy tvastra 2018</div>
-      </div>
-    </div>
+    </section>
   </body>
 </html>

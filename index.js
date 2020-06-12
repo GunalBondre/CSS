@@ -25,7 +25,6 @@ app.use(express.static(path.join(__dirname, "/src/public/css/")));
 app.use(express.static(path.join(__dirname, "/src/public/js/")));
 app.use(express.static(path.join(__dirname, "/src/public/font/")));
 
-
 app.use(cookieParser());
 
 app.use(

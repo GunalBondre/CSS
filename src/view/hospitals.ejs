@@ -3,9 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>View Doctors</title>
+    <title>View Hospitals</title>
     <%- include('partials/bootstrap') %>
     <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
     <link rel="stylesheet" href="/hospitals/main.css" type="text/css" />
   </head>
   <body>
@@ -39,7 +40,7 @@
     <section class="first-section">
       <div class="wrapper">
         <div class="left">
-          <h5>Filter by</h5>
+          <h5 >Filter by</h5>
           <p>Location</p>
           <div class="form-check">
             <input
@@ -144,19 +145,19 @@
               <div class="card-body">
                 <h5 class="card-title">Apollo hospital delhi</h5>
                 <p class="card-text">
-                  <i class="fas fa-map-marker">Delhi mathura road </i>
+                  <i class="fas fa-map-marker"></i><span>Delhi mathura road</span>  
                 </p>
                 <p class="card-text">
-                  <i class="fas fa-certificate"> MBBS, MD, FRCP</i>
+                  <i class="fas fa-certificate"> </i> <span> MBBS, MD, FRCP</span>
                 </p>
 
                 <span class="info"
                   ><p class="card-text">
-                    <i class="fas fa-bed">133 bed</i>
+                    <i class="fas fa-bed"></i> <span>133 bed</span> 
                   </p>
                 </span>
                 <p class="card-text">
-                  <i class="fas fa-stethoscope">Famous treatment</i>
+                  <i class="fas fa-stethoscope"></i> <span>Famous treatment</span> 
                 </p>
                 <div class="multi-organ">
                   <p>
@@ -192,19 +193,19 @@
               <div class="card-body">
                 <h5 class="card-title">Rockland hospital</h5>
                 <p class="card-text">
-                  <i class="fas fa-map-marker">Delhi mathura road </i>
+                  <i class="fas fa-map-marker"></i> <span>Delhi mathura road</span>  
                 </p>
                 <p class="card-text">
-                  <i class="fas fa-certificate"> MBBS, MD, FRCP</i>
+                  <i class="fas fa-certificate"></i> <span> MBBS, MD, FRCP</span>
                 </p>
 
                 <span class="info"
                   ><p class="card-text">
-                    <i class="fas fa-bed">133 bed</i>
+                    <i class="fas fa-bed"></i> <span>133 bed</span> 
                   </p>
                 </span>
                 <p class="card-text">
-                  <i class="fas fa-stethoscope">Famous treatment</i>
+                  <i class="fas fa-stethoscope"></i> <span>Famous treatment</span> 
                 </p>
                 <div class="multi-organ">
              
@@ -240,19 +241,19 @@
               <div class="card-body">
                 <h5 class="card-title">Fortis hospital delhi</h5>
                 <p class="card-text">
-                  <i class="fas fa-map-marker">Delhi mathura road </i>
+                  <i class="fas fa-map-marker"> </i> <span>Delhi mathura road</span> 
                 </p>
                 <p class="card-text">
-                  <i class="fas fa-certificate"> MBBS, MD, FRCP</i>
+                  <i class="fas fa-certificate"></i> <span>MBBS, MD, FRCP</span> 
                 </p>
 
                 <span class="info"
                   ><p class="card-text">
-                    <i class="fas fa-bed">133 bed</i>
+                    <i class="fas fa-bed"></i> <span>133 bed</span> 
                   </p>
                 </span>
                 <p class="card-text">
-                  <i class="fas fa-stethoscope">Famous treatment</i>
+                  <i class="fas fa-stethoscope"></i> <span>Famous treatment</span> 
                 </p>
                 <div class="multi-organ">
                   <p>
@@ -287,41 +288,6 @@
       </div>
     </section>
 
-    <section class="bottom">
-      <div class="help">
-        <header>Need Help?</header>
-        <p>Just let us know we will happy to assist you</p>
-        <button class="btn btn-primary">Submit your query</button>
-      </div>
-    </section>
-    <section class="footer-section">
-      <div class="footer-menu">
-        <img src="/footer.png" alt="" id="img-footer" />
-        <div class="links">
-          <a href="#">Doctor</a>
-          <a href="#">Hospital</a>
-          <a href="#">Treatment</a>
-          <a href="#">Other-Services</a>
-          <a href="#">FAQs</a>
-        </div>
-      </div>
-
-      <div class="social-icons">
-        <div class="social-icon-items">
-          <a href="#">
-            <img src="/facebook.png" height="30px" width="30px"
-          /></a>
-          <a href="#"
-            ><img src="/google-plus.png" height="30px" width="30px"
-          /></a>
-          <a href="#">
-            <img src="/pinterest.png" height="30px" width="30px"
-          /></a>
-          <a href="#"><img src="/twitter.png" height="30px" width="30px" /></a>
-          <a href="#"><img src="/youtube.png" height="30px" width="30px" /></a>
-          <p>All rights reserved &copy; tcstra 2020</p>
-        </div>
-      </div>
-    </section>
+   <%- include('footer') %>>
   </body>
 </html>

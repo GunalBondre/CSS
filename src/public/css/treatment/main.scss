@@ -1,9 +1,11 @@
 @import "../main/breakpoint";
 
 @import "../font";
+@import "../theme/config";
 
 .container-fluid {
-  background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist_hero_image.jpg);
+  background-image: linear-gradient(to right, skyblue, transparent),
+    url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist_hero_image.jpg);
   width: 90%;
   background-repeat: no-repeat;
   background-size: cover;
@@ -21,34 +23,45 @@
     background-position: top;
   }
 }
-
-.vaccination {
-  margin: 0 auto;
-  width: 80%;
-  margin-top: 5%;
-  background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  text-align: center;
-  @include xs {
-    padding: 30%;
+body {
+  header {
+    font-family: nexa-bold;
+    font-size: 1.5rem;
   }
-  @include sm {
-    padding: 15%;
+  p {
+    font-family: nexa-light;
+    font-size: 1rem;
   }
 }
+.vaccination {
+  text-align: center;
+  padding: 1rem;
 
+  img {
+    // margin: 0 auto;
+    // width: 80%;
+    // margin-top: 5%;
+    // // background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist.jpg);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center;
+    // text-align: center;
+    // @include xs {
+    //   padding: 30%;
+    // }
+    // @include sm {
+    //   padding: 15%;
+    // }
+    max-width: 300px;
+  }
+}
 .wrapper {
   .description {
     width: 80%;
     margin: 0 auto;
     padding-top: 20px;
     header {
-      padding: 10px;
-      font-family: nexa-bold;
-      font-size: 22px;
-      font-weight: bold;
+      font-size: 1.3rem;
     }
 
     p {
@@ -67,271 +80,500 @@
       }
     }
   }
-
-  @media (max-width: 599px) {
-  }
-
-  //   @include sm {
-  //     width: 80%;
-  //     margin: 0 auto;
-  //     display: flex;
-
-  //     padding: 5px;
-  //     .vaccination {
-  //       width: 30%;
-  //       margin-right: 10px;
-  //     }
-  //   }
-  //   @include md {
-  //     .description {
-  //       padding: 4%;
-  //     }
-  //   }
-  // }
-  // @include xs {
-  //   .right-sidebar {
-  //     .card {
-  //       width: 100%;
-  //       margin: 0 auto;
-  //       span {
-  //         float: right;
-  //       }
-  //     }
-  //   }
-  // }
-  // @include md {
-  //   .right-sidebar {
-  //     padding: 4%;
-  //     p {
-  //       padding: 5px;
-  //     }
-  //     span {
-  //       float: right;
-  //     }
-  //     .card-title {
-  //       font-weight: bold;
-  //     }
-  //     .card {
-  //       padding-top: 5px;
-  //     }
-  //   }
-  // }
-
-  // @include xs {
-  //   .two {
-  //     text-align: center;
-  //     padding: 20px;
-  //     i {
-  //       padding: 20px;
-  //       border-radius: 50%;
-  //       border-color: black;
-  //       background-color: skyblue;
-  //     }
-  //     div {
-  //       padding: 10px;
-  //     }
-  //   }
-  // }
-
-  // @include xs {
-  //   .three {
-  //     margin-top: 5%;
-  //     padding-top: 5%;
-  //     background-color: skyblue;
-  //     header {
-  //       text-align: center;
-  //       font-family: nexa-bold;
-  //       font-weight: bold;
-  //     }
-  //     .more-info {
-  //       width: 70%;
-  //       margin: 0 auto;
-  //     }
-  //   }
-  // }
-
-  // footer menu
-  .footer-section {
-    @include xs {
+}
+@media (max-width: 599px) {
+  .two {
+    width: 90%;
+    padding: 1rem;
+    text-align: center;
+    header {
+      font-size: 1.2rem;
+    }
+    i {
       padding: 20px;
-      background-color: #00004d;
-      text-align: center;
-      .footer-menu {
-        img {
-          display: inline-block;
-        }
-        .links a {
-          display: block;
-          padding: 5px;
-          color: white;
-        }
-      }
-      .social-icons {
-        padding: 10px;
-        a {
-          padding: 5px;
-          color: white;
-        }
-        img {
-          width: 25px;
-          height: 25px;
-        }
-        p {
-          color: white;
-          padding-top: 10px;
-        }
-      }
-
-      header {
-        font-family: nexa-bold;
-        font-size: 2rem;
-        color: white;
+      border-radius: 50%;
+      border-color: black;
+      background-color: skyblue;
+    }
+  }
+  .right-sidebar {
+    .card-title {
+      padding-left: 15px;
+      font-family: nexa-bold;
+    }
+    .card-title1 {
+      padding-left: 15px;
+      font-family: nexa-bold;
+    }
+    .card-text {
+      font-family: nexa-bold;
+    }
+    span {
+      float: right;
+      font-family: nexa-light;
+    }
+    .card-title {
+      &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: $button-blue;
+        position: absolute;
+        left: 0;
+        top: 15%;
       }
     }
-    .footer-menu {
-      @include sm {
-        img {
-          float: right;
-        }
-        .links a {
-          float: left;
-          padding-right: 5px;
-          padding-top: 35px;
-        }
+    .card-title1 {
+      &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: $button-blue;
+        position: absolute;
+        left: 0;
+        top: 9%;
       }
     }
   }
-
-  //tablet section
-  @media (min-width: 481px) and (max-width: 767px) {
-    .one {
-      display: flex;
-    }
-    .two {
-      display: flex;
-      flex-direction: row;
-    }
-    .right-sidebar {
-      display: flex;
-      flex-direction: row;
-      span {
-        float: right;
-      }
-    }
-    .three {
-      width: 100%;
-
-      .more-info {
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        .card {
-          width: 30rem;
-          margin: 10px;
-        }
-      }
-    }
-    .footer-section {
-      display: flex;
-      flex-direction: column;
-      .footer {
-        float: left;
-      }
-      .social-icon-items {
-        float: right;
-        padding-top: 10px;
-      }
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1024px) {
-    .footer-section {
-      display: flex;
-      flex-direction: column;
-      .footer {
-        float: left;
-      }
-      .social-icon-items {
-        float: right;
-        padding-top: 10px;
-      }
-    }
-  }
-  .footer-section {
-    #follow {
-      display: none;
-    }
-  }
-  .outer-wrapper {
-    .two {
-      display: flex;
-      flex-direction: row;
-    }
-  }
-  .one {
-    display: flex;
-    flex-direction: row;
-  }
-
-  @media (min-width: 1025px) and (max-width: 1280px) {
-    .outer-wrapper {
-      .two {
-        display: flex;
-        flex-direction: row;
-      }
-    }
-    .one {
-      display: flex;
-      flex-direction: row;
-    }
-    .footer-section {
-      display: flex;
-      flex-direction: column;
-      .footer {
-        float: left;
-      }
-      .social-icon-items {
-        float: right;
-        padding-top: 10px;
-      }
-    }
-  }
-  @media (min-width: 1280px) {
-    .outer-wrapper {
-      width: 70%;
-      .two {
-        display: flex;
-        flex-direction: row;
-      }
-    }
-    .one {
-      display: flex;
-      flex-direction: row;
-    }
-    .right-sidebar {
-      width: 30%;
+  .three {
+    text-align: center;
+    .card {
+      margin: 15px;
     }
     .more-info {
-      width: 90%;
-      display: flex;
-      flex-direction: row;
-      padding-bottom: 20px;
-      .card {
-        margin: 10px;
-        border-radius: 15px;
+      .card-title {
+        text-align: left;
+        font-family: nexa-bold;
+        padding-left: 15px;
+        font-size: 1.3rem;
       }
-    }
-
-    .footer-section {
-      display: flex;
-      flex-direction: column;
-      .footer {
-        float: left;
-      }
-      .social-icon-items {
-        float: right;
-        padding-top: 10px;
+      .card-title {
+        &::before {
+          content: "";
+          display: block;
+          width: 30px;
+          height: 2px;
+          background: $button-blue;
+          position: absolute;
+          left: 0;
+          top: 87%;
+        }
       }
     }
   }
+  .bottom {
+    display: none;
+  }
 }
+
+@media (min-width: 600px) {
+  .more-info {
+    .card-title {
+      text-align: left;
+      font-family: nexa-bold;
+      padding-left: 15px;
+      font-size: 1.3rem;
+    }
+    .card-title {
+      &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: $button-blue;
+        position: absolute;
+        left: 0;
+        top: 80%;
+      }
+    }
+  }
+  .wrapper {
+    display: flex;
+    padding: 5%;
+    header {
+      text-align: left;
+    }
+  }
+  .two {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    padding: 0 5%;
+    header {
+      font-size: 1.2rem;
+    }
+    i {
+      padding: 20px;
+      border-radius: 50%;
+      border-color: black;
+      background-color: skyblue;
+    }
+  }
+  .right-sidebar {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    .card {
+      width: 50%;
+      margin: 2%;
+      height: fit-content;
+      border-radius: 10px;
+    }
+    .card-title {
+      padding-left: 15px;
+      font-family: nexa-bold;
+    }
+    .card-title1 {
+      padding-left: 15px;
+      font-family: nexa-bold;
+    }
+    .card-text {
+      font-family: nexa-bold;
+    }
+    span {
+      float: right;
+      font-family: nexa-light;
+    }
+    .card-title {
+      &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: $button-blue;
+        position: absolute;
+        left: 0;
+        top: 15%;
+      }
+    }
+    .card-title1 {
+      &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: $button-blue;
+        position: absolute;
+        left: 0;
+        top: 9%;
+      }
+    }
+  }
+  .three {
+    background-color: $bg-light-blue;
+    padding: 2%;
+    header {
+      padding-left: 20px;
+      font-family: nexa-bold;
+      color: white;
+    }
+  }
+  .more-info {
+    display: flex;
+    justify-content: space-between;
+    margin: 2%;
+
+    .card {
+      margin: 1%;
+    }
+  }
+  .bottom {
+    display: none;
+  }
+}
+@media (min-width: 1200px) {
+  .container-fluid {
+    width: 95%;
+  }
+  .bottom {
+    display: none !important;
+  }
+  .one {
+    width: 100%;
+    padding: 0 5%;
+    display: flex;
+  }
+
+  .right-sidebar {
+    display: flex;
+    flex-direction: column;
+    .card {
+      width: 80%;
+    }
+  }
+  .two {
+    padding-bottom: 3%;
+  }
+  .three {
+    margin: 2%;
+  }
+  .footer-section {
+    margin: 0 3%;
+  }
+}
+//   @include sm {
+//     width: 80%;
+//     margin: 0 auto;
+//     display: flex;
+
+//     padding: 5px;
+//     .vaccination {
+//       width: 30%;
+//       margin-right: 10px;
+//     }
+//   }
+//   @include md {
+//     .description {
+//       padding: 4%;
+//     }
+//   }
+// }
+// @include xs {
+//   .right-sidebar {
+//     .card {
+//       width: 100%;
+//       margin: 0 auto;
+//       span {
+//         float: right;
+//       }
+//     }
+//   }
+// }
+// @include md {
+//   .right-sidebar {
+//     padding: 4%;
+//     p {
+//       padding: 5px;
+//     }
+//     span {
+//       float: right;
+//     }
+//     .card-title {
+//       font-weight: bold;
+//     }
+//     .card {
+//       padding-top: 5px;
+//     }
+//   }
+// }
+
+// @include xs {
+//   .two {
+//     text-align: center;
+//     padding: 20px;
+//     i {
+//       padding: 20px;
+//       border-radius: 50%;
+//       border-color: black;
+//       background-color: skyblue;
+//     }
+//     div {
+//       padding: 10px;
+//     }
+//   }
+// }
+
+// @include xs {
+//   .three {
+//     margin-top: 5%;
+//     padding-top: 5%;
+//     background-color: skyblue;
+//     header {
+//       text-align: center;
+//       font-family: nexa-bold;
+//       font-weight: bold;
+//     }
+//     .more-info {
+//       width: 70%;
+//       margin: 0 auto;
+//     }
+//   }
+// }
+
+// footer menu
+//   .footer-section {
+//     @include xs {
+//       padding: 20px;
+//       background-color: #00004d;
+//       text-align: center;
+//       .footer-menu {
+//         img {
+//           display: inline-block;
+//         }
+//         .links a {
+//           display: block;
+//           padding: 5px;
+//           color: white;
+//         }
+//       }
+//       .social-icons {
+//         padding: 10px;
+//         a {
+//           padding: 5px;
+//           color: white;
+//         }
+//         img {
+//           width: 25px;
+//           height: 25px;
+//         }
+//         p {
+//           color: white;
+//           padding-top: 10px;
+//         }
+//       }
+
+//       header {
+//         font-family: nexa-bold;
+//         font-size: 2rem;
+//         color: white;
+//       }
+//     }
+//     .footer-menu {
+//       @include sm {
+//         img {
+//           float: right;
+//         }
+//         .links a {
+//           float: left;
+//           padding-right: 5px;
+//           padding-top: 35px;
+//         }
+//       }
+//     }
+//   }
+
+//   //tablet section
+//   @media (min-width: 481px) and (max-width: 767px) {
+//     .one {
+//       display: flex;
+//     }
+//     .two {
+//       display: flex;
+//       flex-direction: row;
+//     }
+//     .right-sidebar {
+//       display: flex;
+//       flex-direction: row;
+//       span {
+//         float: right;
+//       }
+//     }
+//     .three {
+//       width: 100%;
+
+//       .more-info {
+//         width: 100%;
+//         display: flex;
+//         flex-direction: row;
+//         .card {
+//           width: 30rem;
+//           margin: 10px;
+//         }
+//       }
+//     }
+//     .footer-section {
+//       display: flex;
+//       flex-direction: column;
+//       .footer {
+//         float: left;
+//       }
+//       .social-icon-items {
+//         float: right;
+//         padding-top: 10px;
+//       }
+//     }
+//   }
+
+//   @media (min-width: 768px) and (max-width: 1024px) {
+//     .footer-section {
+//       display: flex;
+//       flex-direction: column;
+//       .footer {
+//         float: left;
+//       }
+//       .social-icon-items {
+//         float: right;
+//         padding-top: 10px;
+//       }
+//     }
+//   }
+//   .footer-section {
+//     #follow {
+//       display: none;
+//     }
+//   }
+//   .outer-wrapper {
+//     .two {
+//       display: flex;
+//       flex-direction: row;
+//     }
+//   }
+//   .one {
+//     display: flex;
+//     flex-direction: row;
+//   }
+
+//   @media (min-width: 1025px) and (max-width: 1280px) {
+//     .outer-wrapper {
+//       .two {
+//         display: flex;
+//         flex-direction: row;
+//       }
+//     }
+//     .one {
+//       display: flex;
+//       flex-direction: row;
+//     }
+//     .footer-section {
+//       display: flex;
+//       flex-direction: column;
+//       .footer {
+//         float: left;
+//       }
+//       .social-icon-items {
+//         float: right;
+//         padding-top: 10px;
+//       }
+//     }
+//   }
+//   @media (min-width: 1280px) {
+//     .outer-wrapper {
+//       width: 70%;
+//       .two {
+//         display: flex;
+//         flex-direction: row;
+//       }
+//     }
+//     .one {
+//       display: flex;
+//       flex-direction: row;
+//     }
+//     .right-sidebar {
+//       width: 30%;
+//     }
+//     .more-info {
+//       width: 90%;
+//       display: flex;
+//       flex-direction: row;
+//       padding-bottom: 20px;
+//       .card {
+//         margin: 10px;
+//         border-radius: 15px;
+//       }
+//     }
+
+//     .footer-section {
+//       display: flex;
+//       flex-direction: column;
+//       .footer {
+//         float: left;
+//       }
+//       .social-icon-items {
+//         float: right;
+//         padding-top: 10px;
+//       }
+//     }
+//   }
+// }

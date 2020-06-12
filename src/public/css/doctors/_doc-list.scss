@@ -12,6 +12,18 @@
   }
 }
 .doc-wrapper {
+  #btn {
+    background-color: $bg-dark-blue;
+  }
+  .card-text {
+    span {
+      color: $bg-black;
+    }
+    i {
+      color: $button-blue;
+    }
+  }
+
   .card-body {
     position: relative;
     color: $button-blue;
@@ -35,12 +47,13 @@
       top: 15%;
     }
   }
+  .btn {
+    background-color: $bg-dark-blue;
+  }
 
   @include xs {
-    // padding-bottom: 20px;
     text-align: center;
     .doc-list {
-      // padding-top: 10px;
       display: inline-block;
       .card-body {
         text-align: left;
@@ -52,48 +65,26 @@
             padding-right: 10px;
           }
         }
-        #btn {
-          width: 100%;
-          margin: 0 auto;
-          margin-top: 10px;
+        .btn {
+          width: 17.5rem;
         }
       }
     }
     .card {
-      width: 22rem;
+      width: 20rem;
       .card-img-top {
         height: 20rem;
       }
     }
   }
 }
-.bottom {
-  background-color: skyblue;
-  padding: 1.5rem;
-  @include xs {
-    // Help section style
 
-    .help {
-      text-align: center;
-
-      header {
-        color: white;
-        padding: 5px;
-      }
-      p {
-        padding: 5px;
-      }
-    }
-  }
-  @include sm {
-    padding: 20px;
-  }
-}
 .card-body {
   h5 {
-    font-family: nexa-bold;
-    font-size: 2rem;
-    color: skyblue;
+    font-family: nexa-light;
+    font-size: 1.5rem;
+    // color: $bg-light-blue;
+    padding-top: 8px;
   }
   p {
     font-family: nexa-light;
@@ -106,29 +97,27 @@
 
 // styles for tabs
 .main {
-  padding: 20px;
-  @include sm {
-    display: flex;
-    flex-direction: row;
-    .left {
-      width: 30%;
-      position: absolute;
-      left: 5%;
-    }
+  display: flex;
+  flex-direction: row;
+  .left {
+    width: 35%;
+  }
+  .doc-wrapper {
+    width: 65%;
   }
 }
 .doc-wrapper {
   @include sm {
-    width: 70%;
-    padding-left: 20%;
     .card {
       width: 25rem;
       display: flex;
       flex-direction: row;
+      .card-body {
+        width: 40%;
+      }
       .card-img-top {
-        width: 12rem;
-        height: 15rem;
-        padding-left: 1.5rem;
+        width: 8rem;
+        height: 12rem;
       }
     }
   }
@@ -136,34 +125,75 @@
 
 .doc-list {
   @include lg {
-    .doc-list {
-      display: flex;
-      flex-direction: column;
-    }
+    display: flex;
     .card {
       width: 100%;
-      padding-left: 2rem;
+      .btn {
+        width: 20rem;
+      }
     }
     .info-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
     }
-    #btn {
-      width: 50%;
-    }
   }
 }
-.bottom {
-  padding: 5x;
-  @include lg {
-    padding: 2rem;
-    header {
-      font-family: nexa-bold;
-      font-size: 1.5rem;
+
+@include lg {
+  .navbar {
+    margin: 0 6rem;
+  }
+  .navbar-nav {
+    margin: 0 auto;
+  }
+}
+
+@include sm {
+  .main {
+    padding-top: 5%;
+  }
+}
+@media (min-width: 600px) {
+  .sort-section {
+    padding: 4%;
+  }
+  .left {
+    padding-left: 5%;
+    padding-right: 3%;
+  }
+}
+@media (max-width: 599px) {
+  .sort-section {
+    padding: 10%;
+  }
+  .doc-list {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .left {
+    padding-left: 5%;
+    h5 {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: $bg-light-grey;
     }
-    p {
+  }
+  .sort-section {
+    padding: 3% 6%;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
+    color: grey;
+  }
+}
+
+.doc-wrapper {
+  .card-body {
+    .card-text,
+    span {
       font-family: nexa-light;
-      font-size: 1rem;
     }
   }
 }

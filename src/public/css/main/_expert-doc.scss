@@ -84,3 +84,11 @@
     }
   }
 }
+
+@include md {
+  .card-text {
+    p {
+      text-align: left;
+    }
+  }
+}

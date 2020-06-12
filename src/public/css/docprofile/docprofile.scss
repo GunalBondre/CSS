@@ -1,16 +1,15 @@
 @import "../main/breakpoint";
+@import "../theme//config";
 
 @import "../font";
 .doc__header {
-  background-color: skyblue;
+  background-color: $bg-light-blue;
 
-  header {
-    @include xs {
-      padding: 20%;
-    }
-    @include md {
-      padding: 10%;
-    }
+  @include xs {
+    padding: 20%;
+  }
+  @include md {
+    padding: 10%;
   }
 }
 .wrapper {
@@ -19,13 +18,30 @@
 .outer {
   border: 1px dashed;
   overflow: hidden;
-  width: 100%;
+  width: 90%;
   padding: 10px;
+  margin: 0 auto;
   summary {
     color: #66b2ff;
   }
 }
 @media (max-width: 599px) {
+  .doc__header {
+    width: 95%;
+    margin: 0 auto;
+    header {
+      font-family: nexa-bold;
+      line-height: 1.6;
+      color: white;
+      font-size: 1.5rem;
+    }
+    p {
+      font-family: nexa-light;
+      font-size: 1rem;
+      text-align: center;
+      color: white;
+    }
+  }
   .doc__image {
     text-align: center;
   }
@@ -52,32 +68,6 @@
       text-align: center;
     }
   }
-  .bottom {
-    padding-top: 20px;
-    background-color: skyblue;
-    text-align: center;
-
-    .help {
-      padding: 5px;
-      header,
-      p,
-      button {
-        padding: 5px;
-      }
-      header {
-        color: white;
-        font-family: nexa-bold;
-        font-size: 1.5rem;
-      }
-    }
-  }
-  .footer-section {
-    text-align: center;
-    .links a {
-      display: block;
-      padding: 5px;
-    }
-  }
 }
 @media (min-width: 600px) {
   .section1 {
@@ -101,42 +91,6 @@
       }
     }
   }
-  .bottom {
-    padding-top: 20px;
-    background-color: skyblue;
-    text-align: center;
-    .help {
-      padding: 5px;
-      header,
-      p,
-      button {
-        padding: 5px;
-      }
-      header {
-        color: white;
-        font-family: nexa-bold;
-        font-size: 1.5rem;
-      }
-    }
-  }
-  .footer-menu {
-    img {
-      float: right;
-    }
-  }
-  .social-icons {
-    padding-top: 5%;
-  }
-
-  .social-icon-items {
-    text-align: right;
-    p {
-      float: left;
-    }
-  }
-  .links {
-    padding-top: 5%;
-  }
 }
 @media (min-width: 1200px) {
   .section1 {
@@ -152,48 +106,5 @@
     .outer {
       padding: 20px;
     }
-  }
-  .bottom {
-    padding-top: 20px;
-    background-color: skyblue;
-    display: flex;
-    padding: 2% 5%;
-
-    .help {
-      padding: 5px;
-      header,
-      p,
-      .btn {
-        padding: 5px;
-      }
-      header {
-        color: white;
-        font-family: nexa-bold;
-        font-size: 1.5rem;
-      }
-    }
-    .btn {
-      position: absolute;
-      right: 10%;
-      width: 40%;
-    }
-  }
-  .footer-menu {
-    img {
-      float: right;
-    }
-  }
-  .social-icons {
-    padding-top: 3%;
-  }
-
-  .social-icon-items {
-    text-align: right;
-    p {
-      float: left;
-    }
-  }
-  .links {
-    padding-top: 2%;
   }
 }

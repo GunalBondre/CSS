@@ -246,6 +246,18 @@
   }
 }
 
+.doc-wrapper #btn {
+  background-color: #000033;
+}
+
+.doc-wrapper .card-text span {
+  color: black;
+}
+
+.doc-wrapper .card-text i {
+  color: #0066cc;
+}
+
 .doc-wrapper .card-body {
   position: relative;
   color: #0066cc;
@@ -269,6 +281,10 @@
   top: 15%;
 }
 
+.doc-wrapper .btn {
+  background-color: #000033;
+}
+
 @media (min-width: 300px) {
   .doc-wrapper {
     text-align: center;
@@ -285,47 +301,21 @@
   .doc-wrapper .doc-list .card-body p i {
     padding-right: 10px;
   }
-  .doc-wrapper .doc-list .card-body #btn {
-    width: 100%;
-    margin: 0 auto;
-    margin-top: 10px;
+  .doc-wrapper .doc-list .card-body .btn {
+    width: 17.5rem;
   }
   .doc-wrapper .card {
-    width: 22rem;
+    width: 20rem;
   }
   .doc-wrapper .card .card-img-top {
     height: 20rem;
   }
 }
 
-.bottom {
-  background-color: skyblue;
-  padding: 1.5rem;
-}
-
-@media (min-width: 300px) {
-  .bottom .help {
-    text-align: center;
-  }
-  .bottom .help header {
-    color: white;
-    padding: 5px;
-  }
-  .bottom .help p {
-    padding: 5px;
-  }
-}
-
-@media (min-width: 576px) {
-  .bottom {
-    padding: 20px;
-  }
-}
-
 .card-body h5 {
-  font-family: nexa-bold;
-  font-size: 2rem;
-  color: skyblue;
+  font-family: nexa-light;
+  font-size: 1.5rem;
+  padding-top: 8px;
 }
 
 .card-body p {
@@ -338,31 +328,24 @@
 }
 
 .main {
-  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.main .left {
+  width: 35%;
+}
+
+.main .doc-wrapper {
+  width: 65%;
 }
 
 @media (min-width: 576px) {
-  .main {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  .main .left {
-    width: 30%;
-    position: absolute;
-    left: 5%;
-  }
-}
-
-@media (min-width: 576px) {
-  .doc-wrapper {
-    width: 70%;
-    padding-left: 20%;
-  }
   .doc-wrapper .card {
     width: 25rem;
     display: -webkit-box;
@@ -373,26 +356,26 @@
         -ms-flex-direction: row;
             flex-direction: row;
   }
+  .doc-wrapper .card .card-body {
+    width: 40%;
+  }
   .doc-wrapper .card .card-img-top {
-    width: 12rem;
-    height: 15rem;
-    padding-left: 1.5rem;
+    width: 8rem;
+    height: 12rem;
   }
 }
 
 @media (min-width: 992px) {
-  .doc-list .doc-list {
+  .doc-list {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
   }
   .doc-list .card {
     width: 100%;
-    padding-left: 2rem;
+  }
+  .doc-list .card .btn {
+    width: 20rem;
   }
   .doc-list .info-grid {
     display: -ms-grid;
@@ -400,27 +383,63 @@
     -ms-grid-columns: (1fr)[3];
         grid-template-columns: repeat(3, 1fr);
   }
-  .doc-list #btn {
-    width: 50%;
-  }
-}
-
-.bottom {
-  padding: 5x;
 }
 
 @media (min-width: 992px) {
-  .bottom {
-    padding: 2rem;
+  .navbar {
+    margin: 0 6rem;
   }
-  .bottom header {
+  .navbar-nav {
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 576px) {
+  .main {
+    padding-top: 5%;
+  }
+}
+
+@media (min-width: 600px) {
+  .sort-section {
+    padding: 4%;
+  }
+  .left {
+    padding-left: 5%;
+    padding-right: 3%;
+  }
+}
+
+@media (max-width: 599px) {
+  .sort-section {
+    padding: 10%;
+  }
+  .doc-list {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 900px) {
+  .left {
+    padding-left: 5%;
+  }
+  .left h5 {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e0e0e0;
+  }
+  .sort-section {
+    padding: 3% 6%;
     font-family: nexa-bold;
     font-size: 1.5rem;
+    color: grey;
   }
-  .bottom p {
-    font-family: nexa-light;
-    font-size: 1rem;
-  }
+}
+
+.doc-wrapper .card-body .card-text,
+.doc-wrapper .card-body span {
+  font-family: nexa-light;
 }
 
 @font-face {
