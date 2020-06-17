@@ -1,3 +1,13 @@
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
 .m-1 {
   margin: 1rem;
 }
@@ -190,6 +200,57 @@
   padding: 0 8rem;
 }
 
+header {
+  font-family: nexa-bold;
+  font-size: 1.6rem;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  header {
+    font-size: 2rem !important;
+  }
+}
+
+p {
+  font-family: nexa-light;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+h2 {
+  font-family: nexa-bold;
+  font-size: 1.4rem;
+  color: #0066cc;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h1 {
+  font-family: nexa-bold;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 0rem;
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h3 {
+  font-family: nexa-bold;
+  font-size: 1.3rem;
+}
+
 @font-face {
   font-family: nexa-bold;
   src: url(/Nexa-Bold.otf);
@@ -202,17 +263,13 @@
 
 .doc__header {
   background-color: #99ccff;
+  width: 100%;
 }
 
 @media (min-width: 300px) {
   .doc__header {
-    padding: 20%;
-  }
-}
-
-@media (min-width: 767px) {
-  .doc__header {
-    padding: 10%;
+    padding: 20% 10%;
+    text-align: center;
   }
 }
 
@@ -221,10 +278,8 @@
 }
 
 .outer {
-  border: 1px dashed;
+  border: 0.5px dashed;
   overflow: hidden;
-  width: 90%;
-  padding: 10px;
   margin: 0 auto;
 }
 
@@ -233,13 +288,28 @@
 }
 
 @media (max-width: 599px) {
+  .section1 h1 {
+    font-family: nexa-bold;
+    color: #0066cc;
+    font-size: 1.5rem;
+  }
+  .section1 h1::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #0066cc;
+    position: absolute;
+    left: 10;
+    top: 85%;
+  }
   .doc__header {
     width: 95%;
     margin: 0 auto;
   }
   .doc__header header {
     font-family: nexa-bold;
-    line-height: 1.6;
+    line-height: 1.4;
     color: white;
     font-size: 1.5rem;
   }
@@ -252,35 +322,112 @@
   .doc__image {
     text-align: center;
   }
+  .outer {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
   .outer .btn-dark {
-    width: 100%;
+    width: 90%;
   }
   .outer img {
-    max-width: 400px;
+    max-width: 300px;
+    padding: 15px;
   }
-  .section1 {
+  .outer .section1 {
     padding-top: 15px;
+    padding-bottom: 15px;
   }
-  .section1 header {
+  .outer .section1 header {
     font-family: nexa-bold;
     font-size: 2rem;
-    padding-left: 10%;
-    color: skyblue;
+    color: #0066cc;
   }
-  .section1 p {
-    padding-top: 10px;
+  .outer .section1 header::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #0066cc;
+    position: absolute;
+    left: 10;
+    top: 110%;
+  }
+  .outer .section1 summary {
+    text-align: left;
+    padding-left: 5%;
+    color: #0066cc;
+  }
+  .outer p {
     font-family: nexa-light;
     font-size: 1rem;
     text-align: center;
+    padding: 10px;
+    background-color: #e0f1f3;
   }
 }
 
 @media (min-width: 600px) {
+  .section1 h1 {
+    font-family: nexa-bold;
+    color: #0066cc;
+    font-size: 1.5rem;
+    padding-left: 25px;
+  }
+  .section1 h1::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #0066cc;
+    position: absolute;
+    left: 1.5%;
+    top: 73%;
+  }
+  .doc__header {
+    padding: 7%;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .doc__header header {
+    font-family: nexa-bold;
+    line-height: 1.4;
+    color: white;
+    font-size: 1.5rem;
+  }
+  .doc__header p {
+    font-family: nexa-light;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+  }
+  .section1 {
+    padding: 10px;
+  }
   .section1 header {
     font-family: nexa-bold;
     font-size: 2rem;
-    padding-left: 5%;
-    color: skyblue;
+    color: #0066cc;
+    padding-left: 25px;
+  }
+  .section1 header::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #0066cc;
+    position: absolute;
+    left: 1.5%;
+    top: 78%;
+  }
+  .section1 summary {
+    color: #0066cc;
+    font-family: nexa-light;
+    padding-left: 15px;
+  }
+  .section1 p {
+    background-color: #e0f1f3;
+    padding: 10px;
   }
   .outer {
     display: -webkit-box;
@@ -303,11 +450,42 @@
 }
 
 @media (min-width: 1200px) {
+  .doc__header {
+    text-align: left;
+  }
+  .doc__header p {
+    text-align: left;
+  }
+  .section1 h1 {
+    font-family: nexa-bold;
+    color: #0066cc;
+    font-size: 1.5rem;
+  }
+  .section1 h1::before {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 2px;
+    background: #0066cc;
+    position: absolute;
+    left: 5%;
+    top: 72%;
+  }
   .section1 header {
     font-family: nexa-bold;
     font-size: 2rem;
-    padding-left: 10%;
-    color: skyblue;
+    padding-left: 2%;
+    color: #0066cc;
+  }
+  .section1 header::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #0066cc;
+    position: absolute;
+    left: 5%;
+    top: 77%;
   }
   .wrapper {
     padding: 5%;

@@ -1,3 +1,13 @@
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
 .m-1 {
   margin: 1rem;
 }
@@ -190,19 +200,62 @@
   padding: 0 8rem;
 }
 
+header {
+  font-family: nexa-bold;
+  font-size: 1.6rem;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  header {
+    font-size: 2rem !important;
+  }
+}
+
+p {
+  font-family: nexa-light;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+h2 {
+  font-family: nexa-bold;
+  font-size: 1.4rem;
+  color: #0066cc;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h1 {
+  font-family: nexa-bold;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 0rem;
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h3 {
+  font-family: nexa-bold;
+  font-size: 1.3rem;
+}
+
 .btn {
   font-family: nexa-light;
 }
 
 @media (max-width: 599px) {
-  .help header {
-    font-size: 2rem;
-    font-family: nexa-bold;
-  }
-  .help p {
-    font-family: nexa-light;
-    font-size: 1rem;
-  }
   .bottom {
     background-color: #99ccff;
     text-align: center;
@@ -213,7 +266,7 @@
   }
   .footer-section .links a {
     display: block;
-    padding: 5px;
+    padding: 10px;
     color: #fff;
   }
   .footer-section p {
@@ -222,6 +275,9 @@
   .footer-section i {
     padding-right: 10px;
     color: white;
+  }
+  .social-icon-items {
+    padding: 5%;
   }
 }
 
@@ -239,15 +295,6 @@
   .bottom .help button {
     padding: 5px;
   }
-  .bottom .help header {
-    color: white;
-    font-family: nexa-bold;
-    font-size: 2rem;
-  }
-  .bottom .help p {
-    font-size: 1rem;
-    font-family: nexa-light;
-  }
   .bottom .btn {
     text-align: center;
   }
@@ -263,7 +310,7 @@
     color: black;
   }
   .social-icons {
-    padding-top: 5%;
+    padding-top: 3%;
   }
   .social-icon-items {
     text-align: right;
@@ -291,21 +338,16 @@
   }
   .bottom .help {
     padding: 3% 0;
-    padding-left: 10%;
+    padding-left: 4%;
   }
   .bottom .help header,
   .bottom .help p {
     text-align: left;
     padding: 5px;
   }
-  .bottom .help header {
-    color: white;
-    font-family: nexa-bold;
-    font-size: 1.5rem;
-  }
   .bottom .btn {
     position: absolute;
-    right: 10%;
+    right: 3%;
     width: 40%;
     padding: 15px;
   }
@@ -315,9 +357,6 @@
   .footer-menu img {
     float: right;
   }
-  .social-icons {
-    padding-top: 3%;
-  }
   .social-icon-items {
     text-align: right;
   }
@@ -326,6 +365,9 @@
   }
   .links {
     padding-top: 2%;
+  }
+  .footer-section {
+    margin: 2% 4.5%;
   }
 }
 /*# sourceMappingURL=footer.css.map */

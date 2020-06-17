@@ -1,39 +1,11 @@
-.sort-section {
-  padding: 10px;
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
 }
 
-.sort-section h4 {
-  float: left;
-}
-
-.sort-section #dropdownMenuButton {
-  float: right;
-}
-
-@media (min-width: 300px) {
-  .container-fluid header {
-    display: none;
-  }
-}
-
-@media (min-width: 576px) {
-  .container-fluid header {
-    font-size: 1.5rem;
-    font-family: nexa-bold;
-    display: block;
-    background-color: skyblue;
-    padding: 5rem;
-  }
-}
-
-@media (min-width: 767px) {
-  .container-fluid header {
-    font-size: 2rem;
-    font-family: nexa-bold;
-    display: block;
-    background-color: skyblue;
-    padding: 5rem;
-  }
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
 }
 
 .m-1 {
@@ -228,6 +200,383 @@
   padding: 0 8rem;
 }
 
+header {
+  font-family: nexa-bold;
+  font-size: 1.6rem;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  header {
+    font-size: 2rem !important;
+  }
+}
+
+p {
+  font-family: nexa-light;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+h2 {
+  font-family: nexa-bold;
+  font-size: 1.4rem;
+  color: #0066cc;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h1 {
+  font-family: nexa-bold;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 0rem;
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h3 {
+  font-family: nexa-bold;
+  font-size: 1.3rem;
+}
+
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
+.sort-section {
+  padding: 10px;
+}
+
+.sort-section h4 {
+  float: left;
+}
+
+.sort-section #dropdownMenuButton {
+  float: right;
+}
+
+.top-container-wrapper {
+  background: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png) no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+@media (min-width: 300px) {
+  .top-container-wrapper header {
+    display: none;
+  }
+}
+
+@media (min-width: 576px) {
+  .top-container-wrapper header {
+    display: block;
+    padding: 5rem 1rem;
+  }
+}
+
+@media (min-width: 767px) {
+  .top-container-wrapper header {
+    padding: 7rem 5rem;
+  }
+}
+
+.color-bg {
+  background-color: skyblue;
+  opacity: 0.9;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.form-check input,
+.form-check label {
+  padding: 5px;
+}
+
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.mx-2 {
+  margin: 0 2rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.px-2 {
+  padding: 0 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.mx-3 {
+  margin: 0 3rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.px-3 {
+  padding: 0 3rem;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.mx-4 {
+  margin: 0 4rem;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.py-4 {
+  padding: 4rem 0;
+}
+
+.px-4 {
+  padding: 0 4rem;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.my-5 {
+  margin: 5rem 0;
+}
+
+.mx-5 {
+  margin: 0 5rem;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+.px-5 {
+  padding: 0 5rem;
+}
+
+.m-6 {
+  margin: 6rem;
+}
+
+.my-6 {
+  margin: 6rem 0;
+}
+
+.mx-6 {
+  margin: 0 6rem;
+}
+
+.p-6 {
+  padding: 6rem;
+}
+
+.py-6 {
+  padding: 6rem 0;
+}
+
+.px-6 {
+  padding: 0 6rem;
+}
+
+.m-7 {
+  margin: 7rem;
+}
+
+.my-7 {
+  margin: 7rem 0;
+}
+
+.mx-7 {
+  margin: 0 7rem;
+}
+
+.p-7 {
+  padding: 7rem;
+}
+
+.py-7 {
+  padding: 7rem 0;
+}
+
+.px-7 {
+  padding: 0 7rem;
+}
+
+.m-8 {
+  margin: 8rem;
+}
+
+.my-8 {
+  margin: 8rem 0;
+}
+
+.mx-8 {
+  margin: 0 8rem;
+}
+
+.p-8 {
+  padding: 8rem;
+}
+
+.py-8 {
+  padding: 8rem 0;
+}
+
+.px-8 {
+  padding: 0 8rem;
+}
+
+header {
+  font-family: nexa-bold;
+  font-size: 1.6rem;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  header {
+    font-size: 2rem !important;
+  }
+}
+
+p {
+  font-family: nexa-light;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+h2 {
+  font-family: nexa-bold;
+  font-size: 1.4rem;
+  color: #0066cc;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h1 {
+  font-family: nexa-bold;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 0rem;
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h3 {
+  font-family: nexa-bold;
+  font-size: 1.3rem;
+}
+
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
+body {
+  overflow-x: hidden;
+}
+
 @media (min-width: 300px) {
   .left {
     display: none;
@@ -243,6 +592,12 @@
 @media (min-width: 767px) {
   .left {
     display: block;
+  }
+}
+
+@media (min-width: 300px) {
+  .main {
+    width: 100%;
   }
 }
 
@@ -278,7 +633,7 @@
   background: #0066cc;
   position: absolute;
   left: 0;
-  top: 15%;
+  top: 17%;
 }
 
 .doc-wrapper .btn {
@@ -290,6 +645,7 @@
     text-align: center;
   }
   .doc-wrapper .doc-list {
+    width: 100%;
     display: inline-block;
   }
   .doc-wrapper .doc-list .card-body {
@@ -305,7 +661,8 @@
     width: 17.5rem;
   }
   .doc-wrapper .card {
-    width: 20rem;
+    width: 90%;
+    margin: 0 auto;
   }
   .doc-wrapper .card .card-img-top {
     height: 20rem;
@@ -327,27 +684,9 @@
   color: skyblue;
 }
 
-.main {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.main .left {
-  width: 35%;
-}
-
-.main .doc-wrapper {
-  width: 65%;
-}
-
 @media (min-width: 576px) {
-  .doc-wrapper .card {
-    width: 25rem;
+  .main {
+    width: 100%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -356,13 +695,42 @@
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  .doc-wrapper .card .card-body {
+  .main .left {
+    width: 37%;
+  }
+  .main .doc-wrapper {
+    width: 63%;
+  }
+}
+
+@media (min-width: 576px) {
+  .doc-wrapper .doc-list {
+    width: 100%;
+  }
+  .doc-wrapper .doc-list .card {
+    width: 95%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .doc-wrapper .doc-list .card .card-body {
     width: 40%;
   }
-  .doc-wrapper .card .card-img-top {
+  .doc-wrapper .doc-list .card .card-img-top {
     width: 8rem;
     height: 12rem;
   }
+  .doc-wrapper .doc-list .card .btn {
+    width: 80%;
+  }
+}
+
+.doc-list {
+  width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -385,18 +753,9 @@
   }
 }
 
-@media (min-width: 992px) {
-  .navbar {
-    margin: 0 6rem;
-  }
-  .navbar-nav {
-    margin: 0 auto;
-  }
-}
-
 @media (min-width: 576px) {
   .main {
-    padding-top: 5%;
+    padding-top: 1%;
   }
 }
 
@@ -405,8 +764,17 @@
     padding: 4%;
   }
   .left {
-    padding-left: 5%;
+    padding-left: 3%;
     padding-right: 3%;
+  }
+  .left h5 {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #e0e0e0;
+    margin: 10px;
+  }
+  .left p {
+    margin: 10px;
   }
 }
 
@@ -421,8 +789,12 @@
 }
 
 @media (min-width: 900px) {
-  .left {
-    padding-left: 5%;
+  #bookappointment {
+    width: 40%;
+    border: 0px;
+  }
+  .doc-list {
+    width: 90%;
   }
   .left h5 {
     margin-top: 10px;
@@ -434,6 +806,22 @@
     font-family: nexa-bold;
     font-size: 1.5rem;
     color: grey;
+  }
+  .main {
+    padding: 2% 2.8%;
+  }
+}
+
+@media (min-width: 767px) {
+  .card-title::before {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: #0066cc;
+    position: absolute;
+    left: 0;
+    top: 19% !important;
   }
 }
 

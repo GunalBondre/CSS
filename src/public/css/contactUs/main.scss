@@ -40,6 +40,9 @@
   }
 }
 @media (min-width: 600px) {
+  .footer-section {
+    padding: 3.5%;
+  }
   .footer-menu {
     img {
       float: right;
@@ -101,6 +104,9 @@
   }
 }
 @media (min-width: 1200px) {
+  .footer-section {
+    padding: 4.5% !important;
+  }
   .footer-menu {
     img {
       float: right;
@@ -158,6 +164,7 @@ p {
 
       header {
         font-family: nexa-bold;
+        font-size: 1.5rem !important;
       }
       p {
         font-family: nexa-light;
@@ -179,5 +186,12 @@ p {
         float: right;
       }
     }
+  }
+}
+#top-content {
+  font-family: nexa-bold;
+  font-size: 1.2rem;
+  @include sm {
+    font-size: 1rem;
   }
 }

@@ -40,7 +40,11 @@
       background: $button-blue;
       position: absolute;
       left: 0;
-      top: 20%;
+      top: 29%;
+      @include md {
+        position: absolute;
+        top: 26%;
+      }
     }
   }
   @include xs {
@@ -48,13 +52,14 @@
     .info {
       text-align: center;
     }
+
     .card {
-      width: 22rem;
+      width: 21rem;
     }
   }
   @include sm {
     .card {
-      width: 21rem;
+      width: 20rem;
       // width: 100%;
     }
     header,
@@ -73,6 +78,7 @@
     header,
     .info {
       text-align: left;
+      padding-left: 4.5%;
     }
   }
 }
@@ -80,15 +86,45 @@
 .card-group {
   @include md {
     .card {
-      width: 18rem;
+      width: 17rem;
+      margin: 0 auto;
     }
   }
 }
 
 @include md {
-  .card-text {
+  .expert-doc {
+    header,
     p {
       text-align: left;
+    }
+    .card-text {
+      p {
+        text-align: left;
+      }
+    }
+  }
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .card-group {
+    .card {
+      width: 22rem;
+    }
+  }
+  .exclusive-services {
+    .es-wrapper {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+    }
+  }
+  .container {
+    text-align: center;
+    header {
+      text-align: center;
+    }
+    p {
+      text-align: center;
     }
   }
 }

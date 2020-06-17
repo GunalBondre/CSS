@@ -11,7 +11,7 @@
   <body>
     <!-- navbar included -->
     <div class="nav-parent">
-      <!-- <%- include('partials/navbar') %> -->
+      <%- include('partials/navbar') %>
     </div>
     <!-- navbar included -->
 
@@ -30,7 +30,7 @@
           <form action="/users/otpsignin" method="POST">
             <input
               type="tel"
-              class="form-control"
+              class="form-control my-2"
               id="mobile"
               aria-describedby="mobile"
               placeholder="Enter Mobile No"
@@ -44,11 +44,14 @@
               placeholder="Enter Otp"
               name="otp"
             /> -->
-            <p>Not registered <a href="signup">Signup</a></p>
-            <p>Sign in using Email <a href="emailsignin">Email Signin</a></p>
+
             <button type="submit" class="btn btn-primary" id="btn">
               Submit
             </button>
+            <p class="py-2">Not registered? : <a href="signup">Signup</a></p>
+            <p class="py-2">
+              Sign in using Email : <a href="emailsignin">Email Signin</a>
+            </p>
           </form>
         </div>
       </div>

@@ -1,61 +1,95 @@
 @import "../main/breakpoint";
 @import "../font";
-body {
-  background-color: skyblue;
-}
+@import "../theme/config";
 
-.nav-parent {
-  text-align: center;
+html {
+  background-color: $bg-light-blue;
 }
-
+.form-wrapper {
+  padding: 5%;
+}
 .signin {
-  @include xs {
-    width: 100%;
-    padding: 10px;
-    margin-top: 20%;
-    .form-group {
+  background-color: $bg-light-blue;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  .form-group {
+    background-color: $white;
+    padding: 15px;
+    text-align: center;
+    margin: 5%;
+    @media (max-width: 599px) {
+      input {
+        padding: 10%;
+        border-radius: 0%;
+      }
       width: 90%;
-      padding: 10px;
-      margin: 0 auto;
-      background-color: white;
-      .form-control {
-        margin-top: 10px;
-      }
-      header {
-        text-align: center;
-        font-family: nexa-bold;
-        font-size: 1.5rem;
-      }
+      position: absolute;
+      top: 22%;
+      left: 0%;
       #btn {
+        font-size: 1.5rem;
+        padding: 3%;
         width: 100%;
-        margin-top: 10px;
-      }
-      p {
-        text-align: center;
-        padding: 5px;
+        background-color: $bg-dark-blue;
+        border: none;
+        border-radius: 0%;
+        font-family: nexa-light;
+        i {
+          float: right;
+        }
       }
     }
-  }
-
-  @include sm {
-    margin-top: 10%;
-    margin-bottom: 10%;
-    .form-group {
+    @include sm {
+      padding-bottom: 10px;
       width: 70%;
       margin: 0 auto;
-      margin-top: 20px;
+      input {
+        padding: 6%;
+        border-radius: 0%;
+      }
+      #btn {
+        font-size: 1.5rem;
+        width: 100%;
+        background-color: $bg-dark-blue;
+        border: none;
+        border-radius: 0%;
+        font-family: nexa-light;
+        i {
+          float: right;
+        }
+      }
     }
-  }
-  @include md {
-    .form-group {
+    @include md {
       width: 40%;
-      margin-top: 30px;
-      margin-bottom: 20px;
+      position: absolute;
+      top: 26%;
+      left: 30%;
+
+      input {
+        padding: 4%;
+        border-radius: 0%;
+      }
     }
   }
 }
-
 footer {
   text-align: center;
-  padding: 20px;
+  background-color: $bg-light-blue;
+  font-family: nexa-light;
+  font-size: 1rem;
+  @include xs {
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+  @include md {
+    padding: 2% !important;
+  }
+}
+
+#mobile {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px dashed;
 }

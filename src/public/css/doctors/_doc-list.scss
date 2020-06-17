@@ -1,4 +1,8 @@
 @import "../theme/config";
+@import "../font";
+body {
+  overflow-x: hidden;
+}
 
 .left {
   @include xs {
@@ -9,6 +13,11 @@
   }
   @include md {
     display: block;
+  }
+}
+@include xs {
+  .main {
+    width: 100%;
   }
 }
 .doc-wrapper {
@@ -44,7 +53,7 @@
       background: $button-blue;
       position: absolute;
       left: 0;
-      top: 15%;
+      top: 17%;
     }
   }
   .btn {
@@ -54,6 +63,7 @@
   @include xs {
     text-align: center;
     .doc-list {
+      width: 100%;
       display: inline-block;
       .card-body {
         text-align: left;
@@ -71,7 +81,8 @@
       }
     }
     .card {
-      width: 20rem;
+      width: 90%;
+      margin: 0 auto;
       .card-img-top {
         height: 20rem;
       }
@@ -94,36 +105,45 @@
     color: skyblue;
   }
 }
-
-// styles for tabs
-.main {
-  display: flex;
-  flex-direction: row;
-  .left {
-    width: 35%;
-  }
-  .doc-wrapper {
-    width: 65%;
+@include sm {
+  // styles for tabs
+  .main {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    .left {
+      width: 37%;
+    }
+    .doc-wrapper {
+      width: 63%;
+    }
   }
 }
 .doc-wrapper {
-  @include sm {
-    .card {
-      width: 25rem;
-      display: flex;
-      flex-direction: row;
-      .card-body {
-        width: 40%;
-      }
-      .card-img-top {
-        width: 8rem;
-        height: 12rem;
+  .doc-list {
+    @include sm {
+      width: 100%;
+      .card {
+        width: 95%;
+        display: flex;
+        flex-direction: row;
+        .card-body {
+          width: 40%;
+        }
+        .card-img-top {
+          width: 8rem;
+          height: 12rem;
+        }
+        .btn {
+          width: 80%;
+        }
       }
     }
   }
 }
 
 .doc-list {
+  width: 100%;
   @include lg {
     display: flex;
     .card {
@@ -139,18 +159,9 @@
   }
 }
 
-@include lg {
-  .navbar {
-    margin: 0 6rem;
-  }
-  .navbar-nav {
-    margin: 0 auto;
-  }
-}
-
 @include sm {
   .main {
-    padding-top: 5%;
+    padding-top: 1%;
   }
 }
 @media (min-width: 600px) {
@@ -158,8 +169,17 @@
     padding: 4%;
   }
   .left {
-    padding-left: 5%;
+    padding-left: 3%;
     padding-right: 3%;
+    h5 {
+      margin-top: 10px;
+      padding: 10px;
+      background-color: $bg-light-grey;
+      margin: 10px;
+    }
+    p {
+      margin: 10px;
+    }
   }
 }
 @media (max-width: 599px) {
@@ -173,8 +193,16 @@
 }
 
 @media (min-width: 900px) {
+  #bookappointment {
+    width: 40%;
+    border: 0px;
+  }
+  .doc-list {
+    width: 90%;
+  }
+
   .left {
-    padding-left: 5%;
+    // padding-left: 5%;
     h5 {
       margin-top: 10px;
       padding: 10px;
@@ -186,6 +214,24 @@
     font-family: nexa-bold;
     font-size: 1.5rem;
     color: grey;
+  }
+  .main {
+    padding: 2% 2.8%;
+  }
+}
+
+@include md {
+  .card-title {
+    &::before {
+      content: "";
+      display: block;
+      width: 40px;
+      height: 2px;
+      background: $button-blue;
+      position: absolute;
+      left: 0;
+      top: 19% !important;
+    }
   }
 }
 

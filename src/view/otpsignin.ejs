@@ -11,7 +11,7 @@
   <body>
     <!-- navbar included -->
     <div class="nav-parent">
-      <!-- <%- include('partials/navbar') %> -->
+      <%- include('partials/navbar') %>
     </div>
     <!-- navbar included -->
 
@@ -25,10 +25,10 @@
         <div class="form-group">
           <%- include('partials/messages') %>
 
-          <header>Enter Otp</header>
+          <header>OTP</header>
           <hr />
           <form action="/users/welcome" method="POST">
-            <input type="hidden" name="id" value="<%=id%>" />
+            <input type="hidden" name="id" />
             <input
               type="text"
               class="form-control"
@@ -36,7 +36,7 @@
               aria-describedby="mobile"
               placeholder="Enter OTP"
               name="token"
-            /><button type="submit" class="btn btn-primary" id="btn">
+            /><button type="submit" class="btn btn-primary my-3" id="btn">
               Submit
             </button>
           </form>

@@ -8,66 +8,366 @@
   src: url(/Nexa-light.otf);
 }
 
-body {
-  background-color: skyblue;
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
 }
 
-.nav-parent {
-  text-align: center;
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
 }
 
-@media (min-width: 300px) {
-  .signin {
-    width: 100%;
-    padding: 10px;
-    margin-top: 20%;
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.mx-2 {
+  margin: 0 2rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.px-2 {
+  padding: 0 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.mx-3 {
+  margin: 0 3rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.px-3 {
+  padding: 0 3rem;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.mx-4 {
+  margin: 0 4rem;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.py-4 {
+  padding: 4rem 0;
+}
+
+.px-4 {
+  padding: 0 4rem;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.my-5 {
+  margin: 5rem 0;
+}
+
+.mx-5 {
+  margin: 0 5rem;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+.px-5 {
+  padding: 0 5rem;
+}
+
+.m-6 {
+  margin: 6rem;
+}
+
+.my-6 {
+  margin: 6rem 0;
+}
+
+.mx-6 {
+  margin: 0 6rem;
+}
+
+.p-6 {
+  padding: 6rem;
+}
+
+.py-6 {
+  padding: 6rem 0;
+}
+
+.px-6 {
+  padding: 0 6rem;
+}
+
+.m-7 {
+  margin: 7rem;
+}
+
+.my-7 {
+  margin: 7rem 0;
+}
+
+.mx-7 {
+  margin: 0 7rem;
+}
+
+.p-7 {
+  padding: 7rem;
+}
+
+.py-7 {
+  padding: 7rem 0;
+}
+
+.px-7 {
+  padding: 0 7rem;
+}
+
+.m-8 {
+  margin: 8rem;
+}
+
+.my-8 {
+  margin: 8rem 0;
+}
+
+.mx-8 {
+  margin: 0 8rem;
+}
+
+.p-8 {
+  padding: 8rem;
+}
+
+.py-8 {
+  padding: 8rem 0;
+}
+
+.px-8 {
+  padding: 0 8rem;
+}
+
+header {
+  font-family: nexa-bold;
+  font-size: 1.6rem;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  header {
+    font-size: 2rem !important;
   }
+}
+
+p {
+  font-family: nexa-light;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+h2 {
+  font-family: nexa-bold;
+  font-size: 1.4rem;
+  color: #0066cc;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h1 {
+  font-family: nexa-bold;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 0rem;
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h3 {
+  font-family: nexa-bold;
+  font-size: 1.3rem;
+}
+
+html {
+  background-color: #99ccff;
+}
+
+.form-wrapper {
+  padding: 5%;
+}
+
+.signin {
+  background-color: #99ccff;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+.signin .form-group {
+  background-color: #fff;
+  padding: 15px;
+  text-align: center;
+  margin: 5%;
+}
+
+@media (max-width: 599px) {
   .signin .form-group {
     width: 90%;
-    padding: 10px;
-    margin: 0 auto;
-    background-color: white;
+    position: absolute;
+    top: 22%;
+    left: 0%;
   }
-  .signin .form-group .form-control {
-    margin-top: 10px;
-  }
-  .signin .form-group header {
-    text-align: center;
-    font-family: nexa-bold;
-    font-size: 1.5rem;
+  .signin .form-group input {
+    padding: 10%;
+    border-radius: 0%;
   }
   .signin .form-group #btn {
+    font-size: 1.5rem;
+    padding: 3%;
     width: 100%;
-    margin-top: 10px;
+    background-color: #000033;
+    border: none;
+    border-radius: 0%;
+    font-family: nexa-light;
   }
-  .signin .form-group p {
-    text-align: center;
-    padding: 5px;
+  .signin .form-group #btn i {
+    float: right;
   }
 }
 
 @media (min-width: 576px) {
-  .signin {
-    margin-top: 10%;
-    margin-bottom: 10%;
-  }
   .signin .form-group {
+    padding-bottom: 10px;
     width: 70%;
     margin: 0 auto;
-    margin-top: 20px;
+  }
+  .signin .form-group input {
+    padding: 6%;
+    border-radius: 0%;
+  }
+  .signin .form-group #btn {
+    font-size: 1.5rem;
+    width: 100%;
+    background-color: #000033;
+    border: none;
+    border-radius: 0%;
+    font-family: nexa-light;
+  }
+  .signin .form-group #btn i {
+    float: right;
   }
 }
 
 @media (min-width: 767px) {
   .signin .form-group {
     width: 40%;
-    margin-top: 30px;
-    margin-bottom: 20px;
+    position: absolute;
+    top: 26%;
+    left: 30%;
+  }
+  .signin .form-group input {
+    padding: 4%;
+    border-radius: 0%;
   }
 }
 
 footer {
   text-align: center;
-  padding: 20px;
+  background-color: #99ccff;
+  font-family: nexa-light;
+  font-size: 1rem;
+}
+
+@media (min-width: 300px) {
+  footer {
+    padding-bottom: 5%;
+    padding-top: 5%;
+  }
+}
+
+@media (min-width: 767px) {
+  footer {
+    padding: 2% !important;
+  }
+}
+
+#mobile {
+  border-top: none;
+  border-right: none;
+  border-left: none;
+  border-bottom: 2px dashed;
 }
 /*# sourceMappingURL=signin.css.map */

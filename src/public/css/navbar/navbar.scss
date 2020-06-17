@@ -1,0 +1,21 @@
+@import "../main/breakpoint";
+@import "../theme/config";
+@import "../font";
+
+#navbarText {
+  @include xs {
+    text-align: center;
+    img {
+      width: 7rem;
+      height: 3rem;
+    }
+  }
+}
+@include lg {
+  .navbar {
+    margin: 0 4rem;
+  }
+  .navbar-nav {
+    margin: 0 auto;
+  }
+}

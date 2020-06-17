@@ -8,6 +8,16 @@
   src: url(/Nexa-light.otf);
 }
 
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
 .m-1 {
   margin: 1rem;
 }
@@ -200,6 +210,57 @@
   padding: 0 8rem;
 }
 
+header {
+  font-family: nexa-bold;
+  font-size: 1.6rem;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  header {
+    font-size: 2rem !important;
+  }
+}
+
+p {
+  font-family: nexa-light;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+h2 {
+  font-family: nexa-bold;
+  font-size: 1.4rem;
+  color: #0066cc;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h1 {
+  font-family: nexa-bold;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 0rem;
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h3 {
+  font-family: nexa-bold;
+  font-size: 1.3rem;
+}
+
 .container-fluid {
   background-image: -webkit-gradient(linear, left top, right top, from(skyblue), to(transparent)), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist_hero_image.jpg);
   background-image: linear-gradient(to right, skyblue, transparent), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist_hero_image.jpg);
@@ -242,11 +303,12 @@ body p {
 
 .vaccination {
   text-align: center;
-  padding: 1rem;
+  padding: 0rem 1rem;
 }
 
 .vaccination img {
-  max-width: 300px;
+  max-width: 100%;
+  height: auto;
 }
 
 .wrapper .description {
@@ -291,7 +353,7 @@ body p {
     padding: 20px;
     border-radius: 50%;
     border-color: black;
-    background-color: skyblue;
+    background-color: #99ccff;
   }
   .right-sidebar .card-title {
     padding-left: 15px;
@@ -348,7 +410,7 @@ body p {
     background: #0066cc;
     position: absolute;
     left: 0;
-    top: 87%;
+    top: 85%;
   }
   .bottom {
     display: none;
@@ -356,6 +418,12 @@ body p {
 }
 
 @media (min-width: 600px) {
+  .vaccination {
+    width: 40%;
+  }
+  .description {
+    width: 60%;
+  }
   .more-info .card-title {
     text-align: left;
     font-family: nexa-bold;
@@ -370,13 +438,13 @@ body p {
     background: #0066cc;
     position: absolute;
     left: 0;
-    top: 80%;
+    top: 70%;
   }
   .wrapper {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
-    padding: 5%;
+    padding: 2%;
   }
   .wrapper header {
     text-align: left;
@@ -479,6 +547,16 @@ body p {
 }
 
 @media (min-width: 1200px) {
+  .more-info .card-title::before {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 2px;
+    background: #0066cc;
+    position: absolute;
+    left: 0;
+    top: 85%;
+  }
   .container-fluid {
     width: 95%;
   }

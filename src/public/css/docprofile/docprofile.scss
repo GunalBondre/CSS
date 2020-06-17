@@ -4,34 +4,48 @@
 @import "../font";
 .doc__header {
   background-color: $bg-light-blue;
+  width: 100%;
 
   @include xs {
-    padding: 20%;
-  }
-  @include md {
-    padding: 10%;
+    padding: 20% 10%;
+    text-align: center;
   }
 }
 .wrapper {
   padding: 10px;
 }
 .outer {
-  border: 1px dashed;
+  border: 0.5px dashed;
   overflow: hidden;
-  width: 90%;
-  padding: 10px;
   margin: 0 auto;
   summary {
     color: #66b2ff;
   }
 }
 @media (max-width: 599px) {
+  .section1 {
+    h1 {
+      font-family: nexa-bold;
+      color: $button-blue;
+      font-size: 1.5rem;
+      &::before {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: $button-blue;
+        position: absolute;
+        left: 10;
+        top: 85%;
+      }
+    }
+  }
   .doc__header {
     width: 95%;
     margin: 0 auto;
     header {
       font-family: nexa-bold;
-      line-height: 1.6;
+      line-height: 1.4;
       color: white;
       font-size: 1.5rem;
     }
@@ -46,36 +60,112 @@
     text-align: center;
   }
   .outer {
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
     .btn-dark {
-      width: 100%;
+      width: 90%;
     }
     img {
-      max-width: 400px;
+      max-width: 300px;
+      padding: 15px;
     }
-  }
-  .section1 {
-    padding-top: 15px;
-    header {
-      font-family: nexa-bold;
-      font-size: 2rem;
-      padding-left: 10%;
-      color: skyblue;
+
+    .section1 {
+      padding-top: 15px;
+      padding-bottom: 15px;
+      header {
+        font-family: nexa-bold;
+        font-size: 2rem;
+        color: $button-blue;
+        &::before {
+          content: "";
+          display: block;
+          width: 50px;
+          height: 2px;
+          background: $button-blue;
+          position: absolute;
+          left: 10;
+          top: 110%;
+        }
+      }
+      summary {
+        text-align: left;
+        padding-left: 5%;
+        color: $button-blue;
+      }
     }
     p {
-      padding-top: 10px;
       font-family: nexa-light;
       font-size: 1rem;
       text-align: center;
+      padding: 10px;
+      background-color: #e0f1f3;
     }
   }
 }
 @media (min-width: 600px) {
   .section1 {
+    h1 {
+      font-family: nexa-bold;
+      color: $button-blue;
+      font-size: 1.5rem;
+      padding-left: 25px;
+      &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: $button-blue;
+        position: absolute;
+        left: 1.5%;
+        top: 73%;
+      }
+    }
+  }
+  .doc__header {
+    padding: 7%;
+    width: 100%;
+    margin: 0 auto;
+    header {
+      font-family: nexa-bold;
+      line-height: 1.4;
+      color: white;
+      font-size: 1.5rem;
+    }
+    p {
+      font-family: nexa-light;
+      font-size: 1rem;
+      text-align: center;
+      color: white;
+    }
+  }
+  .section1 {
+    padding: 10px;
     header {
       font-family: nexa-bold;
       font-size: 2rem;
-      padding-left: 5%;
-      color: skyblue;
+      color: $button-blue;
+      padding-left: 25px;
+      &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: $button-blue;
+        position: absolute;
+        left: 1.5%;
+        top: 78%;
+      }
+    }
+    summary {
+      color: $button-blue;
+      font-family: nexa-light;
+      padding-left: 15px;
+    }
+    p {
+      background-color: #e0f1f3;
+      padding: 10px;
     }
   }
   .outer {
@@ -91,14 +181,55 @@
       }
     }
   }
+  // .bottom {
+  //   width: 95%;
+  //   margin: 0 auto;
+  // }
+  // .footer-section {
+  //   width: 95%;
+  //   margin: 0 auto;
+  // }
 }
 @media (min-width: 1200px) {
+  .doc__header {
+    text-align: left;
+    p {
+      text-align: left;
+    }
+  }
+  .section1 {
+    h1 {
+      font-family: nexa-bold;
+      color: $button-blue;
+      font-size: 1.5rem;
+      &::before {
+        content: "";
+        display: block;
+        width: 50px;
+        height: 2px;
+        background: $button-blue;
+        position: absolute;
+        left: 5%;
+        top: 72%;
+      }
+    }
+  }
   .section1 {
     header {
       font-family: nexa-bold;
       font-size: 2rem;
-      padding-left: 10%;
-      color: skyblue;
+      padding-left: 2%;
+      color: $button-blue;
+      &::before {
+        content: "";
+        display: block;
+        width: 30px;
+        height: 2px;
+        background: $button-blue;
+        position: absolute;
+        left: 5%;
+        top: 77%;
+      }
     }
   }
   .wrapper {
@@ -107,4 +238,12 @@
       padding: 20px;
     }
   }
+  // .footer-section {
+  //   width: 90%;
+  //   margin: 0 auto;
+  // }
+  // .bottom {
+  //   width: 95%;
+  //   margin: 0 auto;
+  // }
 }

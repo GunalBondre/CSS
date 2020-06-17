@@ -8,6 +8,16 @@
   src: url(/Nexa-light.otf);
 }
 
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
 .m-1 {
   margin: 1rem;
 }
@@ -200,6 +210,57 @@
   padding: 0 8rem;
 }
 
+header {
+  font-family: nexa-bold;
+  font-size: 1.6rem;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  header {
+    font-size: 2rem !important;
+  }
+}
+
+p {
+  font-family: nexa-light;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+h2 {
+  font-family: nexa-bold;
+  font-size: 1.4rem;
+  color: #0066cc;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h1 {
+  font-family: nexa-bold;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 0rem;
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h3 {
+  font-family: nexa-bold;
+  font-size: 1.3rem;
+}
+
 .cucover {
   background-image: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/contactUs.png);
   background-repeat: no-repeat;
@@ -237,6 +298,9 @@
 }
 
 @media (min-width: 600px) {
+  .footer-section {
+    padding: 3.5%;
+  }
   .footer-menu img {
     float: right;
   }
@@ -308,6 +372,9 @@
 }
 
 @media (min-width: 1200px) {
+  .footer-section {
+    padding: 4.5% !important;
+  }
   .footer-menu img {
     float: right;
   }
@@ -377,6 +444,7 @@ p {
   }
   .main .left-wrapper header {
     font-family: nexa-bold;
+    font-size: 1.5rem !important;
   }
   .main .left-wrapper p {
     font-family: nexa-light;
@@ -398,6 +466,17 @@ p {
   }
   .main form .btn {
     float: right;
+  }
+}
+
+#top-content {
+  font-family: nexa-bold;
+  font-size: 1.2rem;
+}
+
+@media (min-width: 576px) {
+  #top-content {
+    font-size: 1rem;
   }
 }
 /*# sourceMappingURL=main.css.map */

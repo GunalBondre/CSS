@@ -24,7 +24,7 @@
           <form action="/users/emailsignin" method="POST">
             <input
               type="email"
-              class="form-control"
+              class="form-control my-2"
               id="email"
               aria-describedby="emailHelp"
               placeholder="Enter Email"
@@ -38,11 +38,16 @@
               placeholder="Enter password"
               name="password"
             />
-            <p>Not registered <a href="signup">Signup</a></p>
-            <p>Sign in using Mobile no <a href="signin">Mobile Signin</a></p>
-            <button type="submit" class="btn btn-primary" id="btn">
-              Submit
+            <p class="py-2" style="float: left;">
+              <a href="signin">Otp Signin</a>
+            </p>
+            <p class="py-2" style="float: right;">
+              <a href="#">Forgot Password</a>
+            </p>
+            <button type="submit" class="btn btn-primary my-2" id="btn">
+              Sign In <i class="fas fa-sign-in-alt"></i>
             </button>
+            <p class="py-3">Not registered? : <a href="signup">Signup</a></p>
           </form>
         </div>
       </div>

@@ -1,11 +1,264 @@
 @font-face {
   font-family: nexa-bold;
-  src: url("../../../../font/Nexa-Bold.otf") format("opentype");
+  src: url(/Nexa-Bold.otf);
 }
 
 @font-face {
   font-family: nexa-light;
-  src: url("../../../../font/Nexa-light.otf") format("opentype");
+  src: url(/Nexa-light.otf);
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.mx-2 {
+  margin: 0 2rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.px-2 {
+  padding: 0 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.mx-3 {
+  margin: 0 3rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.px-3 {
+  padding: 0 3rem;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.mx-4 {
+  margin: 0 4rem;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.py-4 {
+  padding: 4rem 0;
+}
+
+.px-4 {
+  padding: 0 4rem;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.my-5 {
+  margin: 5rem 0;
+}
+
+.mx-5 {
+  margin: 0 5rem;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+.px-5 {
+  padding: 0 5rem;
+}
+
+.m-6 {
+  margin: 6rem;
+}
+
+.my-6 {
+  margin: 6rem 0;
+}
+
+.mx-6 {
+  margin: 0 6rem;
+}
+
+.p-6 {
+  padding: 6rem;
+}
+
+.py-6 {
+  padding: 6rem 0;
+}
+
+.px-6 {
+  padding: 0 6rem;
+}
+
+.m-7 {
+  margin: 7rem;
+}
+
+.my-7 {
+  margin: 7rem 0;
+}
+
+.mx-7 {
+  margin: 0 7rem;
+}
+
+.p-7 {
+  padding: 7rem;
+}
+
+.py-7 {
+  padding: 7rem 0;
+}
+
+.px-7 {
+  padding: 0 7rem;
+}
+
+.m-8 {
+  margin: 8rem;
+}
+
+.my-8 {
+  margin: 8rem 0;
+}
+
+.mx-8 {
+  margin: 0 8rem;
+}
+
+.p-8 {
+  padding: 8rem;
+}
+
+.py-8 {
+  padding: 8rem 0;
+}
+
+.px-8 {
+  padding: 0 8rem;
+}
+
+header {
+  font-family: nexa-bold;
+  font-size: 1.6rem;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  header {
+    font-size: 2rem !important;
+  }
+}
+
+p {
+  font-family: nexa-light;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+h2 {
+  font-family: nexa-bold;
+  font-size: 1.4rem;
+  color: #0066cc;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h1 {
+  font-family: nexa-bold;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 0rem;
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h3 {
+  font-family: nexa-bold;
+  font-size: 1.3rem;
+}
+
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
 }
 
 header {
@@ -88,8 +341,33 @@ p {
 }
 
 @media (max-width: 599px) {
+  .test-wrapper {
+    width: 95%;
+    margin: 0 auto;
+    display: -ms-grid;
+    display: grid;
+    -ms-grid-columns: (1fr)[2];
+        grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    text-align: center;
+  }
+  .test-wrapper header {
+    font-size: 1rem;
+  }
+  .test-wrapper p {
+    font-size: 0.85rem;
+  }
+  .test-wrapper img {
+    width: 50px;
+  }
+  .test-wrapper div {
+    -webkit-box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding: 40px 20px;
+    background-color: #fff;
+  }
   .plan-wrapper {
-    top: 55%;
+    top: 45%;
   }
   .plan-wrapper {
     padding: 10%;
@@ -112,7 +390,7 @@ p {
     text-align: center;
   }
   .plan {
-    height: 133rem;
+    height: 110rem;
   }
   .top-header-image {
     text-align: center;
@@ -139,7 +417,9 @@ p {
     padding-top: 10%;
   }
   .bottom #cost {
-    font-weight: bold;
+    font-weight: bolder;
+    font-family: nexa-bold;
+    font-size: 1.5rem;
   }
   .advance {
     margin-top: 10%;
@@ -156,7 +436,7 @@ p {
     margin: 0 auto;
     position: absolute;
     left: 40%;
-    top: 35.5%;
+    top: 38.5%;
   }
   .comprehensive {
     margin-top: 10%;
@@ -201,9 +481,6 @@ p {
   .plus-benefits {
     padding: 5%;
   }
-  .plus-benefits p {
-    text-align: left;
-  }
   .plus-benefits hr {
     border: 5px solid skyblue;
     width: 80%;
@@ -214,9 +491,37 @@ p {
     border-radius: 50%;
     background: skyblue;
     color: white;
+    margin: 5px;
+    float: left;
+  }
+  .plus-benefits header {
+    text-align: center;
+  }
+  .more-info {
+    padding: 5%;
+  }
+  .more-info i {
+    float: left;
+  }
+  .more-info span {
+    padding: 5px;
   }
   .rating-chart {
     color: #304f86;
+  }
+  .benefit_plus_title {
+    font-family: nexa-light;
+    font-size: 1.2rem;
+    text-align: center;
+    padding-top: 15px;
+  }
+  .benefit_plus_title hr {
+    border: 6px solid skyblue;
+    width: 70%;
+    margin: 10px auto;
+  }
+  .test-included p {
+    text-align: center;
   }
 }
 

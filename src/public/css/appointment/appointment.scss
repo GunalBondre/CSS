@@ -1,24 +1,27 @@
 @import "../font";
 @import "../main/breakpoint";
+@import "../theme/config";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-body {
-  background-color: skyblue;
 }
 
 .wrapper {
+  background-color: $bg-light-blue;
+
   padding: 10px;
   .appoint {
     input {
-      margin: 5px;
+      margin: 7px;
     }
+  }
+  label {
+    font-family: nexa-bold;
+    font-size: 1.1rem;
+    padding: 7px;
   }
 }
 
@@ -26,14 +29,16 @@ body {
   max-width: 550px;
   margin: 0 auto;
   border-radius: 5px;
-  background-color: white;
+  background-color: $white;
   padding: 30px;
 }
 
 h4 {
   text-align: center;
-  color: blue;
+  color: $button-blue;
   padding: 10px;
+  font-family: nexa-bold;
+  font-size: 1.2rem;
 }
 .date {
   width: 100%;
@@ -47,7 +52,7 @@ h4 {
 }
 .button1 {
   width: 100%;
-  background-color: darkblue;
+  background-color: $bg-dark-blue;
   color: white;
   padding: 5px;
 }

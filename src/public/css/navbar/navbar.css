@@ -251,23 +251,32 @@ h3 {
   font-size: 1.3rem;
 }
 
-.bg-white {
-  background-color: #fff;
-  color: #333;
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
 }
 
-.bg-dark-blue {
-  background-color: #000033;
-  color: #fff;
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
 }
 
-.bg-light-blue {
-  background-color: #99ccff;
-  color: #333;
+@media (min-width: 300px) {
+  #navbarText {
+    text-align: center;
+  }
+  #navbarText img {
+    width: 7rem;
+    height: 3rem;
+  }
 }
 
-.bg-light-grey {
-  background-color: #e0e0e0;
-  color: #333;
+@media (min-width: 992px) {
+  .navbar {
+    margin: 0 4rem;
+  }
+  .navbar-nav {
+    margin: 0 auto;
+  }
 }
-/*# sourceMappingURL=theme.css.map */
+/*# sourceMappingURL=navbar.css.map */

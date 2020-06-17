@@ -5,10 +5,18 @@
 
 .exclusive-services {
   // background-color: lightgray;
+
   width: 100%;
   header,
   p {
     text-align: center;
+  }
+  @include md {
+    header,
+    p {
+      text-align: left;
+      padding-left: 4.5%;
+    }
   }
 }
 .es-wrapper {

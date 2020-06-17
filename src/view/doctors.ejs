@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>View Doctors</title>
-    <%- include('partials/bootstrap') %>
     <link rel="stylesheet" href="/reset.css" type="text/css" />
     <link rel="stylesheet" href="/doctors/doctors.css" type="text/css" />
     <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
+    <%- include('partials/bootstrap') %>
   </head>
   <body>
     <!-- navbar included -->
@@ -16,8 +16,11 @@
     </div>
     <!-- navbar included -->
     <!-- first div started -->
-    <div class="container-fluid">
-      <header>Cardiac surgeon in <u>Delhi</u></header>
+
+    <div class="top-container-wrapper">
+      <div class="color-bg">
+        <header>Cardiac surgeon in <u>Delhi</u></header>
+      </div>
     </div>
     <div class="sort-section">
       <h4>Home/Doctor List</h4>
@@ -132,7 +135,9 @@
         <div class="doc-list py-2">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title"><span>Duke sanon</span></h5>
+              <h5 class="card-title">
+                <span><h2>Duke sanon</h2></span>
+              </h5>
               <div class="info-grid">
                 <p class="card-text">
                   <i class="fas fa-medal"></i><span>Surgeon</span>
@@ -150,7 +155,11 @@
                   </p></span
                 >
               </div>
-              <button class="btn btn-primary my-3" type="submit">
+              <button
+                class="btn btn-primary my-3"
+                type="submit"
+                id="bookappointment"
+              >
                 Book Appointment
               </button>
             </div>
@@ -166,7 +175,9 @@
         <div class="doc-list">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title"><span>Duke sanon</span></h5>
+              <h5 class="card-title">
+                <span><h2>Duke sanon</h2></span>
+              </h5>
               <div class="info-grid">
                 <p class="card-text">
                   <i class="fas fa-medal"></i><span>Surgeon</span>
@@ -184,7 +195,11 @@
                   </p></span
                 >
               </div>
-              <button class="btn btn-primary my-3" type="submit">
+              <button
+                class="btn btn-primary my-3"
+                type="submit"
+                id="bookappointment"
+              >
                 Book Appointment
               </button>
             </div>
@@ -201,7 +216,9 @@
         <div class="doc-list py-2">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title"><span>Duke sanon</span></h5>
+              <h5 class="card-title">
+                <span><h2>Duke sanon</h2></span>
+              </h5>
               <div class="info-grid">
                 <p class="card-text">
                   <i class="fas fa-medal"></i><span>Surgeon</span>
@@ -219,7 +236,11 @@
                   </p></span
                 >
               </div>
-              <button class="btn btn-primary my-3" type="submit">
+              <button
+                class="btn btn-primary my-3"
+                type="submit"
+                id="bookappointment"
+              >
                 Book Appointment
               </button>
             </div>
@@ -235,7 +256,6 @@
         </div>
       </div>
     </section>
-
     <%- include('footer') %>
   </body>
 </html>

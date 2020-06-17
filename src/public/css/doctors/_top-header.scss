@@ -1,3 +1,7 @@
+@import "../main/breakpoint";
+@import "../theme/config";
+@import "../font";
+
 .sort-section {
   padding: 10px;
   h4 {
@@ -8,7 +12,12 @@
   }
 }
 
-.container-fluid {
+.top-container-wrapper {
+  background: url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Doctors.png)
+    no-repeat;
+  background-size: cover;
+  background-position: center;
+
   @include xs {
     header {
       display: none;
@@ -16,21 +25,27 @@
   }
   @include sm {
     header {
-      font-size: 1.5rem;
-      font-family: nexa-bold;
       display: block;
-      background-color: skyblue;
-      padding: 5rem;
+      padding: 5rem 1rem;
     }
   }
 
   @include md {
     header {
-      font-size: 2rem;
-      font-family: nexa-bold;
-      display: block;
-      background-color: skyblue;
-      padding: 5rem;
+      padding: 7rem 5rem;
     }
+  }
+}
+
+.color-bg {
+  background-color: skyblue;
+  opacity: 0.9;
+  width: 100%;
+  margin: 0 auto;
+}
+.form-check {
+  input,
+  label {
+    padding: 5px;
   }
 }

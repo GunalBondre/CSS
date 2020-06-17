@@ -10,6 +10,11 @@ router.get("/doctors", ensureAuthenticated, (req, res) => {
   res.render("doctors");
 });
 
+// test route
+router.get("/HIW", (req, res) => {
+  res.render("HIW");
+});
+
 router.get("/hospitals", ensureAuthenticated, (req, res) => {
   res.render("hospitals");
 });

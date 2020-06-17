@@ -60,13 +60,13 @@ function div7() {
     x.style.display = "none";
   }
 }
-//
+
 // (function () {
 //   const buttons = document.getElementsByClassName("section_button");
 
 //   if (buttons !== null) {
 //     for (let i = 0; i < buttons.length; i++) {
-//       buttons.item(i).addEventListener("click", function () {
+//       buttons[i].addEventListener("click", function () {
 //         const div_id = this.getAttribute("data-image-id");
 
 //         // remove the following line and the complete following if to keep all
@@ -76,7 +76,7 @@ function div7() {
 //         );
 //         if (images !== null) {
 //           for (let j = 0; j < images.length; j++) {
-//             images.item(j).classList.remove("shown");
+//             images[j].classList.remove("shown");
 //           }
 //         }
 

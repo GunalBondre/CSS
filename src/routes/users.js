@@ -104,7 +104,9 @@ router.post("/emailsignin", (req, res, next) => {
 router.get("/emailsignin", LoggedIn, (req, res) => {
   res.render("emailsignin");
 });
-
+router.get("/otpsignin", LoggedIn, (req, res) => {
+  res.render("otpsignin");
+});
 router.get("/logout", (req, res) => {
   req.logout();
   req.session.destroy();

@@ -1,26 +1,83 @@
+@import "../theme/config";
+@import "../font";
+
 .HIW {
   width: 100%;
   text-align: center;
-  padding: 20px;
+  // padding: 20px;
+
+  padding-top: 20px;
+
+  @media (max-width: 599px) {
+    .lap-wrapper {
+      display: none;
+    }
+    .wrapper-mob {
+      display: block !important;
+    }
+  }
+  @media (min-width: 600px) {
+    .lap-wrapper {
+      display: block !important;
+    }
+    .wrapper-mob {
+      display: none !important;
+    }
+  }
+  @media (min-device-width: 1200px) {
+    .wrapper-mob {
+      display: none !important;
+    }
+    .lap-wrapper {
+      display: block !important;
+    }
+  }
 }
 
-.HIW header,
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+  .HIW {
+    width: 100%;
+    header,
+    p {
+      text-align: center !important;
+    }
+  }
+}
+
+.HIW,
+header,
 p {
   @include lg {
-    text-align: center;
+    text-align: left;
+    padding-left: 4.7%;
   }
 }
 
 .section_button_label {
   font-family: nexa-bold;
 }
-.section_button {
-  @include xs {
-    padding: 20px;
-    margin: 5px;
-    border-radius: 10px;
-    border: 1px solid black;
-    width: 90%;
-    text-align: left;
+// .wrapper-mob {
+//   .section_button {
+//     @include xs {
+//       padding: 20px;
+//       border-radius: 10px;
+//       border: 1px solid black;
+//       text-align: left;
+//       width: 90%;
+//       margin: 0 auto;
+//     }
+//   }
+// }
+.wrapper-mob {
+  span {
+    color: $button-blue;
+    padding-right: 10px;
+  }
+}
+
+.wrapper {
+  .id_no {
+    color: $button-blue;
+    padding-right: 10px;
   }
 }

@@ -3,7 +3,7 @@ const ensureAuthenticated = (req, res, next) => {
     return next();
   }
   req.flash("error_msg", "please signin to view this resource");
-  res.redirect("/users/signin");
+  res.redirect("/users/emailsignin");
 };
 
 const LoggedIn = (req, res, next) => {
