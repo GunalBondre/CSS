@@ -1,2 +1,25 @@
-<h1>Your mobile no has been verified.</h1>
-<h3>Go to home page - <a href="/">Home</a></h3>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1>Your mobile no has been verified. <%= message %></h1>
+    <h3>Go to home page - <a href="/">Home</a></h3> -->
+    <%- include ('bootstrap') %>
+ <%- include ('partials/navbar') %>
+    <section id="main" role="main">
+      <p class="status"><%= message %> <h3>Go to home page - <a href="/">Home</a></h3></p>
+      <% if(locals.requestId) { %> Try with another PIN if you have one.<br />
+      <form action="/otpsignin" method="post">
+        <div class="fa fa-key"></div>
+        <input type="number" name="pin" placeholder="1234" required />
+        <input type="hidden" name="requestId" value="<%= requestId %>" />
+        <input type="submit" value="Verify PIN" />
+      </form>
+      <% } %>
+    </section>
+  </body>
+</html>

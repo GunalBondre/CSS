@@ -26,7 +26,7 @@ p {
 
   width: 90%;
   position: absolute;
-  top: 65%;
+  top: 90%;
   left: 5%;
   text-align: center;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -72,6 +72,9 @@ p {
   height: 18px;
   background-color: rgb(76, 92, 182);
   border-radius: 5px;
+}
+.bottom {
+  display: none !important;
 }
 
 @media (max-width: 599px) {
@@ -124,7 +127,7 @@ p {
   }
 
   .plan {
-    height: 110rem;
+    height: 80rem;
   }
   .top-header-image {
     text-align: center;
@@ -147,7 +150,7 @@ p {
     font-size: 2rem;
     padding: 5px;
   }
-  .bottom {
+  .bottom-plus {
     padding-top: 10%;
     #cost {
       font-weight: bolder;
@@ -169,7 +172,7 @@ p {
       margin: 0 auto;
       position: absolute;
       left: 40%;
-      top: 38.5%;
+      top: 39%;
     }
   }
   .comprehensive {
@@ -262,6 +265,71 @@ p {
       text-align: center;
     }
   }
+  .feedback {
+    padding: 5%;
+    padding-top: 10%;
+    header {
+      text-align: center;
+      margin-bottom: 10px;
+      span {
+        padding: 5px;
+        background-color: $bg-light-blue;
+        border-radius: 10px;
+      }
+    }
+    .parent {
+      margin: 5% auto;
+      width: 100%;
+      padding: 7% 5%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      .bottom-content {
+        padding-top: 10px;
+        width: 100%;
+        display: flex;
+        .left-img {
+          width: 30%;
+          img {
+            border-radius: 50%;
+          }
+        }
+        .right-content {
+          width: 70%;
+          span {
+            padding: 10px;
+            background-color: $bg-light-blue;
+            border-radius: 10px;
+            color: $white;
+            font-family: nexa-light;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+  .faq {
+    padding: 5%;
+    header {
+      text-align: center;
+    }
+    .questions {
+      padding: 5%;
+      summary {
+        color: $button-blue;
+        font-family: nexa-light;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        padding: 5px;
+      }
+      p {
+        background-color: #e0f1f3;
+        padding: 10px;
+        margin: 5px;
+      }
+    }
+  }
 }
 .hospitals_onboard {
   table {
@@ -301,8 +369,78 @@ p {
   }
 }
 @media (min-width: 600px) {
+  .faq {
+    padding: 3%;
+    header {
+      text-align: left;
+    }
+    .questions {
+      padding: 2%;
+      summary {
+        color: $button-blue;
+        font-family: nexa-light;
+        font-size: 1.2rem;
+        line-height: 1.3;
+        padding: 5px;
+      }
+      p {
+        background-color: #e0f1f3;
+        padding: 10px;
+        margin: 5px;
+      }
+    }
+  }
+  .feedback {
+    padding: 5%;
+    header {
+      text-align: left;
+      margin-bottom: 10px;
+      span {
+        padding: 5px;
+        background-color: $bg-light-blue;
+        border-radius: 10px;
+      }
+    }
+    .feedback-parent {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+    .parent {
+      margin: 5% auto;
+      width: 100%;
+      padding: 7% 5%;
+      display: flex;
+      flex-direction: column;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      .bottom-content {
+        padding-top: 10px;
+        width: 100%;
+        display: flex;
+
+        .left-img {
+          width: 30%;
+          img {
+            border-radius: 50%;
+          }
+        }
+        .right-content {
+          width: 70%;
+          span {
+            padding: 10px;
+            background-color: $bg-light-blue;
+            border-radius: 10px;
+            color: $white;
+            font-family: nexa-light;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
   .plan-wrapper {
-    padding: 10%;
+    padding: 2%;
   }
   p {
     padding-top: 10px;
@@ -311,7 +449,7 @@ p {
     line-height: 1.5;
   }
   .plan {
-    height: 40rem;
+    height: 30rem;
   }
   .top-header-image {
     padding: 5%;
@@ -328,7 +466,8 @@ p {
     header {
       padding-top: 30px;
       font-family: nexa-bold;
-      font-size: 2rem;
+      font-size: 1.8rem;
+      margin-top: 10px;
     }
   }
   .plan-description {
@@ -349,6 +488,7 @@ p {
     }
   }
   .advance {
+    padding-top: 15px;
     background: linear-gradient(to bottom, skyblue, white);
     .populartext {
       padding: 3px;
@@ -359,11 +499,11 @@ p {
       margin: 0 auto;
       position: absolute;
       left: 44%;
-      top: 22%;
+      top: 17%;
     }
   }
   .basic {
-    .bottom {
+    .bottom-plus {
       padding-top: 55%;
     }
   }
@@ -423,7 +563,13 @@ p {
   .benefit_plus_title {
     text-align: center;
     font-family: nexa-bold;
-    font-size: 1.5rem;
+    font-size: 1rem;
+    hr {
+      border: 2px solid skyblue;
+      width: 40%;
+      margin: 0 auto;
+      margin-top: 10px;
+    }
   }
   .benefit-desc {
     header {
@@ -439,9 +585,19 @@ p {
     }
   }
   .plus-benefits {
-    padding: 10px;
+    padding: 5%;
+
+    span {
+      text-align: left;
+    }
+    i {
+      text-align: left;
+    }
   }
   .more-info {
+    div {
+      padding: 10px;
+    }
     i {
       border: 1px;
       padding: 5px;
@@ -467,18 +623,49 @@ p {
       font-weight: bold;
     }
   }
+  .test-included {
+    padding: 10%;
+    p {
+      padding: 10px;
+    }
+    .test-wrapper {
+      text-align: center;
+      gap: 10px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      div {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+          0 6px 20px 0 rgba(0, 0, 0, 0.19);
+        padding: 10%;
+      }
+      img {
+        width: 50px;
+      }
+    }
+  }
 }
 
 @media (min-width: 900px) {
+  .benefit_plus_title {
+    padding: 3%;
+    font-family: nexa-light;
+    font-size: 1.2rem;
+  }
+  .rating {
+    padding-top: 5%;
+  }
   .top-header-image {
-    padding-top: 15%;
+    padding-top: 8%;
   }
   .plan-wrapper {
     padding: 5%;
+    position: absolute;
+    top: 60%;
   }
   .basic {
-    .bottom {
+    .bottom-plus {
       padding-top: 10%;
+      line-height: 1.5;
     }
   }
   .plan-description {
@@ -489,9 +676,10 @@ p {
       font-family: nexa-light;
       font-size: 1rem;
       line-height: 1.5;
+      padding: 5px;
     }
     .populartext {
-      top: 28%;
+      top: 26.5%;
     }
   }
   .user-info {
@@ -506,12 +694,23 @@ p {
     padding: 0 10%;
     .benefit-desc {
       padding-right: 10%;
+      p {
+        padding: 10px;
+      }
     }
   }
   .more-info {
-    padding: 10%;
+    h3 {
+      font-family: nexa-bold;
+      font-size: 1.5rem;
+      padding: 10px;
+    }
+    p {
+      padding: 10px;
+    }
+
     .secondFlex {
-      width: 80%;
+      width: 95%;
       margin: 0 auto;
       .secondleft {
         width: 30%;
@@ -521,11 +720,11 @@ p {
       }
     }
     .thirdFlex {
-      width: 80%;
+      width: 95%;
       margin: 0 auto;
     }
     .fourthflex {
-      width: 80%;
+      width: 95%;
       margin: 0 auto;
     }
     i {
@@ -539,6 +738,38 @@ p {
 }
 
 @media (min-width: 1200px) {
+  .faq {
+    header {
+      padding-left: 20px;
+    }
+  }
+  .feedback {
+    .feedback-parent {
+      display: flex;
+
+      .parent {
+        margin: 5px;
+        padding: 3%;
+      }
+    }
+  }
+  .test-included {
+    #title-60-tests {
+      padding-left: 6%;
+    }
+    padding: 1% 0% !important;
+    .test-wrapper {
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+      padding-left: 5%;
+      div {
+        margin: 10px;
+        padding: 3% 5% !important;
+        text-align: left;
+      }
+    }
+  }
   .user-info {
     text-align: center;
   }

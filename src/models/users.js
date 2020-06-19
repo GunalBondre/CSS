@@ -30,6 +30,9 @@ const UserSchema = new mongoose.Schema({
   select: {
     type: String,
   },
+  isVerified: { type: Boolean, default: false },
+  resetPasswordToken: { type: String },
+  resetPasswordExpires: { type: Date },
 });
 
 const User = mongoose.model("User", UserSchema);

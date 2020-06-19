@@ -15,7 +15,7 @@
     </div>
     <!-- navbar included -->
 
-    <!-- signup form -->
+    <!-- signin form -->
     <% if(error) { %>
 
     <p><%= error %></p>
@@ -27,7 +27,7 @@
 
           <header>OTP</header>
           <hr />
-          <form action="/users/welcome" method="POST">
+          <form action="/users/otpVerifyPass" method="POST">
             <input type="hidden" name="requestId" value="<%= requestId %>" />
             <input
               type="text"

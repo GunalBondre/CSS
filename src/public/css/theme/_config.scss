@@ -68,7 +68,7 @@ header {
   font-size: 1.6rem;
   padding: 1rem 0rem;
   @include md {
-    font-size: 2rem !important;
+    font-size: 1.8rem !important;
   }
 }
 p {
@@ -105,4 +105,5 @@ input {
 h3 {
   font-family: nexa-bold;
   font-size: 1.3rem;
+  line-height: 1.3;
 }

@@ -19,17 +19,9 @@
     <section class="signin">
       <div class="form-wrapper">
         <div class="form-group">
-          <header>Sign In</header>
+          <header>Reset Password</header>
           <hr />
-          <form action="/users/emailsignin" method="POST">
-            <input
-              type="email"
-              class="form-control my-2"
-              id="email"
-              aria-describedby="emailHelp"
-              placeholder="Enter Email"
-              name="email"
-            />
+          <form action="/users/resetPass" method="POST">
             <input
               type="password"
               class="form-control"
@@ -38,16 +30,9 @@
               placeholder="Enter password"
               name="password"
             />
-            <p class="py-2" style="float: left;">
-              <a href="signin">Otp Signin</a>
-            </p>
-            <p class="py-2" style="float: right;">
-              <a href="forgotPass">Forgot Password</a>
-            </p>
             <button type="submit" class="btn btn-primary my-2" id="btn">
-              Sign In <i class="fas fa-sign-in-alt"></i>
+              Reset Password <i class="fas fa-sign-in-alt"></i>
             </button>
-            <p class="py-3">Not registered? : <a href="signup">Signup</a></p>
           </form>
         </div>
       </div>
