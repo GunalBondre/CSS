@@ -45,6 +45,7 @@ app.use(flash());
 app.use(function (req, res, next) {
   res.locals.isAuthenticated = req.isAuthenticated();
   res.locals.requestId = req.requestId;
+  res.locals.isVerified = req.isVerified;
   next();
 });
 app.use((req, res, next) => {

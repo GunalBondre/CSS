@@ -7,7 +7,7 @@ const crypto = require("crypto");
 const { ensureAuthenticated } = require("../models/auth");
 const { LoggedIn } = require("../models/auth");
 const Nexmo = require("nexmo");
-// var nodemailer = require("nodemailer");
+var nodemailer = require("nodemailer");
 
 const nexmo = new Nexmo({
   apiKey: "1d5a96be",
@@ -132,6 +132,15 @@ router.get("/logout", (req, res) => {
 
 router.post("/otpsignin", (req, res) => {
   var number = req.body.mobile;
+  USer.findOne({ number: number }).then((user) => {
+    if (user) {
+      const token = crypto.randomBytes(20).toString("hex");
+      user.update({
+        resetPasswordToken: token,
+        resetPasswordExpires: Date.now() + 3600000,
+      });
+    }
+  });
 
   nexmo.verify.request(
     { number: number, brand: "Awesome Company" },
@@ -169,10 +178,23 @@ router.post("/welcome", (req, res) => {
         console.log(result);
         // Error status code: https://developer.nexmo.com/api/verify#verify-check
         if (result && result.status == "0") {
+          USer.findOne({ resetPasswordToken: req.params.token }).then(
+            (user) => {
+              user.isVerified = true;
+              console.log(user.isVerified);
+              user.save().then((User) => {
+                req.flash("success_msg");
+                res.render("welcome", {
+                  message: "Account verified! 🎉",
+                });
+              });
+            }
+          );
+
           //res.status(200).send('Account verified!');
-          res.render("welcome", {
-            message: "Account verified! 🎉",
-          });
+          // res.render("welcome", {
+          //   message: "Account verified! 🎉",
+          // });
         } else {
           //res.status(401).send(result.error_text);
           res.render("otpsignin", {

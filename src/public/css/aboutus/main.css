@@ -280,14 +280,8 @@ h3 {
 }
 
 .top-container .inner-container-for-header {
-  padding-top: 20%;
-  padding-bottom: 20%;
-}
-
-.top-container header {
-  z-index: 1;
-  font-style: nexa-bold;
-  font-size: 2rem;
+  padding-top: 20% !important;
+  padding-bottom: 20% !important;
 }
 
 .top-container .top-container__paragraph {
@@ -493,9 +487,8 @@ article .article__paragraph {
   }
 }
 
-@media (min-width: 300px) {
-  .top-container header,
-  .top-container p {
+@media (max-width: 599px) {
+  .top-container header {
     padding: 5% 3%;
   }
   .content {

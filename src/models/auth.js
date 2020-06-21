@@ -1,5 +1,5 @@
 const ensureAuthenticated = (req, res, next) => {
-  if (req.isAuthenticated()) {
+  if (req.isAuthenticated() || req.isVerified) {
     return next();
   }
   req.flash("error_msg", "please signin to view this resource");

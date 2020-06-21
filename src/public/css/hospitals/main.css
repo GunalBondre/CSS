@@ -509,6 +509,15 @@ h3 {
   }
 }
 
+.form-check input,
+.form-check label {
+  padding: 5px;
+}
+
+.left p {
+  padding: 10px;
+}
+
 @font-face {
   font-family: nexa-bold;
   src: url(/Nexa-Bold.otf);

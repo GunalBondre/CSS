@@ -17,14 +17,10 @@
     z-index: -1;
   }
   .inner-container-for-header {
-    padding-top: 20%;
-    padding-bottom: 20%;
+    padding-top: 20% !important;
+    padding-bottom: 20% !important;
   }
-  header {
-    z-index: 1;
-    font-style: nexa-bold;
-    font-size: 2rem;
-  }
+
   .top-container__paragraph {
     font-family: nexa-light;
     font-size: 1rem;
@@ -203,10 +199,9 @@ article {
   }
 }
 
-@include xs {
+@media (max-width: 599px) {
   .top-container {
-    header,
-    p {
+    header {
       padding: 5% 3%;
     }
   }

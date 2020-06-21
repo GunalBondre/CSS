@@ -85,11 +85,16 @@ p {
   .wrapper {
     width: 100%;
     .image-wrapper {
+      text-align: center;
       width: 50%;
-      div {
-        width: 50%;
+      img {
+        width: 100%;
+        padding-top: 10%;
+        margin: 0 auto;
         text-align: center;
+        height: 400px;
       }
+
       header,
       p {
         text-align: center;
@@ -97,6 +102,14 @@ p {
     }
     .button-wrapper {
       width: 50%;
+      .section_button {
+        float: left;
+        width: 60%;
+        padding: 35px;
+        &:hover {
+          border-color: $button-blue;
+        }
+      }
     }
   }
 }

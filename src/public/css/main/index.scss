@@ -15,15 +15,77 @@ html {
 }
 
 // adding marker inside textfield
+// @media (min-width: 900px) {
+//   .inputSection {
+//     img {
+//       position: absolute;
+//       left: 19% !important;
+//       top: 38.5% !important;
+//     }
+//   }
+// }
+// @media (max-width: 599px) {
+//   .inputSection {
+//     img {
+//       position: absolute;
+//       left: 85%;
+//       top: 49.5%;
+//     }
+//   }
+// }
+// @media (min-width: 600px) {
+//   .inputSection {
+//     img {
+//       position: absolute;
+//       left: 26%;
+//       top: 65% !important;
+//       width: 15px;
+//     }
+//   }
+// }
+// @media (min-width: 411px) and (max-width: 731px) {
+//   .inputSection {
+//     img {
+//       position: absolute;
+//       left: 85%;
+//       top: 43.5%;
+//     }
+//   }
+// }
+// @media (min-width: 411px) and (max-width: 731px) and (orientation: landscape) {
+//   .inputSection {
+//     img {
+//       position: absolute;
+//       left: 26%;
+//       top: 57.5%;
+//     }
+//   }
+// }
 
 .inputSection #marker {
   position: absolute;
 }
+
 #marker {
   padding: 19px;
   min-width: 30px;
 }
 
+#searchPlace {
+  background-image: url(/target.png);
+  background-size: 20px;
+  background-repeat: no-repeat;
+  background-position: right;
+  border: 0.5px solid !important;
+  padding-right: 20px !important;
+  @media (min-width: 600px) {
+    background-size: 15px;
+  }
+}
+
+#searchDoc {
+  margin-left: 5px;
+}
 // adding marker inside textfield end
 
 .FAH {
@@ -41,7 +103,7 @@ html {
     }
     input[type="text"] {
       width: 90%;
-      padding: 13px;
+      padding: 15px !important;
       margin: 5px;
     }
     #searchBtn {
