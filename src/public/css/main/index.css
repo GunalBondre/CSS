@@ -334,26 +334,26 @@ h3 {
   }
   .wrapper .image-wrapper {
     text-align: center;
-    width: 50%;
+    width: 60%;
   }
   .wrapper .image-wrapper img {
-    width: 100%;
-    padding-top: 10%;
+    width: 80%;
+    height: 50% !important;
     margin: 0 auto;
     text-align: center;
-    height: 400px;
   }
   .wrapper .image-wrapper header,
   .wrapper .image-wrapper p {
     text-align: center;
   }
   .wrapper .button-wrapper {
-    width: 50%;
+    width: 40%;
   }
   .wrapper .button-wrapper .section_button {
     float: left;
-    width: 60%;
+    width: 90%;
     padding: 35px;
+    margin-left: -4.5%;
   }
   .wrapper .button-wrapper .section_button:hover {
     border-color: #0066cc;
@@ -1579,7 +1579,7 @@ html {
     width: 50%;
   }
   .FAH .inputSection {
-    width: 70%;
+    width: 75%;
   }
 }
 
@@ -1810,7 +1810,7 @@ html {
   width: 95%;
   cursor: pointer;
   text-align: left;
-  margin: 20px auto;
+  margin: 5px auto;
 }
 
 .section_button:hover {

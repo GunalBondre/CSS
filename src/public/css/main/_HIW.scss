@@ -86,13 +86,13 @@ p {
     width: 100%;
     .image-wrapper {
       text-align: center;
-      width: 50%;
+      width: 60%;
       img {
-        width: 100%;
-        padding-top: 10%;
+        width: 80%;
+        height: 50% !important;
+
         margin: 0 auto;
         text-align: center;
-        height: 400px;
       }
 
       header,
@@ -101,11 +101,12 @@ p {
       }
     }
     .button-wrapper {
-      width: 50%;
+      width: 40%;
       .section_button {
         float: left;
-        width: 60%;
+        width: 90%;
         padding: 35px;
+        margin-left: -4.5%;
         &:hover {
           border-color: $button-blue;
         }
