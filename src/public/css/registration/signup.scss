@@ -1,10 +1,14 @@
 @import "../main/breakpoint";
 @import "../font";
-body {
-  background-color: skyblue;
+@import "../theme/config";
+.signup {
+  background-color: $bg-light-blue;
 }
 
-.nav-parent {
+#btn {
+  background-color: $bg-dark-blue;
+}
+h2 {
   text-align: center;
 }
 .signup {

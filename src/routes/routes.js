@@ -3,7 +3,7 @@ const router = express.Router();
 const { ensureAuthenticated } = require("../models/auth");
 
 router.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", { success_msg: req.flash("success_msg") });
 });
 
 router.get("/doctors", ensureAuthenticated, (req, res) => {

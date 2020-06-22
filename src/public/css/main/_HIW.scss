@@ -105,12 +105,32 @@ p {
       .section_button {
         float: left;
         width: 90%;
-        padding: 35px;
+        padding: 2.5rem;
         margin-left: -4.5%;
         &:hover {
           border-color: $button-blue;
+          color: black;
         }
       }
+    }
+  }
+}
+
+.section_button {
+  h5 {
+    font-family: nexa-bold;
+    font-size: 1.2rem;
+  }
+  background-color: lightgray;
+  color: lightgray;
+  .id_no {
+    color: lightgray;
+    font-size: 1.2rem;
+  }
+  &:focus {
+    color: black;
+    .id_no {
+      color: $bg-light-blue;
     }
   }
 }

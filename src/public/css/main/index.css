@@ -352,12 +352,36 @@ h3 {
   .wrapper .button-wrapper .section_button {
     float: left;
     width: 90%;
-    padding: 35px;
+    padding: 2.5rem;
     margin-left: -4.5%;
   }
   .wrapper .button-wrapper .section_button:hover {
     border-color: #0066cc;
+    color: black;
   }
+}
+
+.section_button {
+  background-color: lightgray;
+  color: lightgray;
+}
+
+.section_button h5 {
+  font-family: nexa-bold;
+  font-size: 1.2rem;
+}
+
+.section_button .id_no {
+  color: lightgray;
+  font-size: 1.2rem;
+}
+
+.section_button:focus {
+  color: black;
+}
+
+.section_button:focus .id_no {
+  color: #99ccff;
 }
 
 @media (min-device-width: 600px) {
@@ -1470,28 +1494,38 @@ html {
           box-sizing: border-box;
 }
 
+.FAH {
+  position: relative;
+}
+
+.FAH .msg {
+  position: absolute;
+  top: 10%;
+  right: 0;
+  border-radius: 10px;
+}
+
+.FAH {
+  position: relative;
+}
+
+#searchPlace {
+  padding-left: 30px !important;
+}
+
 .inputSection #marker {
   position: absolute;
 }
 
-#marker {
-  padding: 19px;
-  min-width: 30px;
-}
-
-#searchPlace {
-  background-image: url(/target.png);
-  background-size: 20px;
-  background-repeat: no-repeat;
-  background-position: right;
-  border: 0.5px solid !important;
-  padding-right: 20px !important;
-}
-
-@media (min-width: 600px) {
-  #searchPlace {
-    background-size: 15px;
+@media (min-width: 576px) {
+  .inputSection #marker {
+    position: absolute;
+    top: 68%;
   }
+}
+
+.inputSection {
+  opacity: 0.6;
 }
 
 #searchDoc {
@@ -1507,6 +1541,11 @@ html {
   .FAH {
     text-align: center;
     padding: 3rem 0;
+  }
+  .FAH #crosshair {
+    position: absolute;
+    left: 83%;
+    top: 54%;
   }
   .FAH .inputSection {
     width: 100%;
@@ -1532,6 +1571,11 @@ html {
   .FAH {
     text-align: center;
     padding: 2rem 0;
+  }
+  .FAH #crosshair {
+    position: absolute;
+    left: 26%;
+    top: 73%;
   }
   .FAH #marker {
     padding: 14px;
@@ -1584,7 +1628,7 @@ html {
 }
 
 @media (min-width: 767px) {
-  .container-fluid input[type="text"] {
+  .container-fluid1 input[type="text"] {
     width: 100%;
   }
 }
@@ -1749,6 +1793,22 @@ html {
 }
 
 @media (min-device-width: 1200px) {
+  .inputSection #marker {
+    position: absolute;
+    top: 59%;
+  }
+  input,
+  #searchBtn {
+    padding: 1.1rem !important;
+  }
+  .FAH {
+    padding: 10% 4.5%;
+  }
+  #crosshair {
+    position: absolute;
+    left: 19% !important;
+    top: 62% !important;
+  }
   .background #para3,
   .background #para4,
   .background #para5,

@@ -5,18 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Signup</title>
     <%- include('partials/bootstrap') %>
+
     <link rel="stylesheet" href="/reset.css" type="text/css" />
     <link rel="stylesheet" href="/registration/signin.css" type="text/css" />
+    <script type="text/javascript" src="/password_toggle.js"></script>
   </head>
   <body>
     <!-- navbar included -->
-    <div class="nav-parent">
-      <%- include('partials/navbar') %>
-    </div>
+    <div class="nav-parent"></div>
     <!-- navbar included -->
-
     <!-- signup form -->
+    <%- include('partials/navbar') %>
     <section class="signin">
+      <% if(error_msg.length > 0) { %>
+      <div class="alert alert-danger"><%= error_msg %></div>
+      <% }%>
       <div class="form-wrapper">
         <div class="form-group">
           <header>Sign In</header>
@@ -29,6 +32,7 @@
               aria-describedby="emailHelp"
               placeholder="Enter Email"
               name="email"
+              required
             />
             <input
               type="password"
@@ -37,7 +41,14 @@
               aria-describedby="emailHelp"
               placeholder="Enter password"
               name="password"
+              required
             />
+            <i
+              class="fas fa-eye-slash"
+              id="password_toggle"
+              onclick="pass_toggle()"
+            ></i>
+
             <p class="py-2" style="float: left;">
               <a href="signin">Otp Signin</a>
             </p>
@@ -47,7 +58,7 @@
             <button type="submit" class="btn btn-primary my-2" id="btn">
               Sign In <i class="fas fa-sign-in-alt"></i>
             </button>
-            <p class="py-3">Not registered? : <a href="signup">Signup</a></p>
+            <p class="py-1">Not registered? : <a href="signup">Signup</a></p>
           </form>
         </div>
       </div>

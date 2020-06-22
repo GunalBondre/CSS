@@ -42,6 +42,7 @@ app.use(
 app.use(passport.initialize());
 app.use(passport.session());
 app.use(flash());
+
 app.use(function (req, res, next) {
   res.locals.isAuthenticated = req.isAuthenticated();
   res.locals.requestId = req.requestId;

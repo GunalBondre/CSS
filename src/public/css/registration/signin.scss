@@ -9,13 +9,24 @@ html {
   padding: 5%;
 }
 .signin {
+  header {
+    padding: 5px !important;
+  }
   background-color: $bg-light-blue;
   width: 100%;
-  height: 100vh;
   position: relative;
+  @include xs {
+    height: 80vh !important;
+  }
+  @include sm {
+    height: 100vh !important;
+  }
+  @media (min-width: 1200px) {
+    height: 70vh !important;
+  }
   .form-group {
     background-color: $white;
-    padding: 15px;
+    padding: 5px;
     text-align: center;
     margin: 5%;
     @media (max-width: 599px) {
@@ -25,7 +36,7 @@ html {
       }
       width: 90%;
       position: absolute;
-      top: 22%;
+      top: 10%;
       left: 0%;
       #btn {
         font-size: 1.5rem;
@@ -41,12 +52,14 @@ html {
       }
     }
     @include sm {
-      padding-bottom: 10px;
-      width: 70%;
+      width: 50%;
       margin: 0 auto;
+
       input {
         padding: 6%;
         border-radius: 0%;
+        width: 90%;
+        margin: 0 auto;
       }
       #btn {
         font-size: 1.5rem;
@@ -63,9 +76,12 @@ html {
     @include md {
       width: 40%;
       position: absolute;
-      top: 26%;
-      left: 30%;
-
+      top: 20%;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      margin: auto;
+      padding: 10px;
       input {
         padding: 4%;
         border-radius: 0%;
@@ -75,15 +91,18 @@ html {
 }
 footer {
   text-align: center;
-  background-color: $bg-light-blue;
   font-family: nexa-light;
   font-size: 1rem;
-  @include xs {
-    padding-bottom: 5%;
-    padding-top: 5%;
-  }
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
   @include md {
-    padding: 2% !important;
+    bottom: 2%;
+  }
+  @include xs {
+    position: fixed !important;
   }
 }
 
@@ -92,4 +111,37 @@ footer {
   border-right: none;
   border-left: none;
   border-bottom: 2px dashed;
+}
+
+#password_toggle {
+  position: absolute;
+  @include xs {
+    left: 90%;
+    top: 48%;
+  }
+  @media (min-width: 600px) {
+    left: 65%;
+    top: 45%;
+  }
+  @media (min-width: 1200px) {
+    left: 86%;
+    top: 43%;
+  }
+}
+
+.form-group {
+  header {
+    color: #007bff;
+  }
+}
+
+.signin {
+  position: relative;
+  overflow-y: hidden;
+  .alert-success {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    max-width: 200px;
+  }
 }

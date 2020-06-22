@@ -11,7 +11,7 @@
   <body>
     <!-- navbar included -->
     <div class="nav-parent">
-      <!-- <%- include('partials/navbar') %> -->
+      <%- include('partials/navbar') %>
     </div>
     <!-- navbar included -->
 
@@ -20,7 +20,7 @@
       <div class="form-wrapper">
         <div class="form-group">
           <%- include('partials/messages') %>
-          <header>Sign Up</header>
+          <h2>Sign Up</h2>
           <hr />
           <form action="/users/signup" method="POST">
             <input
@@ -89,17 +89,17 @@
                 />
               </div>
             </div>
-            <p style="text-align: center;">
-              Already registered <a href="signin">Signin</a>
-            </p>
 
             <button type="submit" class="btn btn-primary" id="btn">
               Submit
             </button>
+            <p class="py-3" style="text-align: center;">
+              Already registered <a href="emailsignin">Signin</a>
+            </p>
           </form>
         </div>
       </div>
+      <footer>All rights reserved &copy; Tvstra.com</footer>
     </section>
-    <footer>All rights reserved &copy; Tvstra.com</footer>
   </body>
 </html>

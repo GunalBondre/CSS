@@ -8,6 +8,7 @@ const { ensureAuthenticated } = require("../models/auth");
 const { LoggedIn } = require("../models/auth");
 const Nexmo = require("nexmo");
 var nodemailer = require("nodemailer");
+const toastr = require("toastr");
 
 const nexmo = new Nexmo({
   apiKey: "1d5a96be",
@@ -23,7 +24,7 @@ router.get("/signin", LoggedIn, (req, res) => {
 // register
 
 router.get("/signup", LoggedIn, (req, res) => {
-  res.render("signup");
+  res.render("signup", { success_message: req.flash("success_msg") });
 });
 
 router.post("/signup", (req, res) => {
@@ -104,13 +105,19 @@ router.post("/signup", (req, res) => {
 router.post("/emailsignin", (req, res, next) => {
   passport.authenticate("local", {
     successRedirect: "/",
+    success_msg: req.flash("success_msg", "successfully logged in"),
     failureRedirect: "/users/emailsignin",
+    error_msg: req.flash("error_msg", "password or email is wrong"),
     failureFlash: true,
+    // successFlash: "Welcome!",
   })(req, res, next);
 });
 
 router.get("/emailsignin", LoggedIn, (req, res) => {
-  res.render("emailsignin");
+  res.render("emailsignin", {
+    success_msg: req.flash("success_msg"),
+    error_msg: req.flash("error_msg"),
+  });
 });
 router.get("/otpsignin", LoggedIn, (req, res) => {
   res.render("otpsignin");
