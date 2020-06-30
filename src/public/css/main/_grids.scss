@@ -1,22 +1,22 @@
 // .innerWrapper {
 //   @include sm {
 //     display: grid;
-//     gap: 20px;
+//     gap: 10px;
 //     grid-template-columns: repeat(2, 1fr);
 //   }
 //   @include md {
 //     display: grid;
-//     gap: 20px;
+//     gap: 10px;
 //     grid-template-columns: repeat(2, 1fr);
 //   }
 //   @include lg {
 //     display: grid;
-//     gap: 20px;
+//     gap: 10px;
 //     grid-template-columns: repeat(2, 1fr);
 //   }
 //   @include xl {
 //     display: grid;
-//     gap: 20px;
+//     gap: 10px;
 //     grid-template-columns: repeat(2, 1fr);
 //   }
 // }
@@ -75,17 +75,37 @@
   @include xs {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 10px;
   }
 
   @include sm {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 10px;
   }
   @include md {
     display: grid;
     gap: 4px;
     grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .FMTwrapper {
+    .first-grid {
+      display: grid;
+      grid-template-rows: 1fr 2fr;
+      gap: 10px;
+    }
+    .second-grid {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      gap: 10px;
+    }
+    .third-grid {
+      display: grid;
+      grid-template-rows: 1.7fr 2.3fr;
+      gap: 10px;
+    }
   }
 }

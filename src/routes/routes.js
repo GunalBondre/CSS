@@ -58,4 +58,7 @@ router.get("/tvstra-plus", (req, res) => {
   res.render("tvstra-plus");
 });
 
+router.get("/createSchedule", (req, res) => {
+  res.render("createSchedule");
+});
 module.exports = router;

@@ -145,3 +145,36 @@ footer {
     max-width: 200px;
   }
 }
+
+@media (min-width: 1200px) {
+  .form-group {
+    #btn {
+      width: 90% !important;
+      margin-bottom: 3%;
+    }
+
+    #otp {
+      padding-left: 5%;
+    }
+    #fpass {
+      padding-right: 5%;
+    }
+  }
+  .mobile-signin {
+    .form-group {
+      form {
+        padding-top: 20px;
+        #btn {
+          margin: 10px 0px;
+        }
+      }
+    }
+  }
+}
+.form-group {
+  #btn {
+    i {
+      padding-top: 5px;
+    }
+  }
+}

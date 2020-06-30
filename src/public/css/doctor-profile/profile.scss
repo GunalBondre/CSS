@@ -1,0 +1,62 @@
+@import "../theme/config";
+@import "../font";
+
+@media (min-width: 999px) {
+  .right-panel {
+    .header-info-and-button {
+      display: flex;
+      justify-content: space-between;
+      .btn-primary {
+        padding: 5px !important;
+        height: 50%;
+        margin-top: 10px;
+      }
+    }
+    .top {
+      display: flex;
+      .custom-file {
+        width: 50%;
+      }
+      .form-group {
+        width: 50%;
+      }
+    }
+    .middle {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      .form-group {
+        flex: 25%;
+        margin: 10px;
+      }
+    }
+    .bottom {
+      display: flex;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      .form-group {
+        flex: 25%;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+.bootstrap-tagsinput .tag {
+  background: skyblue !important;
+  border: 0.5px solid black;
+  padding: 2px 7px;
+  margin-right: 2px;
+  color: white;
+  border-radius: 4px;
+}
+.bootstrap-tagsinput {
+  text-align: left;
+  white-space: nowrap;
+  overflow: scroll;
+  margin-bottom: 4px !important;
+  padding: 5px;
+  display: block;
+  width: auto;
+  margin: auto 0;
+}

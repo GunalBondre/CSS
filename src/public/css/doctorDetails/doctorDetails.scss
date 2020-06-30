@@ -1,0 +1,119 @@
+@import "../theme/config";
+@import "../font";
+html {
+  box-sizing: border-box;
+}
+.form-wrapper {
+  background-color: $bg-light-blue;
+  height: 100vh;
+  width: 100%;
+  form {
+    width: 50%;
+    margin: 0 auto;
+    .form-group {
+      padding: 15px;
+
+      background-color: $white;
+    }
+  }
+}
+.bootstrap-tagsinput .tag {
+  background: skyblue;
+  border: 0.5px solid black;
+  padding: 2px 7px;
+  margin-right: 2px;
+  color: white;
+  border-radius: 4px;
+}
+@media (max-width: 599px) {
+  form {
+    margin-top: 10%;
+  }
+  .form-group {
+    text-align: center;
+  }
+  form {
+    textarea {
+      width: 99%;
+    }
+    .btn-dark {
+      width: 100%;
+      margin: 3px auto !important;
+    }
+    width: 95% !important;
+    .bootstrap-tagsinput {
+      text-align: left;
+      white-space: nowrap;
+      overflow: scroll;
+      margin-bottom: 4px !important;
+      padding: 5px;
+      display: block;
+      width: auto;
+      margin: auto 0;
+    }
+    #avatar {
+      display: block;
+      margin: 3px auto;
+    }
+  }
+}
+@media (min-width: 600px) {
+  .bootstrap-tagsinput {
+    overflow-y: scroll;
+    margin-bottom: 2px !important;
+    padding: 5px;
+    margin: auto 0;
+    width: 100%;
+    color: skyblue;
+    text-align: left;
+  }
+
+  .form-wrapper {
+    width: 100%;
+    height: 90vh;
+    overflow-y: hidden;
+  }
+  form {
+    width: 70% !important;
+    margin: 0 auto;
+    height: 100vh;
+    overflow-y: auto;
+    .form-group {
+      text-align: center;
+      margin-bottom: 10% !important;
+      margin-top: 10px;
+      textarea {
+        width: 100%;
+      }
+      #avatar {
+        display: inline !important;
+        margin: 3px auto;
+      }
+      #btn1 {
+        width: 70%;
+        margin: 3px auto !important;
+      }
+      #fee {
+        width: 40% !important;
+      }
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .bootstrap-tagsinput {
+    padding: 10px !important;
+    margin-bottom: 7px !important;
+  }
+  input {
+    margin-bottom: 7px;
+    padding: 10px;
+  }
+  textarea {
+    padding: 20px;
+  }
+  #btn1 {
+    width: 50% !important;
+    margin: 3px auto !important;
+  }
+}

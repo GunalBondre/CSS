@@ -6,31 +6,32 @@
     <link rel="stylesheet" href="/reset.css" type="text/css" />
     <link rel="stylesheet" href="/main/index.css" type="text/css" />
     <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
-    
+
     <script type="text/javascript" src="/index.js"></script>
     <script type="text/javascript" src="/hiw-mob.js"></script>
     <script type="text/javascript" src="/flashMessages.js"></script>
-
 
     <%- include('partials/bootstrap') %>
     <script type="text/javascript" src="/glocation.js"></script>
     <script type="text/javascript" src="/docSearch.js"></script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCApDjpZ6lHz-PN0os4RPGU2cRfD8W7BoE&libraries=places&callback=initAutocomplete"
-    async defer></script>   
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCApDjpZ6lHz-PN0os4RPGU2cRfD8W7BoE&libraries=places&callback=initAutocomplete"
+      async
+      defer
+    ></script>
   </head>
   <body>
     <div class="nav-parent">
       <%- include('partials/navbar') %>
     </div>
-   
+
     <div class="top"></div>
 
-    
-    <div class="FAH ">
+    <div class="FAH">
       <% if(success_msg.length > 0) { %>
-        <div class="msg alert alert-success"><%= success_msg %></div>
-        <% }%>
+      <div class="msg alert alert-success"><%= success_msg %></div>
+      <% }%>
       <!-- <div class="msg bg-light ">
         <header class="text-success"><%= success_msg %></header>
       </div> -->
@@ -50,25 +51,21 @@
             class="search"
             placeholder="Ahmedabad"
             id="searchPlace"
-           />
-           <i class="fas fa-crosshairs" id="crosshair"></i>
+          />
+          <i class="fas fa-crosshairs" id="crosshair"></i>
           <input
             type="text"
             class="search"
             id="searchDoc"
             placeholder="Search for Doctor hospital & treatment"
           />
-          <button
-            type="submit"
-            class="btn"
-            id="searchBtn"
-            placeholder="Search"
-          >Search</button>
+          <button type="submit" class="btn" id="searchBtn" placeholder="Search">
+            Search
+          </button>
         </div>
-      </form> 
-   
-  </div>
+      </form>
     </div>
+
     <section class="HIW bg-white">
       <div class="container-HIW">
         <header>How it works</header>
@@ -77,362 +74,380 @@
           needs to be followed so that you get the servicea at its best
         </p>
       </div>
- <%- include('HIW') %>
+      <%- include('HIW') %>
       <div class="wrapper-mob">
         <div class="innerWrapper">
-        <div class="button1">
-        <button
-          type="button"
-          placeholder="01 Fix consultation"
-          class="section_button "
-          onclick="div_1()"
-          autofocus
-        
-        >
-          <label class="section_button_label"
-            ><span class="id_no">01</span> Fix consultation
-          </label>
-        </button>
-      </div>
-        <div id="div_1" style="display: block;">
-          <img
-            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.png
+          <div class="button1">
+            <button
+              type="button"
+              placeholder="01 Fix consultation"
+              class="section_button"
+              onclick="div_1()"
+              autofocus
+            >
+              <label class="section_button_label"
+                ><span class="id_no">01</span> Fix consultation
+              </label>
+            </button>
+          </div>
+          <div id="div_1" style="display: block;">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.png
   "
-            height="300px"
-            width="300px"
-          />
-          <header>Fix consultation</header>
-          <p>
-            This dipicts that user will have to fix appointment first when it
-            select perticular doctor
-          </p>
-        </div>
-      </div>
-      <div class="innerWrapper">
-        <div class="button2">
-        <button
-          type="button"
-          placeholder=" 02 Upload medical records"
-          class="section_button"
-          onclick="div_2()"
-        >
-          <label class="label2"><span> 02</span> </label> Upload medical records
-        </button>
-      </div>
-        <div id="div_2" style="display: none;">
-          <img
-          src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img2.png"
-          height="300px"
-          width="300px"
-        />
-        <header>Upload Medical Record</header>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita eligendi neque placeat dolores iusto cum dolorem </p>
-
-        </div>
-      </div>
-      <div class="innerWrapper">
-        <div class="button3">
-        <button
-          type="button"
-          placeholder=" 03 Consult with doctor"
-          class="section_button"
-          onclick="div_3()"
-        >
-          <label class="label3"> <span> 03</span> </label> Consult with doctor
-        </button></div>
-        <div id="div_3" style="display: none;">
-          <img
-          src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img3.jpeg"
-          height="300px"
-          width="300px"
-        />
-        <header>Consult With Doctors</header>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi soluta aliquam corporis non </p>
-        </div>
-      </div>
-      <div class="innerWrapper">
-        <div class="button4">
-        <button
-          type="button"
-          placeholder=" 04 Fix surgery"
-          class="section_button"
-          onclick="div_4()"
-        >
-          <label class="label4"> <span>04</span>  </label> Fix surgery
-        </button>
-      </div>
-        <div id="div_4" style="display: none;">
-          <img
-          src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img4.jpeg"
-          height="300px"
-          width="300px"
-        />
-        <header>Fix Surgery</header>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem, dolorem esse dolorum laudantium sed ut, impedit possimus </p>
-        </div>
-      </div>
-      <div class="innerWrapper">
-        <div class="button5">
-        <button
-          type="button"
-          placeholder=" 05 Hospital sent estimates"
-          class="section_button"
-          onclick="div_5()"
-        >
-          <label class="label5"><span>05</span>  </label> Hospital sent estimates
-        </button>
-      </div>
-        <div id="div_5" style="display: none;">
-          <img
-            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img5.jpg"
-            height="300px"
-            width="300px"
-          />
-          <header>Hospital Sent Estimates</header>
-          <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Laboriosam earum quo dicta ratione autem </p>
-        
-        </div>
-      </div>
-      <div class="innerWrapper">
-        <div class="button6">
-        <button
-          type="button"
-          placeholder=" 06 Payment"
-          class="section_button"
-          onclick="div_6()"
-        >
-          <label class="label6"><span>06</span>  </label> Payment
-        </button>
-      </div>
-        <div id="div_6" style="display: none;">
-          <img
-          src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img6.jpg"
-          height="300px"
-          width="300px"
-        />
-        <header>Payment</header>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis exercitationem error quidem. Obcaecati sit perferendis necessitatibus id repudiandae deserunt veniam nobis quia tempore! Debitis.</p>
-    
-        </div>
-      </div>
-      <div class="innerWrapper">
-        <div class="button7">
-        <button
-          type="button"
-          placeholder=" 07 Surgery completed"
-          class="section_button"
-          onclick="div_7()"
-        >
-          <label class="label7"><span>07</span>  </label> Surgery completed
-        </button>
-      </div>
-        <div id="div_7" style="display: none;">
-          <img
-          src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img7.jpeg"
-          height="300px"
-          width="300px"
-        />
-        <header>Surgery completed</header>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Et est, nobis harum facere sunt pariatur obcaecati maiores eveniet, </p>
-       
-        </div>
-      </div>
-    <!-- </div> -->
-
-      <!-- <div class="wrapper">
-        <div class="button-wrapper">
-          <div class="button">
-            <button type="button" placeholder="01 Fix consultation" class="section_button" data-image-id="div1">
-              <span class="id_no">01</span> Fix consultation
-            </button>
-          </div>
-          <div class="button">
-            <button type="button" placeholder="02 Upload medical records" class="section_button" data-image-id="div2">
-              <span class="id_no">02</span> Upload medical records
-            </button>
-          </div>
-          <div class="button">
-            <button type="button" placeholder="03 Consult with doctor" class="section_button" data-image-id="div3">
-              <span class="id_no">03</span> 03 Consult with doctor
-            </button>
-          </div>
-          <div class="button">
-            <button type="button" placeholder="04 Fix surgery" class="section_button" data-image-id="div4">
-              <span class="id_no">04</span> Fix surgery
-            </button>
-          </div>
-
-          <div class="button">
-            <button type="button" placeholder="05 Hospital sent estimates" class="section_button" data-image-id="div5">
-              <span class="id_no">05</span> Hospital sent estimates
-            </button>
-          </div>
-
-          <div class="button">
-            <button type="button" placeholder="06 Payment" class="section_button" data-image-id="div6">
-              <span class="id_no">06</span> Payment
-            </button>
-          </div>
-          <div class="button">
-            <button type="button" placeholder="07 Surgery completed" class="section_button" data-image-id="div7">
-              <span class="id_no">07</span> Surgery completed
-            </button>
-          </div>
-        </div> -->
-        <!-- <div class="image-wrapper">
-          <div id="div1">
-            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img1.png" height="300px" width="300px">
+              height="300px"
+              width="300px"
+            />
             <header>Fix consultation</header>
             <p>
-              This dipicts that user will have to fix appointment first when it select perticular doctor
+              This dipicts that user will have to fix appointment first when it
+              select perticular doctor
             </p>
           </div>
-          <div id="div2">
-            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img2.png" height="300px" width="300px">
-            <header>Upload Medical Records</header>
+        </div>
+        <div class="innerWrapper">
+          <div class="button2">
+            <button
+              type="button"
+              placeholder=" 02 Upload medical records"
+              class="section_button"
+              onclick="div_2()"
+            >
+              <label class="label2"><span> 02</span> </label> Upload medical
+              records
+            </button>
+          </div>
+          <div id="div_2" style="display: none;">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img2.png"
+              height="300px"
+              width="300px"
+            />
+            <header>Upload Medical Record</header>
             <p>
-              
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Expedita
+              eligendi neque placeat dolores iusto cum dolorem
             </p>
           </div>
-          <div id="div3">
-            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img3.jpeg" height="300px" width="300px">
+        </div>
+        <div class="innerWrapper">
+          <div class="button3">
+            <button
+              type="button"
+              placeholder=" 03 Consult with doctor"
+              class="section_button"
+              onclick="div_3()"
+            >
+              <label class="label3"> <span> 03</span> </label> Consult with
+              doctor
+            </button>
+          </div>
+          <div id="div_3" style="display: none;">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img3.jpeg"
+              height="300px"
+              width="300px"
+            />
             <header>Consult With Doctors</header>
             <p>
-              
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi
+              soluta aliquam corporis non
             </p>
           </div>
-          <div id="div4">
-            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img4.jpeg" height="300px" width="300px">
+        </div>
+        <div class="innerWrapper">
+          <div class="button4">
+            <button
+              type="button"
+              placeholder=" 04 Fix surgery"
+              class="section_button"
+              onclick="div_4()"
+            >
+              <label class="label4"> <span>04</span> </label> Fix surgery
+            </button>
+          </div>
+          <div id="div_4" style="display: none;">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img4.jpeg"
+              height="300px"
+              width="300px"
+            />
             <header>Fix Surgery</header>
-           
+            <p>
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit. Autem,
+              dolorem esse dolorum laudantium sed ut, impedit possimus
+            </p>
           </div>
-
-          <div id="div5">
-            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img5.jpg" height="300px" width="300px">
+        </div>
+        <div class="innerWrapper">
+          <div class="button5">
+            <button
+              type="button"
+              placeholder=" 05 Hospital sent estimates"
+              class="section_button"
+              onclick="div_5()"
+            >
+              <label class="label5"><span>05</span> </label> Hospital sent
+              estimates
+            </button>
+          </div>
+          <div id="div_5" style="display: none;">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img5.jpg"
+              height="300px"
+              width="300px"
+            />
             <header>Hospital Sent Estimates</header>
-           
+            <p>
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+              Laboriosam earum quo dicta ratione autem
+            </p>
           </div>
-          <div id="div6">
-            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img6.jpg" height="300px" width="300px">
+        </div>
+        <div class="innerWrapper">
+          <div class="button6">
+            <button
+              type="button"
+              placeholder=" 06 Payment"
+              class="section_button"
+              onclick="div_6()"
+            >
+              <label class="label6"><span>06</span> </label> Payment
+            </button>
+          </div>
+          <div id="div_6" style="display: none;">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img6.jpg"
+              height="300px"
+              width="300px"
+            />
             <header>Payment</header>
-           
+            <p>
+              Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+              Reiciendis exercitationem error quidem. Obcaecati sit perferendis
+              necessitatibus id repudiandae deserunt veniam nobis quia tempore!
+              Debitis.
+            </p>
           </div>
-          <div id="div7">
-            <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img7.jpeg" height="300px" width="300px">
+        </div>
+        <div class="innerWrapper">
+          <div class="button7">
+            <button
+              type="button"
+              placeholder=" 07 Surgery completed"
+              class="section_button"
+              onclick="div_7()"
+            >
+              <label class="label7"><span>07</span> </label> Surgery completed
+            </button>
+          </div>
+          <div id="div_7" style="display: none;">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/img7.jpeg"
+              height="300px"
+              width="300px"
+            />
             <header>Surgery completed</header>
-           
+            <p>
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Et est,
+              nobis harum facere sunt pariatur obcaecati maiores eveniet,
+            </p>
           </div>
-        </div> -->
+        </div>
       </div>
-
-    
-      </div>
-
     </section>
     <section class="expert-doc bg-dark-blue py-4">
       <div class="container-fluid">
         <header>World Class Expert Doctors</header>
         <p class="info py-2">
-          The university of texas southestern medical center has been long renowed medical center 
-          But until 80s you couldnt go there. Now with addition of aston center and zale lipsy hospital
-          UT southern is also mecca for patients
+          The university of texas southestern medical center has been long
+          renowed medical center But until 80s you couldnt go there. Now with
+          addition of aston center and zale lipsy hospital UT southern is also
+          mecca for patients
         </p>
       </div>
-    <div class="row">
-      <div class="card-group">
-        <div class="card " >
-          <img class="card-img-top" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg" class="img-fluid w-100" style="height: 20rem;"   alt="Card image cap">
-          <div class="card-body" >
-            <h5 class="card-title"><h2>Duke sanson</h2></h5>
-            <div class="card-text"> <p>Neuro surgeon</p> <p>chain department of neurology</p> <p>Australia</p> </div>
+      <div class="row">
+        <div class="card-group">
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg"
+              class="img-fluid w-100"
+              style="height: 20rem;"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><h2>Duke sanson</h2></h5>
+              <div class="card-text">
+                <p>Neuro surgeon</p>
+                <p>chain department of neurology</p>
+                <p>Australia</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--004.jpg"
+              class="img-fluid w-100"
+              style="height: 20rem;"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><h2>Rose Moon</h2></h5>
+              <div class="card-text">
+                <p>Plastic Surgeon</p>
+                <p>Department of plastic and reconstructive surgery</p>
+                <p>Dubai</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg"
+              class="img-fluid w-100"
+              style="height: 20rem;"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><h2>Georgia Peter</h2></h5>
+              <div class="card-text">
+                <p>Brest cancer surgeon</p>
+                <p>Director. UT. Southwest</p>
+                <p>London</p>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              class="card-img-top"
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--003.jpg"
+              class="img-fluid w-100"
+              style="height: 20rem;"
+              alt="Card image cap"
+            />
+            <div class="card-body">
+              <h5 class="card-title"><h2>Charlie Moon</h2></h5>
+              <div class="card-text">
+                <p>Cardiac Surgeon</p>
+                <p>MBBS MD FRCP MRCP</p>
+                <p>New Delhi India</p>
+              </div>
+            </div>
           </div>
         </div>
-        <div class="card" >
-          <img class="card-img-top" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--004.jpg" class="img-fluid w-100" style="height: 20rem;"alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"><h2>Rose Moon</h2> </h5>
-            <div class="card-text"> <p>Plastic Surgeon</p> <p>Department of plastic and reconstructive surgery</p> <p> Dubai</p></div>
-          </div>
-        </div>
-        <div class="card" >
-          <img class="card-img-top" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg" class="img-fluid w-100" style="height: 20rem;"  alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"> <h2>Georgia Peter</h2> </h5>
-            <div class="card-text"> <p>Brest cancer surgeon</p> <p>Director. UT. Southwest   </p> <p>London</p> </div>
-          </div>
-        </div>
-        <div class="card" >
-          <img class="card-img-top" src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--003.jpg" class="img-fluid w-100" style="height: 20rem;" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title"> <h2>Charlie Moon</h2> </h5>
-            <div class="card-text"> <p>Cardiac Surgeon</p> <p>MBBS MD FRCP MRCP </p> <p>New Delhi India</p>  </div>
-          </div>
-        </div>
-      </div>
-    </div>
       </div>
     </section>
-   <div class="FMT Features-medical-treatment p-3">
-     <header>Featured Medical Treatment</header>
-     <p class="info_fmt py-2">Join the thousand of others who have exercised their rights to quality healthcare at affordable price</p>
+    <div class="FMT Features-medical-treatment p-3">
+      <header>Featured Medical Treatment</header>
+      <p class="info_fmt py-2">
+        Join the thousand of others who have exercised their rights to quality
+        healthcare at affordable price
+      </p>
       <div class="FMTwrapper">
-        <div class="background">
-          <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg" alt="">
-          <p id="para1">Dentistry <br/><span>50+ Specialists</span></p>
-        </div>             
-        <div class="background">
-          <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg" alt="">
-          <p id="para2">Cancer <br/><span>50+ Specialists</span></p>
-        </div>             
-        <div class="background">
-          <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg" alt="">
-          <p id="para3">Cardiology Treatment <br/><span>50+ Specialists</span></p>
-        </div>      
-        <div class="background">
-          <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg" alt="">
-          <p id="para4">Orthopedic Surgery <br/><span>50+ Specialists</span></p>
-        </div>      
-        <div class="background">
-          <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg" alt="">
-          <p id="para5">Multi-organ transplant <br/><span>50+ Specialists</span></p>
-        </div>             
-        <div class="background">
-          <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg" alt="">
-          <p id="para6">Infertility Treatment <br/><span>50+ Specialists</span></p>
-        </div>      
+        <div class="first-grid">
+          <div class="background">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--009.jpg"
+              alt=""
+            />
+            <p id="para1">Dentistry <br /><span>50+ Specialists</span></p>
+          </div>
+          <div class="background">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--010.jpg"
+              alt=""
+            />
+            <p id="para2">Cancer <br /><span>50+ Specialists</span></p>
+          </div>
+        </div>
+        <div class="second-grid">
+          <div class="background">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--011.jpg"
+              alt=""
+            />
+            <p id="para3">
+              Cardiology Treatment <br /><span>50+ Specialists</span>
+            </p>
+          </div>
+          <div class="background">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--008.jpg"
+              alt=""
+            />
+            <p id="para4">
+              Orthopedic Surgery <br /><span>50+ Specialists</span>
+            </p>
+          </div>
+        </div>
+        <div class="third-grid">
+          <div class="background" id="grid1">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--007.jpg"
+              alt=""
+            />
+            <p id="para5">
+              Multi-organ transplant <br /><span>50+ Specialists</span>
+            </p>
+          </div>
+          <div class="background" id="grid2">
+            <img
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--006.jpg"
+              alt=""
+            />
+            <p id="para6">
+              Infertility Treatment <br /><span>50+ Specialists</span>
+            </p>
+          </div>
+        </div>
       </div>
-    
     </div>
-   <section class="exclusive-services bg-light-grey py-3">
-    <header>Exclusive Services</header>
-    <p >We want you to be comfortable so apart from treating illness we provide other services that you can see</p>
-     <div class="es-wrapper py-3 ">
-      <div class="services"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-01.png" >
-        <p> Travel</p>       
-    </div>
-      <div class="services"><img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-02.png" >
-       <p>Food </p>                        
+    <section class="exclusive-services bg-light-grey py-3">
+      <header>Exclusive Services</header>
+      <p>
+        We want you to be comfortable so apart from treating illness we provide
+        other services that you can see
+      </p>
+      <div class="es-wrapper py-3">
+        <div class="services">
+          <img
+            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-01.png"
+          />
+          <p>Travel</p>
+        </div>
+        <div class="services">
+          <img
+            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-02.png"
+          />
+          <p>Food</p>
+        </div>
+        <div class="services">
+          <img
+            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-03.png"
+          />
+          <p>Accomodation</p>
+        </div>
+        <div class="services">
+          <img
+            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-07.png"
+          />
+          <p>Labs</p>
+        </div>
+        <div class="services">
+          <img
+            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-10.png"
+          />
+          <p>Reports</p>
+        </div>
+        <div class="services">
+          <img
+            src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-06.png"
+          />
+          <p>Ambulance</p>
+        </div>
       </div>
-      <div class="services">
-        <img src ="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-03.png" >
-       <p>Accomodation</p> 
-      </div>
-      <div class="services">
-        <img src ="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-07.png" >
-         <p>Labs</p>
-      </div>
-      <div class="services">
-        <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-10.png" >
-         <p>Reports</p>
-      </div>
-      <div class="services">
-    <img src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/Icons-06.png" >
-      <p>Ambulance
-      </p> </div>
-  </div>
-     </div>
-   </section>
-   <%- include('footer') %>
-
+    </section>
+    <%- include('footer') %>
   </body>
 </html>

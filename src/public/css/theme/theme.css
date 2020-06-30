@@ -235,6 +235,10 @@ input {
   font-family: nexa-light;
 }
 
+label {
+  font-family: nexa-light;
+}
+
 h1 {
   font-family: nexa-bold;
   font-size: 2rem;
@@ -250,6 +254,11 @@ h3 {
   font-family: nexa-bold;
   font-size: 1.3rem;
   line-height: 1.3;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .bg-white {

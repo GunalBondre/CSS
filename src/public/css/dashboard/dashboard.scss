@@ -1,0 +1,65 @@
+@import "../font";
+@import "../theme/config";
+a,
+a:hover,
+a:focus,
+a:active {
+  text-decoration: none;
+  color: inherit;
+}
+
+.wrapper {
+  .left-panel {
+    height: 100vh;
+  }
+  a {
+    color: grey;
+    cursor: pointer;
+
+    &:hover {
+      color: $bg-light-blue;
+      text-decoration: none;
+    }
+    &:active {
+      color: $bg-light-blue;
+    }
+  }
+}
+@media (max-width: 599px) {
+  .left-panel {
+    height: auto !important;
+    padding-bottom: 20px;
+  }
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+  }
+}
+
+@media (min-width: 600px) {
+  .wrapper {
+    display: flex;
+    padding: 10px;
+    width: 100%;
+    .left-panel {
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      width: 30%;
+      padding: 10px;
+      margin-right: 10px;
+    }
+    .right-panel {
+      width: 70%;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
+        0 6px 20px 0 rgba(0, 0, 0, 0.19);
+      padding: 10px;
+    }
+  }
+}
+
+@media (min-width: 1200px) {
+  .right-panel {
+    padding: 10px;
+  }
+}

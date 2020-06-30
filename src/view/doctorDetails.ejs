@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctor details</title>
+    <%- include('partials/bootstrap') %>
+
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+
+    <!-- <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.5/css/bootstrap.min.css"
+    /> -->
+
+    <link
+      rel="stylesheet"
+      href="/doctorDetails/doctorDetails.css"
+      type="text/css"
+    />
+    <link
+      rel="stylesheet"
+      href="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.css"
+    />
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <!-- form starts -->
+    <div class="form-wrapper">
+      <form action="/users/doctorDetails" method="post">
+        <div class="form-group">
+          <header>Welcome <%= name %></header>
+          <p>One step away from becoming part of indias best medical portal</p>
+          <textarea
+            name="bio"
+            id="bio"
+            placeholder="Enter your description"
+          ></textarea>
+
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Speciality"
+                data-role="tagsinput"
+                name="speciality"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Education"
+                name="education"
+                data-role="tagsinput"
+              />
+            </div>
+          </div>
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Treatment"
+                data-role="tagsinput"
+                name="treatment"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Location"
+                name="location"
+                data-role="tagsinput"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Hospital List"
+                data-role="tagsinput"
+                name="hospitalList"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Achievements"
+                name="achievement"
+                data-role="tagsinput"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Awards"
+                data-role="tagsinput"
+                name="awards"
+              />
+            </div>
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Experience"
+                name="experience"
+                data-role="tagsinput"
+              />
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Average fee"
+                name="fee"
+                id="#fee"
+              />
+            </div>
+            <div class="col">
+              <div class="custom-file">
+                <input
+                  type="file"
+                  class="custom-file-input"
+                  id="avatar"
+                  name="avatar"
+                />
+                <label
+                  class="custom-file-label"
+                  for="customFile"
+                  style="text-align: left;"
+                  >Choose file</label
+                >
+              </div>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-dark" id="btn1">
+            Add Fields
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- form ends -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://bootstrap-tagsinput.github.io/bootstrap-tagsinput/dist/bootstrap-tagsinput.min.js"></script>
+  </body>
+</html>

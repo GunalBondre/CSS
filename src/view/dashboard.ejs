@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/dashboard/dashboard.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
+
+    <script type="text/javascript" src="/flashMessages.js"></script>
+
+    <%- include('partials/bootstrap') %>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <div class="wrapper">
+      <div class="left-panel">
+        <header>Dashboard</header>
+        <div class="profile">
+          <a href="/users/profile">General Details</a>
+        </div>
+        <hr />
+
+        <div class="docprofile">
+          <a href="/users/professional_profile">Professional Details</a>
+        </div>
+        <hr />
+        <div class="appointments">
+          <a href="#">Appointments</a>
+        </div>
+        <hr />
+        <div class="create/edit">
+          <a href="/createSchedule">Create/edit appointments</a>
+        </div>
+        <hr />
+        <div class="setting">
+          <a href="#">Settings</a>
+        </div>
+      </div>
+      <div class="right-panel">
+        <h1>right panel</h1>
+      </div>
+    </div>
+  </body>
+</html>

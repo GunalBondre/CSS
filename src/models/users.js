@@ -1,4 +1,6 @@
 const mongoose = require("mongoose");
+const docSchema = require("../models/doctor.model").model("Doctor").schema;
+var deepPopulate = require("mongoose-deep-populate")(mongoose);
 
 const UserSchema = new mongoose.Schema({
   name: {
@@ -30,10 +32,22 @@ const UserSchema = new mongoose.Schema({
   select: {
     type: String,
   },
+  role: {
+    type: String,
+    enum: ["admin", "user", "doctor"],
+    default: "user",
+  },
   isVerified: { type: Boolean, default: false },
   resetPasswordToken: { type: String },
   resetPasswordExpires: { type: Date },
+  prop: {
+    type: mongoose.Schema.Types.ObjectId,
+    ref: "Doctor",
+  },
 });
 
+UserSchema.plugin(deepPopulate);
+
 const User = mongoose.model("User", UserSchema);
+
 module.exports = User;

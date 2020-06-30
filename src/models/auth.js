@@ -1,5 +1,7 @@
+const { locals } = require("../..");
+
 const ensureAuthenticated = (req, res, next) => {
-  if (req.isAuthenticated() || req.isVerified) {
+  if (req.isAuthenticated() || res.locals.isVerified) {
     return next();
   }
   req.flash("error_msg", "please signin to view this resource");

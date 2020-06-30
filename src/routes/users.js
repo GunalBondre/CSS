@@ -5,11 +5,18 @@ const bcrypt = require("bcryptjs");
 const passport = require("passport");
 const crypto = require("crypto");
 const { ensureAuthenticated } = require("../models/auth");
+const mongoose = require("mongoose");
+var deepPopulate = require("mongoose-deep-populate")(mongoose);
 const { LoggedIn } = require("../models/auth");
 const Nexmo = require("nexmo");
 var nodemailer = require("nodemailer");
 const toastr = require("toastr");
-
+const doc = require("../models/doctor.model");
+const methodOverride = require("method-override");
+const { model } = require("../models/doctor.model");
+const ObjectId = require("mongodb").ObjectID;
+require("../models/passport");
+const docSchema = require("../models/doctor.model").model("Doctor").schema;
 const nexmo = new Nexmo({
   apiKey: "1d5a96be",
   apiSecret: "zRAxmYIvV0aDBDWV",
@@ -21,6 +28,11 @@ router.get("/signin", LoggedIn, (req, res) => {
   res.render("signin");
 });
 
+router.get("/doctorDetails", ensureAuthenticated, (req, res) => {
+  res.render("doctorDetails", {
+    success_message: req.flash("success_msg"),
+  });
+});
 // register
 
 router.get("/signup", LoggedIn, (req, res) => {
@@ -29,6 +41,7 @@ router.get("/signup", LoggedIn, (req, res) => {
 
 router.post("/signup", (req, res) => {
   const { name, email, password, select, date, phone, city, state } = req.body;
+  const role = req.body.isDoctor ? "doctor" : "user";
 
   let errors = [];
   //check req fields
@@ -78,6 +91,7 @@ router.post("/signup", (req, res) => {
           phone,
           city,
           state,
+          role,
         });
 
         //hash password
@@ -85,6 +99,7 @@ router.post("/signup", (req, res) => {
           bcrypt.hash(newUser.password, salt, (err, hash) => {
             if (err) throw err;
             newUser.password = hash;
+
             newUser
               .save()
               .then((user) => {
@@ -92,6 +107,7 @@ router.post("/signup", (req, res) => {
                   "success_msg",
                   "you are now registered and can login"
                 );
+
                 res.redirect("/users/emailsignin");
               })
               .catch((err) => console.log(err));
@@ -103,14 +119,33 @@ router.post("/signup", (req, res) => {
 });
 
 router.post("/emailsignin", (req, res, next) => {
-  passport.authenticate("local", {
-    successRedirect: "/",
-    success_msg: req.flash("success_msg", "successfully logged in"),
-    failureRedirect: "/users/emailsignin",
-    error_msg: req.flash("error_msg", "password or email is wrong"),
-    failureFlash: true,
-    // successFlash: "Welcome!",
-  })(req, res, next);
+  USer.findOne({ email: req.body.email }).then((user) => {
+    if (user.role === "doctor") {
+      req.session.name = user.name;
+      req.session.email = user.email;
+      req.session.role = user.role;
+      passport.authenticate("local", {
+        successRedirect: "/users/doctorDetails",
+        success_msg: req.flash("success_msg", "successfully logged in"),
+        failureRedirect: "/users/emailsignin",
+        error_msg: req.flash("error_msg", "password or email is wrong"),
+        failureFlash: true,
+
+        // successFlash: "Welcome!",
+      })(req, res, next);
+    } else {
+      req.session.name = user.name;
+      passport.authenticate("local", {
+        successRedirect: "/",
+        success_msg: req.flash("success_msg", "successfully logged in"),
+        failureRedirect: "/users/emailsignin",
+        error_msg: req.flash("error_msg", "password or email is wrong"),
+        failureFlash: true,
+
+        // successFlash: "Welcome!",
+      })(req, res, next);
+    }
+  });
 });
 
 router.get("/emailsignin", LoggedIn, (req, res) => {
@@ -188,11 +223,20 @@ router.post("/welcome", (req, res) => {
           USer.findOne({ resetPasswordToken: req.params.token }).then(
             (user) => {
               user.isVerified = true;
-              console.log(user.isVerified);
+              req.session.isVerified = user.isVerified;
+              console.log(req.session.isVerified);
+              const otp = req.session.isVerified;
+              console.log(otp);
               user.save().then((User) => {
                 req.flash("success_msg");
                 res.render("welcome", {
                   message: "Account verified! 🎉",
+                  success_msg: req.flash(
+                    "success_msg",
+                    "successfully logged in"
+                  ),
+
+                  otp: otp,
                 });
               });
             }
@@ -322,5 +366,217 @@ router.get("/resetPass/:token", (req, res) => {
     }
   );
 });
+
+router.post("/doctorDetails", (req, res) => {
+  const _id = ObjectId(req.session.passport.user._id);
+  console.log(_id);
+
+  const {
+    bio,
+    speciality,
+    education,
+    treatment,
+    location,
+    hospitalList,
+    achievement,
+    awards,
+    experience,
+    fee,
+    avatar,
+  } = req.body;
+  let errors = [];
+  //check req fields
+
+  if (
+    !bio ||
+    !speciality ||
+    !education ||
+    !treatment ||
+    !location ||
+    !hospitalList ||
+    !experience ||
+    !fee
+  ) {
+    errors.push({ msg: "please fill all details" });
+  }
+  if (errors.length > 0) {
+    res.render("doctorDetails", {
+      errors,
+      bio,
+      speciality,
+      education,
+      treatment,
+      location,
+      hospitalList,
+    });
+  } else {
+    const newDoc = new doc({
+      createdBy: _id,
+      bio,
+      speciality,
+      education,
+      treatment,
+      location,
+      hospitalList,
+      achievement,
+      awards,
+      avatar,
+      fee,
+    });
+    newDoc.save().then((docdetails) => {
+      if (docdetails) {
+        req.session.doc_id = docdetails.id;
+        req.flash("success_msg", "Details saved successfully");
+        res.redirect("/");
+      }
+    });
+  }
+});
+
+// Dashboard get routes
+
+router.get("/dashboard", ensureAuthenticated, (req, res) => {
+  res.render("dashboard", { user: req.user });
+});
+
+// Dashboard post routes
+
+router.post("/dashboard", (req, res) => {
+  res.render("dashboard");
+});
+
+// router.post("/doctor-profile", (req, res) => {
+//   res.render("doctor-profile");
+// });
+
+// profile get route
+router.get("/profile", ensureAuthenticated, (req, res) => {
+  const _id = ObjectId(req.session.passport.user._id);
+
+  USer.findOne({ _id: _id })
+    .then((user, err) => {
+      console.log(user.role);
+      if (user) {
+        res.render("profile", {
+          name: user.name,
+          phone: user.phone,
+          email: user.email,
+          select: user.select,
+          dob: user.date,
+          city: user.city,
+          state: user.state,
+        });
+      }
+    })
+    .catch((err) => console.log(err));
+});
+
+router.post("/profile", (req, res) => {
+  const { name, email, select, dob, phone, city, state } = req.body;
+  const _id = ObjectId(req.session.passport.user._id);
+
+  USer.findOne({ _id: _id })
+    .then((user) => {
+      if (!user) {
+        req.flash("error_msg", "user not found");
+        res.redirect("/users/doctor-profile");
+      } else {
+        let changes = [];
+        for (const [prop, val] of Object.entries({
+          name: name,
+          email: email,
+          phone: phone,
+          select: select,
+          dob: dob,
+          city: city,
+          state: state,
+        })) {
+          if (typeof val !== "undefined") {
+            console.info("changed user." + prop + " to " + val);
+            user[prop] = val;
+            changes.push("user." + prop + " => " + val);
+          } else console.log("property " + prop + " is undefined");
+        }
+        user.save().then((user) => {
+          console.info(
+            "User '" +
+              user.name +
+              "' was saved successfully with " +
+              changes.length +
+              " changes:",
+            changes
+          );
+          req.flash("success_msg", "details updated successfully");
+          res.redirect("/users/profile");
+        });
+      }
+    })
+    .catch((err) => console.log(err));
+});
+router.get("/professional_profile", ensureAuthenticated, (req, res) => {
+  const createdBy = ObjectId(req.session.passport.user._id);
+  doc
+    .findOne({ createdBy: createdBy })
+    .then((user) => {
+      if (user) {
+        res.render("professional_profile", {
+          speciality: user.speciality,
+          education: user.education,
+          treatment: user.treatment,
+          location: user.location,
+          hospitalList: user.hospitalList,
+          awards: user.awards,
+          fee: user.fee,
+          achievements: user.achievements,
+        });
+      }
+    })
+    .catch((err) => console.log(err));
+});
+
+router.post("/professional_profile", (req, res) => {
+  const {
+    speciality,
+    education,
+    treatment,
+    hospitalList,
+    awards,
+    achievements,
+    fee,
+  } = req.body;
+  const createdBy = ObjectId(req.session.passport.user._id);
+  doc.findOne({ createdBy: createdBy }).then((docs) => {
+    if (!docs) {
+      req.flash("error_msg", "details not found");
+      res.redirect("/users/professional-profile");
+    } else {
+      let changes = [];
+      for (const [prop, val] of Object.entries({
+        speciality: speciality,
+        education: education,
+        fee: fee,
+        achievements: achievements,
+        awards: awards,
+        hospitalList: hospitalList,
+        treatment: treatment,
+      })) {
+        if (typeof val !== "undefined") {
+          console.info("changed details of " + prop + " to " + val);
+          docs[prop] = val;
+          changes.push("doc." + prop + " => " + val);
+        } else console.log("property " + prop + " is undefined");
+      }
+      docs.save().then((doc) => {
+        console.log(doc);
+        req.flash("success_msg", "details updated successfully");
+        res.redirect("/users/professional_profile");
+      });
+    }
+  });
+});
+router.get("/doctor-profile", ensureAuthenticated, (req, res) => {
+  res.render("doctor-profile");
+});
+// profile post route
 
 module.exports = router;

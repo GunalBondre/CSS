@@ -15,6 +15,10 @@ require("./src/models/passport")(passport);
 const flash = require("connect-flash");
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
+const methodOverride = require("method-override");
+
+const cors = require("cors");
+app.use(cors());
 
 app.set("views", __dirname + "/src/view/");
 
@@ -25,7 +29,7 @@ app.use(express.static(path.join(__dirname, "/src/public/css/")));
 app.use(express.static(path.join(__dirname, "/src/public/js/")));
 app.use(express.static(path.join(__dirname, "/src/public/font/")));
 
-app.use(cookieParser());
+app.use(cookieParser(""));
 
 app.use(
   session({
@@ -46,7 +50,12 @@ app.use(flash());
 app.use(function (req, res, next) {
   res.locals.isAuthenticated = req.isAuthenticated();
   res.locals.requestId = req.requestId;
-  res.locals.isVerified = req.isVerified;
+  res.locals.isVerified = req.session.isVerified;
+  res.locals.otp = req.session.isVerified;
+  res.locals.name = req.session.name;
+  res.locals.doc_details = req.session.docdetails;
+  res.locals.role = req.session.role;
+  res.locals.currentUser = req.user;
   next();
 });
 app.use((req, res, next) => {
@@ -56,6 +65,7 @@ app.use((req, res, next) => {
 
   next();
 });
+app.use(methodOverride("_method"));
 
 app.use("/", mainRoutes);
 app.use("/users", userRoutes);

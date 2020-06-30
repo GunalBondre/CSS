@@ -1,0 +1,40 @@
+@import "../theme/config";
+@import "../font";
+
+.form-wrapper {
+  background-color: $bg-light-blue;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.inner-wrapper {
+  background-color: $white;
+  padding: 20px;
+  width: 90%;
+  margin: 0 auto;
+}
+#time,
+#interval,
+#addSchedule {
+  width: 100%;
+}
+@media (max-width: 599px) {
+  h3 {
+    font-size: 1rem !important;
+  }
+}
+@media (min-width: 600px) {
+  h3 {
+    font-size: 1rem !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  .form-wrapper {
+    height: 97vh !important;
+    overflow: hidden;
+  }
+  .inner-wrapper {
+    width: 60%;
+  }
+}

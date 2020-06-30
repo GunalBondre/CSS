@@ -25,12 +25,28 @@ module.exports = (passport) => {
     })
   );
 };
-passport.serializeUser(function (user, done) {
-  done(null, user.id);
+// passport.serializeUser(function (user, done) {
+//   done(null, user.id);
+// });
+
+// passport.deserializeUser(function (id, done) {
+//   User.findById(id, function (err, user) {
+//     done(err, user);
+//   });
+// });
+
+passport.serializeUser((user, done) => {
+  var sessionUser = {
+    _id: user._id,
+    name: user.name,
+    email: user.email,
+    roles: user.role,
+  };
+  done(null, sessionUser);
 });
 
-passport.deserializeUser(function (id, done) {
-  User.findById(id, function (err, user) {
-    done(err, user);
-  });
+passport.deserializeUser((sessionUser, done) => {
+  // The sessionUser object is different from the user mongoose collection
+  // it's actually req.session.passport.user and comes from the session collection
+  done(null, sessionUser);
 });

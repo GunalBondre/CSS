@@ -155,19 +155,46 @@ html {
   }
   @media (min-width: 320px) and (max-width: 480px) {
     display: grid;
-    grid-template-rows: repeat(6, 1fr);
-    gap: 20px;
+    gap: 10px;
+    .first-grid {
+      display: grid;
+      gap: 10px;
+    }
+    .second-grid {
+      display: grid;
+      gap: 10px;
+    }
+    .third-grid {
+      display: grid;
+      gap: 10px;
+    }
   }
 
   @media (min-width: 481px) and (max-width: 767px) {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    .first-grid {
+      width: 100%;
+      display: grid;
+      gap: 10px;
+    }
+    .second-grid {
+      width: 100%;
+      display: grid;
+      gap: 10px;
+    }
+    .third-grid {
+      width: 204%;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
   }
   @include md {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
+    gap: 10px;
   }
 }
 
@@ -374,5 +401,12 @@ html {
   #searchBtn {
     margin-left: 5px;
     margin-top: -3px;
+  }
+}
+
+.es-wrapper {
+  p {
+    font-family: nexa-bold;
+    color: grey;
   }
 }

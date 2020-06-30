@@ -12,6 +12,14 @@
   }
 }
 @include lg {
+  #toggler {
+    display: flex;
+    margin-right: 10px !important;
+    #dropdownMenuButton {
+      margin-right: 10px !important;
+    }
+  }
+
   .navbar {
     margin: 0 4rem;
   }
@@ -24,5 +32,9 @@ button {
 }
 
 .nav-link {
+  font-family: nexa-light;
+}
+
+a {
   font-family: nexa-light;
 }
