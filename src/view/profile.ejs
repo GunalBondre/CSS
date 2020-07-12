@@ -14,7 +14,6 @@
   </head>
   <body>
     <%- include('partials/navbar') %>
-    <h2>id is <%= locals.currentUser._id%></h2>
     <div class="wrapper">
       <div class="left-panel">
         <header>Dashboard</header>
@@ -23,6 +22,7 @@
         </div>
         <hr />
 
+        <% if(role==='doctor') {%>
         <div class="docprofile">
           <a href="/users/professional_profile">Professional Details</a>
         </div>
@@ -32,8 +32,10 @@
         </div>
         <hr />
         <div class="create/edit">
-          <a href="#">Create/edit appointments</a>
+          <a href="/createSchedule">Create/edit appointments</a>
         </div>
+        <hr />
+        <%}%>
         <hr />
         <div class="setting">
           <a href="#">Settings</a>

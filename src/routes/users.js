@@ -14,6 +14,7 @@ const toastr = require("toastr");
 const doc = require("../models/doctor.model");
 const methodOverride = require("method-override");
 const { model } = require("../models/doctor.model");
+const User = require("../models/users");
 const ObjectId = require("mongodb").ObjectID;
 require("../models/passport");
 const docSchema = require("../models/doctor.model").model("Doctor").schema;
@@ -25,12 +26,19 @@ const nexmo = new Nexmo({
 // signin page
 
 router.get("/signin", LoggedIn, (req, res) => {
-  res.render("signin");
+  res.render("signin", { message: req.flash("message") });
 });
 
 router.get("/doctorDetails", ensureAuthenticated, (req, res) => {
-  res.render("doctorDetails", {
-    success_message: req.flash("success_msg"),
+  const createdBy = ObjectId(req.session.passport.user._id);
+  doc.findOne({ createdBy: createdBy }).then((user) => {
+    if (user) {
+      res.redirect("/");
+    } else {
+      res.render("doctorDetails", {
+        success_message: req.flash("success_msg"),
+      });
+    }
   });
 });
 // register
@@ -120,30 +128,30 @@ router.post("/signup", (req, res) => {
 
 router.post("/emailsignin", (req, res, next) => {
   USer.findOne({ email: req.body.email }).then((user) => {
-    if (user.role === "doctor") {
-      req.session.name = user.name;
-      req.session.email = user.email;
-      req.session.role = user.role;
-      passport.authenticate("local", {
-        successRedirect: "/users/doctorDetails",
-        success_msg: req.flash("success_msg", "successfully logged in"),
-        failureRedirect: "/users/emailsignin",
-        error_msg: req.flash("error_msg", "password or email is wrong"),
-        failureFlash: true,
+    if (!user) {
+      req.flash("error_msg", "email is not registered please signup");
+      res.redirect("/users/signup");
+    }
+    if (user) {
+      if (user.role === "doctor") {
+        passport.authenticate("local", {
+          successRedirect: "/users/doctorDetails",
+          failureRedirect: "/users/emailsignin",
+          failureFlash: true,
+          successFlash: true,
+        })(req, res, next);
+      } else {
+        req.session.name = user.name;
+        passport.authenticate("local", {
+          successRedirect: "/",
+          success_msg: req.flash("success_msg", "successfully logged in"),
+          failureRedirect: "/users/emailsignin",
+          error_msg: req.flash("error_msg", "password or email is wrong"),
+          failureFlash: true,
 
-        // successFlash: "Welcome!",
-      })(req, res, next);
-    } else {
-      req.session.name = user.name;
-      passport.authenticate("local", {
-        successRedirect: "/",
-        success_msg: req.flash("success_msg", "successfully logged in"),
-        failureRedirect: "/users/emailsignin",
-        error_msg: req.flash("error_msg", "password or email is wrong"),
-        failureFlash: true,
-
-        // successFlash: "Welcome!",
-      })(req, res, next);
+          // successFlash: "Welcome!",
+        })(req, res, next);
+      }
     }
   });
 });
@@ -152,6 +160,7 @@ router.get("/emailsignin", LoggedIn, (req, res) => {
   res.render("emailsignin", {
     success_msg: req.flash("success_msg"),
     error_msg: req.flash("error_msg"),
+    message: req.flash("message"),
   });
 });
 router.get("/otpsignin", LoggedIn, (req, res) => {
@@ -369,6 +378,7 @@ router.get("/resetPass/:token", (req, res) => {
 
 router.post("/doctorDetails", (req, res) => {
   const _id = ObjectId(req.session.passport.user._id);
+  const slot = req.session.slot_id;
   console.log(_id);
 
   const {
@@ -412,6 +422,7 @@ router.post("/doctorDetails", (req, res) => {
   } else {
     const newDoc = new doc({
       createdBy: _id,
+      slot: slot,
       bio,
       speciality,
       education,
@@ -422,10 +433,12 @@ router.post("/doctorDetails", (req, res) => {
       awards,
       avatar,
       fee,
+      experience,
     });
     newDoc.save().then((docdetails) => {
       if (docdetails) {
-        req.session.doc_id = docdetails.id;
+        req.session.doc_id = docdetails._id;
+        console.log(req.session.doc_id);
         req.flash("success_msg", "Details saved successfully");
         res.redirect("/");
       }
@@ -436,7 +449,12 @@ router.post("/doctorDetails", (req, res) => {
 // Dashboard get routes
 
 router.get("/dashboard", ensureAuthenticated, (req, res) => {
-  res.render("dashboard", { user: req.user });
+  const _id = ObjectId(req.session.passport.user._id);
+  USer.findOne({ _id: _id }).then((user) => {
+    if (user) {
+      res.render("dashboard", { user: req.user, role: user.role });
+    }
+  });
 });
 
 // Dashboard post routes
@@ -455,7 +473,6 @@ router.get("/profile", ensureAuthenticated, (req, res) => {
 
   USer.findOne({ _id: _id })
     .then((user, err) => {
-      console.log(user.role);
       if (user) {
         res.render("profile", {
           name: user.name,

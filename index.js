@@ -56,6 +56,8 @@ app.use(function (req, res, next) {
   res.locals.doc_details = req.session.docdetails;
   res.locals.role = req.session.role;
   res.locals.currentUser = req.user;
+  res.locals.slot_id = req.session.slotId;
+  res.locals.location = req.session.location;
   next();
 });
 app.use((req, res, next) => {

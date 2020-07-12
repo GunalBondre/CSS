@@ -1,0 +1,68 @@
+@import "../font";
+@import "../theme/config";
+
+.right-panel {
+  .appointmentSlot {
+    padding: 10px;
+    background-color: $teal-blue;
+    // background: linear-gradient(
+    //   90deg,
+    //   rgba(2, 0, 36, 1) 0%,
+    //   rgba(90, 90, 179, 1) 35%,
+    //   rgba(0, 212, 255, 1) 100%
+    // );
+    margin-bottom: 10px;
+    width: 100%;
+
+    @media (max-width: 599px) {
+      max-height: 300px;
+      .left {
+        display: flex;
+        justify-content: space-between;
+        .date {
+          color: $white !important;
+          margin: 5px;
+        }
+        .time {
+          color: $white;
+        }
+      }
+      .right {
+        text-align: center;
+      }
+    }
+    @media (min-width: 600px) {
+      .left {
+        display: flex;
+        justify-content: space-between;
+        .date {
+          margin: 5px;
+        }
+        .time {
+          color: $white;
+        }
+      }
+      .right {
+        text-align: center;
+      }
+    }
+    @media (min-width: 1200px) {
+      display: flex;
+      justify-content: space-between;
+      .left {
+        display: flex;
+        .time {
+          display: flex;
+          flex-direction: column;
+        }
+      }
+    }
+  }
+}
+
+.date {
+  padding: 10px;
+  background-color: $white;
+  min-width: 100px;
+  text-align: center;
+}

@@ -8,6 +8,16 @@
   src: url(/Nexa-light.otf);
 }
 
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
 .m-1 {
   margin: 1rem;
 }
@@ -261,60 +271,72 @@ html {
           box-sizing: border-box;
 }
 
-@font-face {
-  font-family: nexa-bold;
-  src: url(/Nexa-Bold.otf);
-}
-
-@font-face {
-  font-family: nexa-light;
-  src: url(/Nexa-light.otf);
-}
-
-.form-wrapper {
-  background-color: #99ccff;
-  padding-top: 20px;
-  padding-bottom: 20px;
-}
-
-.inner-wrapper {
-  background-color: #fff;
-  padding: 20px;
-  width: 90%;
-  margin: 0 auto;
-}
-
-.time-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  width: 100%;
-}
-
-.time-wrapper .form-group {
-  width: 50%;
-}
-
-.time-wrapper .form-group #time {
-  width: 95%;
-}
-
-.time-wrapper .form-group #endtime {
-  width: 95%;
-}
-
-#interval,
-#addSchedule,
-#viewSchedule,
-#date {
+.right-panel .appointmentSlot {
+  padding: 10px;
+  background-color: #1ca9c9;
+  margin-bottom: 10px;
   width: 100%;
 }
 
 @media (max-width: 599px) {
-  h3 {
-    font-size: 1rem !important;
+  .right-panel .appointmentSlot {
+    max-height: 300px;
   }
-  .time-wrapper {
+  .right-panel .appointmentSlot .left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .right-panel .appointmentSlot .left .date {
+    color: #fff !important;
+    margin: 5px;
+  }
+  .right-panel .appointmentSlot .left .time {
+    color: #fff;
+  }
+  .right-panel .appointmentSlot .right {
+    text-align: center;
+  }
+}
+
+@media (min-width: 600px) {
+  .right-panel .appointmentSlot .left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .right-panel .appointmentSlot .left .date {
+    margin: 5px;
+  }
+  .right-panel .appointmentSlot .left .time {
+    color: #fff;
+  }
+  .right-panel .appointmentSlot .right {
+    text-align: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .right-panel .appointmentSlot {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .right-panel .appointmentSlot .left {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+  .right-panel .appointmentSlot .left .time {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -323,24 +345,12 @@ html {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .time-wrapper .form-group {
-    width: 100%;
-  }
 }
 
-@media (min-width: 600px) {
-  h3 {
-    font-size: 1rem !important;
-  }
+.date {
+  padding: 10px;
+  background-color: #fff;
+  min-width: 100px;
+  text-align: center;
 }
-
-@media (min-width: 1200px) {
-  .form-wrapper {
-    height: 97vh !important;
-    overflow: hidden;
-  }
-  .inner-wrapper {
-    width: 60%;
-  }
-}
-/*# sourceMappingURL=createSchedule.css.map */
+/*# sourceMappingURL=displaySlot.css.map */

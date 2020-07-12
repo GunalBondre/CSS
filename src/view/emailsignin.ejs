@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Signup</title>
+    <title>Signin</title>
     <%- include('partials/bootstrap') %>
 
     <link rel="stylesheet" href="/reset.css" type="text/css" />
@@ -17,9 +17,10 @@
     <!-- signup form -->
     <%- include('partials/navbar') %>
     <section class="signin">
-      <% if(error_msg.length > 0) { %>
-      <div class="alert alert-danger"><%= error_msg %></div>
+      <% if(message.length>0) { %>
+      <div class="alert alert-danger"><%= message %></div>
       <% }%>
+
       <div class="form-wrapper">
         <div class="form-group">
           <header>Sign In</header>

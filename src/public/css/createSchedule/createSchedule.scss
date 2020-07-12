@@ -13,14 +13,37 @@
   width: 90%;
   margin: 0 auto;
 }
-#time,
+
+.time-wrapper {
+  display: flex;
+  width: 100%;
+  .form-group {
+    width: 50%;
+    #time {
+      width: 95%;
+    }
+    #endtime {
+      width: 95%;
+    }
+  }
+}
+
 #interval,
-#addSchedule {
+#addSchedule,
+#viewSchedule,
+#date {
   width: 100%;
 }
 @media (max-width: 599px) {
   h3 {
     font-size: 1rem !important;
+  }
+  .time-wrapper {
+    display: flex;
+    flex-direction: column;
+    .form-group {
+      width: 100%;
+    }
   }
 }
 @media (min-width: 600px) {

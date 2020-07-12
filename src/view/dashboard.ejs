@@ -21,7 +21,7 @@
           <a href="/users/profile">General Details</a>
         </div>
         <hr />
-
+        <% if(role==='doctor') {%>
         <div class="docprofile">
           <a href="/users/professional_profile">Professional Details</a>
         </div>
@@ -34,6 +34,7 @@
           <a href="/createSchedule">Create/edit appointments</a>
         </div>
         <hr />
+        <%}%>
         <div class="setting">
           <a href="#">Settings</a>
         </div>

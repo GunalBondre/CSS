@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/reset.css" type="text/css" />
     <link rel="stylesheet" href="/main/index.css" type="text/css" />
     <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
-
+    <title><%= mainTitle %></title>
     <script type="text/javascript" src="/index.js"></script>
     <script type="text/javascript" src="/hiw-mob.js"></script>
     <script type="text/javascript" src="/flashMessages.js"></script>
@@ -22,9 +22,7 @@
     ></script>
   </head>
   <body>
-    <div class="nav-parent">
-      <%- include('partials/navbar') %>
-    </div>
+    <%- include('partials/navbar') %>
 
     <div class="top"></div>
 
@@ -43,7 +41,7 @@
         </p>
       </div>
 
-      <form action="#" method="POST">
+      <form action="/doctors" method="POST">
         <div class="inputSection">
           <i class="fas fa-map-marker-alt" id="marker"></i>
           <input
@@ -51,6 +49,7 @@
             class="search"
             placeholder="Ahmedabad"
             id="searchPlace"
+            name="searchPlace"
           />
           <i class="fas fa-crosshairs" id="crosshair"></i>
           <input
@@ -58,6 +57,7 @@
             class="search"
             id="searchDoc"
             placeholder="Search for Doctor hospital & treatment"
+            name="searchQuery"
           />
           <button type="submit" class="btn" id="searchBtn" placeholder="Search">
             Search
@@ -83,7 +83,6 @@
               placeholder="01 Fix consultation"
               class="section_button"
               onclick="div_1()"
-              autofocus
             >
               <label class="section_button_label"
                 ><span class="id_no">01</span> Fix consultation

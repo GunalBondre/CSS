@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
+
+    <link rel="stylesheet" href="/dashboard/dashboard.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="/displaySlot/displayslot.css"
+      type="text/css"
+    />
+
+    <script type="text/javascript" src="/flashMessages.js"></script>
+    <script>
+      $(window).load(function () {
+        $("#exampleModal").modal("show");
+      });
+    </script>
+
+    <%- include('partials/bootstrap') %>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <div class="wrapper">
+      <div class="left-panel">
+        <header>Dashboard</header>
+        <div class="profile">
+          <a href="/users/profile">General Details</a>
+        </div>
+        <hr />
+
+        <div class="docprofile">
+          <a href="/users/professional_profile">Professional Details</a>
+        </div>
+        <hr />
+        <div class="appointments">
+          <a href="#">Appointments</a>
+        </div>
+        <hr />
+        <div class="create/edit">
+          <a href="/createSchedule">Create/edit appointments</a>
+        </div>
+        <hr />
+        <div class="setting">
+          <a href="#">Settings</a>
+        </div>
+      </div>
+      <div class="right-panel">
+        <% if(success_msg.length > 0) { %>
+        <div class="msg alert alert-success"><%= success_msg %></div>
+        <% }%> <% for(let slot in slots){ %>
+        <div class="appointmentSlot">
+          <div class="left">
+            <div class="date">
+              <%= moment(slots[slot].date).format('dddd') %> <%=
+              moment(slots[slot].date).format('LL') %>
+            </div>
+            <div class="time">
+              <div class="hosp"><%= slots[slot].selecthospital %></div>
+              <%= slots[slot].startTime %>
+            </div>
+          </div>
+          <div class="right">
+            <a href="/editSlot/<%=slots[slot].id%>"
+              ><button class="edit btn btn-dark">
+                Edit
+              </button></a
+            >
+            <a href="/deleteSlot/<%=slots[slot].id%>"
+              ><button class="cancel btn btn-dark">Remove</button></a
+            >
+            <a href="/displaySlot"
+              ><button class="view btn btn-dark">View</button></a
+            >
+          </div>
+        </div>
+        <% }%>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination">
+            <% if(hasPreviousPage) { %>
+            <li class="page-item">
+              <a class="page-link" href="?page=<%= previousPage %>">Previous</a>
+            </li>
+            <%}%>
+            <li class="page-item"><a class="page-link" href="?page=1">1</a></li>
+            <li class="page-item"><a class="page-link" href="?page=2">2</a></li>
+
+            <% if (hasNextPage) { %>
+
+            <li class="page-item">
+              <a class="page-link" href="?page=<%= nextPage %>">Next</a>
+            </li>
+            <%}%>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  </body>
+</html>

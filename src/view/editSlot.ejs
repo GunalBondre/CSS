@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/dashboard/dashboard.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="/createSchedule/createSchedule.css"
+      type="text/css"
+    />
+
+    <script type="text/javascript" src="/flashMessages.js"></script>
+
+    <%- include('partials/bootstrap') %>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="left-panel">
+        <header>Dashboard</header>
+        <div class="profile">
+          <a href="/users/profile">General Details</a>
+        </div>
+        <hr />
+
+        <div class="docprofile">
+          <a href="/users/professional_profile">Professional Details</a>
+        </div>
+        <hr />
+        <div class="appointments">
+          <a href="#">Appointments</a>
+        </div>
+        <hr />
+        <div class="create/edit">
+          <a href="/createSchedule">Create/edit appointments</a>
+        </div>
+        <hr />
+        <div class="setting">
+          <a href="#">Settings</a>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="form-wrapper">
+          <div class="inner-wrapper">
+            <header><%=viewTitle%></header>
+            <form action="/editSlot/<%= slot._id %>" method="POST" id="myform">
+              <input type="hidden" name="_id" value="<%= slot._id%>" />
+              <div class="time-wrapper">
+                <div class="form-group">
+                  <label for="ExampleTime"><h3>Select start time</h3></label>
+                  <br />
+                  <input
+                    type="time"
+                    name="startTime"
+                    id="time"
+                    value="<%=slot.startTime%>"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="ExampleTime"><h3>Select end time</h3></label>
+                  <br />
+                  <input
+                    type="time"
+                    name="endtime"
+                    id="endtime"
+                    value="<%=slot.endtime%>"
+                  />
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-dark" id="addSchedule">
+                edit Schedule
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -593,10 +593,6 @@ html {
   src: url(/Nexa-light.otf);
 }
 
-body {
-  overflow-x: hidden;
-}
-
 @media (min-width: 300px) {
   .left {
     display: none;
@@ -615,239 +611,139 @@ body {
   }
 }
 
-@media (min-width: 300px) {
-  .main {
-    width: 100%;
-  }
-}
-
-.doc-wrapper #btn {
-  background-color: #000033;
-}
-
-.doc-wrapper .card-text span {
-  color: black;
-}
-
-.doc-wrapper .card-text i {
-  color: #0066cc;
-}
-
-.doc-wrapper .card-body {
+.card {
   position: relative;
-  color: #0066cc;
-  max-width: 600px;
 }
 
-.doc-wrapper .card-title {
-  font-family: nexa-bold;
-  padding-left: 1.5rem;
+.card i {
   color: #0066cc;
+  margin-right: 10px;
 }
 
-.doc-wrapper .card-title::before {
+.card .card-title {
+  padding-left: 12px;
+}
+
+.card .card-title::before {
   content: "";
   display: block;
-  width: 40px;
+  width: 30px;
   height: 2px;
   background: #0066cc;
   position: absolute;
   left: 0;
-  top: 17%;
-}
-
-.doc-wrapper .btn {
-  background-color: #000033;
-}
-
-@media (min-width: 300px) {
-  .doc-wrapper {
-    text-align: center;
-  }
-  .doc-wrapper .doc-list {
-    width: 100%;
-    display: inline-block;
-  }
-  .doc-wrapper .doc-list .card-body {
-    text-align: left;
-  }
-  .doc-wrapper .doc-list .card-body p {
-    padding: 5px;
-  }
-  .doc-wrapper .doc-list .card-body p i {
-    padding-right: 10px;
-  }
-  .doc-wrapper .doc-list .card-body .btn {
-    width: 17.5rem;
-  }
-  .doc-wrapper .card {
-    width: 90%;
-    margin: 0 auto;
-  }
-  .doc-wrapper .card .card-img-top {
-    height: 20rem;
-  }
-}
-
-.card-body h5 {
-  font-family: nexa-light;
-  font-size: 1.5rem;
-  padding-top: 8px;
-}
-
-.card-body p {
-  font-family: nexa-light;
-  font-size: 1rem;
-}
-
-.card-body i {
-  color: skyblue;
-}
-
-@media (min-width: 576px) {
-  .main {
-    width: 100%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  .main .left {
-    width: 37%;
-  }
-  .main .doc-wrapper {
-    width: 63%;
-  }
-}
-
-@media (min-width: 576px) {
-  .doc-wrapper .doc-list {
-    width: 100%;
-  }
-  .doc-wrapper .doc-list .card {
-    width: 95%;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-  }
-  .doc-wrapper .doc-list .card .card-body {
-    width: 40%;
-  }
-  .doc-wrapper .doc-list .card .card-img-top {
-    width: 8rem;
-    height: 12rem;
-  }
-  .doc-wrapper .doc-list .card .btn {
-    width: 80%;
-  }
-}
-
-.doc-list {
-  width: 100%;
-}
-
-@media (min-width: 992px) {
-  .doc-list {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-  }
-  .doc-list .card {
-    width: 100%;
-  }
-  .doc-list .card .btn {
-    width: 20rem;
-  }
-  .doc-list .info-grid {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: (1fr)[3];
-        grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (min-width: 576px) {
-  .main {
-    padding-top: 1%;
-  }
-}
-
-@media (min-width: 600px) {
-  .sort-section {
-    padding: 4%;
-  }
-  .left {
-    padding-left: 3%;
-    padding-right: 3%;
-  }
-  .left h5 {
-    margin-top: 10px;
-    padding: 10px;
-    background-color: #e0e0e0;
-    margin: 10px;
-  }
-  .left p {
-    margin: 10px;
-  }
+  top: 7.5%;
 }
 
 @media (max-width: 599px) {
-  .sort-section {
-    padding: 10%;
+  .main {
+    width: 100%;
   }
-  .doc-list {
-    width: 75%;
+  .main .doc-wrapper {
+    margin-top: 8%;
+  }
+  .main .doc-wrapper .doc-list {
+    width: 90%;
     margin: 0 auto;
   }
+  .main .doc-wrapper .doc-list img {
+    max-height: 300px;
+    margin: 0 auto;
+  }
+  .main .doc-wrapper .doc-list .button-div {
+    text-align: center;
+  }
+  .main .doc-wrapper .doc-list .button-div button {
+    width: 70%;
+  }
+  .main .doc-wrapper .doc-list .card i {
+    color: #0066cc;
+    margin-right: 10px;
+  }
 }
 
-@media (min-width: 900px) {
-  #bookappointment {
-    width: 40%;
-    border: 0px;
+.sort-section h4 {
+  font-family: nexa-light;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 600px) {
+  .main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 5%;
+    padding: 20px;
   }
-  .doc-list {
-    width: 90%;
+  .main .left {
+    padding-right: 10px;
   }
-  .left h5 {
-    margin-top: 10px;
+  .main .left p {
+    padding-left: 10px;
+  }
+  .main .left h5 {
     padding: 10px;
     background-color: #e0e0e0;
+    margin-bottom: 10px;
   }
-  .sort-section {
-    padding: 3% 6%;
-    font-family: nexa-bold;
-    font-size: 1.5rem;
-    color: grey;
+  .main .card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
-  .main {
-    padding: 2% 2.8%;
+  .main .card .card-img-top {
+    max-width: 200px;
   }
-}
-
-@media (min-width: 767px) {
-  .card-title::before {
+  .main .card .card-title {
+    padding-left: 12px;
+  }
+  .main .card .card-title::before {
     content: "";
     display: block;
-    width: 40px;
+    width: 30px;
     height: 2px;
     background: #0066cc;
     position: absolute;
     left: 0;
-    top: 19% !important;
+    top: 15%;
+  }
+  .main .card .info-grid {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
-.doc-wrapper .card-body .card-text,
-.doc-wrapper .card-body span {
-  font-family: nexa-light;
+@media (min-width: 1200px) {
+  .card-img-top {
+    height: 200px;
+  }
+  .main {
+    width: 100%;
+    padding: 25px;
+  }
+  .main .left {
+    width: 30%;
+    padding-left: 25px;
+  }
+  .main .doc-wrapper-parent {
+    width: 70%;
+  }
+  .main_wrapper__doc_list {
+    padding-bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
 }
 
 @font-face {
