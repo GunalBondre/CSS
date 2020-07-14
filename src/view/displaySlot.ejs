@@ -52,7 +52,10 @@
       <div class="right-panel">
         <% if(success_msg.length > 0) { %>
         <div class="msg alert alert-success"><%= success_msg %></div>
-        <% }%> <% for(let slot in slots){ %>
+        <% }%>
+        <p></p>
+        <% for(let slot in slots){ %>
+
         <div class="appointmentSlot">
           <div class="left">
             <div class="date">
@@ -61,7 +64,7 @@
             </div>
             <div class="time">
               <div class="hosp"><%= slots[slot].selecthospital %></div>
-              <%= slots[slot].startTime %>
+              <%= moment(slots[slot].startTime, "HH:mm").format("hh:mm A") %>
             </div>
           </div>
           <div class="right">

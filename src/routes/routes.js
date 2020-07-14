@@ -5,20 +5,37 @@ const mongoose = require("mongoose");
 const slot = require("../models/slotGenerator.model");
 const ObjectId = require("mongodb").ObjectID;
 var moment = require("moment");
+const MomentRange = require("moment-range");
+var _ = require("underscore");
+
+const Moment = MomentRange.extendMoment(moment);
 const flash = require("connect-flash");
 const doc = require("../models/doctor.model");
 docSchema = require("../models/doctor.model");
 const USer = require("../models/users");
 const Booking = require("../models/appointment.model");
 const slotBooking = require("../models/slotBooking.model");
-
+const timeStop = [{}];
 router.get("/", (req, res) => {
   res.render("index", {
     success_msg: req.flash("success_msg"),
     mainTitle: "Medical App",
   });
 });
+function getTimeStops(start, end, interval) {
+  var startTime = moment(start, "hh:mm");
+  var endTime = moment(end, "hh:mm");
 
+  if (endTime.isBefore(startTime)) {
+    endTime.add(1, "day");
+  }
+
+  while (startTime <= endTime) {
+    timeStop.push(new moment(startTime).format("hh:mm"));
+    startTime.add(interval, "minutes");
+  }
+  return timeStop;
+}
 // router.get("/doctors/search", ensureAuthenticated, async (req, res) => {
 //   const { searchFilter, searchTreatment } = req.query;
 //   let days = [];
@@ -349,10 +366,80 @@ router.get("/bookSlot/:id", ensureAuthenticated, async (req, res) => {
   const id = req.params.id;
   let days = [];
   let daysRequired = 15;
+  let morning_slots = [];
+  let afternoon_slots = [];
+  let evening_slots = [];
+  let slotAndDateObj = [];
+  let slotData = [];
   for (let i = 0; i <= daysRequired; i++) {
     days.push(moment().add(i, "days").format("Do MMMM YYYY"));
   }
-  var query = [{ path: "createdBy" }, { path: "slots" }];
+  slotsArray = await slot.find({ createdBy: id });
+
+  //  categorize time into morning afternoon evening
+  var split_afternoon = 12; //24hr time to split the afternoon
+  var split_evening = 17; //24hr time to split the evening
+  for (i in slotsArray) {
+    slot_time = moment(slotsArray[i].startTime, "hh:mm a").format("HH:mm");
+
+    if (
+      slot_time >= split_afternoon + ":" + 00 &&
+      slot_time <= split_evening + ":" + 00
+    ) {
+      afternoon_slots.push(slot_time);
+    } else if (slot_time >= split_evening + ":" + 00) {
+      evening_slots.push(slot_time);
+    } else {
+      morning_slots.push(slot_time);
+    }
+
+    for (let j in days) {
+      if (
+        moment(slotsArray[i].date).format("Do MMMM YYYY") === days[j] &&
+        afternoon_slots.includes(slot_time)
+      ) {
+        slotAndDateObj = {
+          slotDate: days[j],
+          time: slotsArray[i].startTime,
+          slotEndTime: slotsArray[i].endtime,
+          slot: "afternoonSlot",
+          id: slotsArray[i]._id,
+          interval: slotsArray[i].interval,
+        };
+        slotData.push(slotAndDateObj);
+      }
+      if (
+        moment(slotsArray[i].date).format("Do MMMM YYYY") === days[j] &&
+        morning_slots.includes(slot_time)
+      ) {
+        slotAndDateObj = {
+          slotDate: days[j],
+          time: slotsArray[i].startTime,
+          slotEndTime: slotsArray[i].endtime,
+          slot: "morningSlot",
+          id: slotsArray[i]._id,
+          interval: slotsArray[i].interval,
+        };
+        slotData.push(slotAndDateObj);
+      }
+      if (
+        moment(slotsArray[i].date).format("Do MMMM YYYY") === days[j] &&
+        evening_slots.includes(slot_time)
+      ) {
+        slotAndDateObj = {
+          slotDate: days[j],
+          time: slotsArray[i].startTime,
+          slotEndTime: slotsArray[i].endtime,
+          slot: "eveningSlot",
+          id: slotsArray[i]._id,
+          interval: slotsArray[i].interval,
+        };
+        slotData.push(slotAndDateObj);
+      }
+    }
+  }
+
+  // var query = [{ path: "createdBy" }, { path: "slots" }];
   var query1 = [{ path: "createdBy" }, { path: "docdetail" }];
 
   const docs = await doc.find({ createdBy: id });
@@ -369,6 +456,12 @@ router.get("/bookSlot/:id", ensureAuthenticated, async (req, res) => {
             moment: moment,
             days: days,
             docs: docs,
+            morning_slots: morning_slots,
+            afternoon_slots: afternoon_slots,
+            evening_slots: evening_slots,
+            slotData: slotData,
+            getTimeStops: getTimeStops,
+            timeStop: timeStop,
           });
         });
     }
@@ -413,9 +506,10 @@ router.get("/createSchedule", ensureAuthenticated, (req, res) => {
     }
   });
 });
-router.post("/createSchedule", (req, res) => {
+router.post("/createSchedule", async (req, res) => {
   const createdBy = ObjectId(req.session.passport.user._id);
 
+  const slotsArray = await slot.find({ createdBy: createdBy });
   doc.findOne({ createdBy: createdBy }).then((user) => {
     if (user) {
       const {
@@ -427,12 +521,40 @@ router.post("/createSchedule", (req, res) => {
         date,
       } = req.body;
       const docdetail = user._id;
-      console.log(docdetail);
+
+      let startTime_slot = moment(startTime, "HH:mm").format("hh:mm a");
+      let endtime_slot = moment(endtime, "HH:mm").format("hh:mm a");
+      let beforeTime = parseInt("7:00 am");
+      let afterTime = parseInt("10:00 pm");
       let errors = [];
+
+      startTimeValue = parseInt(startTime);
+      endTimeValue = parseInt(endtime);
 
       if (!selecthospital || !startTime || !endtime || !interval || !date) {
         errors.push({ msg: "fill all details" });
       }
+      if (startTimeValue > endTimeValue) {
+        errors.push({ msg: "invalid time" });
+      }
+      if (startTimeValue < beforeTime && endTimeValue > afterTime) {
+        errors.push({ msg: "invalid time" });
+      }
+      for (i in slotsArray) {
+        if (
+          moment(slotsArray[i].date).format("Do MMMM YYYY") ===
+            moment(date).format("Do MMMM YYYY") &&
+          parseInt(slotsArray[i].startTime) <= parseInt(endtime) &&
+          parseInt(slotsArray[i].endtime) >= parseInt(startTime)
+        ) {
+          errors.push({ msg: "overlapping slots time" });
+        }
+      }
+
+      // time slot interval
+      const timeSlotWithInterval = getTimeStops(startTime, endtime, interval);
+      // time slot interval end
+
       if (errors.length > 0) {
         res.render("createSchedule", {
           errors,
@@ -452,10 +574,12 @@ router.post("/createSchedule", (req, res) => {
           endtime,
           interval,
           date,
+          timeSlotWithInterval: timeSlotWithInterval,
         });
 
         newSlot.save().then((slotsdetail) => {
           if (slotsdetail) {
+            console.log(slotsdetail.timeSlotWithInterval);
             doc.findByIdAndUpdate(
               docdetail,
               { $push: { slots: slotsdetail._id } },
@@ -486,15 +610,7 @@ router.get("/displaySlot", ensureAuthenticated, (req, res) => {
   const page = +req.query.page || 1;
   let totalItems;
   let hasPreviousPage, hasNextPage;
-  let days = [
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-    "Sunday",
-  ];
+  let startTime_slot;
   slot
     .find()
     .countDocuments()
@@ -506,41 +622,32 @@ router.get("/displaySlot", ensureAuthenticated, (req, res) => {
         .limit(per_page)
         .sort("-date")
         .then((slots) => {
-          if (slots) {
-            res.render("displaySlot", {
-              dayselect: slots.dayselect,
-              selecthospital: slots.selecthospital,
-              startTime: slots.startTime,
-              endtime: slots.endtime,
-              interval: slots.interval,
-              slots: slots,
-              date: slots.date,
-              moment: moment,
-              currentPage: page,
-              days,
-              hasNextPage: per_page * page < totalItems,
-              hasPreviousPage: page > 1,
-              nextPage: page + 1,
-              previousPage: page - 1,
-              lastPage: Math.ceil(totalItems / per_page),
-            });
-            // slot
-            //   .find({ createdBy: createdBy })
-            //   .limit(pagination.limit)
-            //   .skip(pagination.skip)
-            //   .then((slots) => {
-            //     if (slots) {
-            //       res.render("displaySlot", {
-            //         dayselect: slots.dayselect,
-            //         selecthospital: slots.selecthospital,
-            //         startTime: slots.startTime,
-            //         endtime: slots.endtime,
-            //         interval: slots.interval,
-            //         slots: slots,
-            //         date: slots.date,
-            //         moment: moment,
-            //       });
-          }
+          res.render("displaySlot", {
+            slots: slots,
+            moment: moment,
+            currentPage: page,
+            hasNextPage: per_page * page < totalItems,
+            hasPreviousPage: page > 1,
+            nextPage: page + 1,
+            previousPage: page - 1,
+            lastPage: Math.ceil(totalItems / per_page),
+          });
+          // slot
+          //   .find({ createdBy: createdBy })
+          //   .limit(pagination.limit)
+          //   .skip(pagination.skip)
+          //   .then((slots) => {
+          //     if (slots) {
+          //       res.render("displaySlot", {
+          //         dayselect: slots.dayselect,
+          //         selecthospital: slots.selecthospital,
+          //         startTime: slots.startTime,
+          //         endtime: slots.endtime,
+          //         interval: slots.interval,
+          //         slots: slots,
+          //         date: slots.date,
+          //         moment: moment,
+          //       });
         });
     });
 });
@@ -578,5 +685,9 @@ router.get("/deleteSlot/:id", (req, res) => {
       req.flash("error_msg", "Failed to delete");
     }
   });
+});
+
+router.get("/slotBookingDetails/:id", (req, res) => {
+  res.render("slotBookingDetails");
 });
 module.exports = router;

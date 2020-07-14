@@ -28,6 +28,11 @@ const slotSchema = new mongoose.Schema(
     interval: {
       type: String,
     },
+    timeSlotWithInterval: [
+      {
+        type: String,
+      },
+    ],
   },
   { timestamps: {} }
 );
