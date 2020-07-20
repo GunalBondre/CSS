@@ -65,18 +65,28 @@
         </div>
 
         <div class="slot_categorization_by_time"></div>
+        <!-- <% function chunk (arr, len) {%> <%var m = 0, n = arr.length;%> <%while
+        (m < n) { chunks.push(arr.slice(m, m += len));}%> <% return chunks; } %> -->
         <div class="display_slot__details">
           <div class="slot-details" id="slot-details" style="display: none;">
             <div class="morning_slots">
               <h3>Morning Slot</h3>
               <ul>
-                <% let slotarray = [] %> <%for(i in slotData){ %> <%
-                if(slotData[i].slotDate === days[0] && slotData[i].slot ===
-                "morningSlot") {%>
+                <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[0]
+                && slotData[i].slot === "morningSlot") {%>
+                <p></p>
+                <% let d = slotData[i].subSlotTime %> <% if(d < 12) d=d+12 %>
+                <%=d%>
+                <p></p>
+                <% if(parseInt(slotData[i].subSlotTime) >=
+                parseInt(moment(Date.now()).format("hh:mm"))){ %>
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>">
+                    <%= slotData[i].subSlotTime%></a
+                  >
                 </li>
-                <%}} %>
+                <p></p>
+                <%}}} %>
               </ul>
             </div>
             <hr />
@@ -85,12 +95,16 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[0]
                 && slotData[i].slot === "afternoonSlot") {%>
+                <p></p>
+                <% let d = slotData[i].subSlotTime %> <% if(d < 12){d=d+12} %>
+                <%=d%>
+                <p></p>
                 <li>
-                  <a href="/slotBookingDetails/<%=slotData[i].id %>">
-                    <%= moment(slotData[i].time, "HH:mm").format("hh:mm A")%></a
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
                   >
-                  <p></p>
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -100,9 +114,13 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[0]
                 && slotData[i].slot === "eveningSlot") {%>
+                <p></p>
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -113,9 +131,16 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[1]
                 && slotData[i].slot === "morningSlot") {%>
+                <p></p>
+                <% if(parseInt(slotData[i].subSlotTime) >=
+                parseInt(moment(Date.now()).format("hh:mm A"))){ %>%>
                 <li>
-                  <%=moment(slotData[i].time, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>">
+                    <%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <%}%>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -125,9 +150,15 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[1]
                 && slotData[i].slot === "afternoonSlot") {%>
+                <p></p>
+
+                <p></p>
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -137,9 +168,13 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[1]
                 && slotData[i].slot === "eveningSlot") {%>
+                <p></p>
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A")%>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -150,9 +185,14 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[2]
                 && slotData[i].slot === "morningSlot") {%>
+                <p></p>
+
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].id%>">
+                    <%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -162,9 +202,15 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[2]
                 && slotData[i].slot === "afternoonSlot") {%>
+                <p></p>
+
+                <p></p>
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -174,9 +220,13 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[2]
                 && slotData[i].slot === "eveningSlot") {%>
+                <p></p>
                 <li>
-                  <%=moment(slotData[i].time, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -187,9 +237,14 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[3]
                 && slotData[i].slot === "morningSlot") {%>
+                <p></p>
+
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].id%>">
+                    <%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -199,9 +254,15 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[3]
                 && slotData[i].slot === "afternoonSlot") {%>
+                <p></p>
+
+                <p></p>
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A")%>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -211,9 +272,13 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[3]
                 && slotData[i].slot === "eveningSlot") {%>
+                <p></p>
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -224,9 +289,15 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[4]
                 && slotData[i].slot === "morningSlot") {%>
+                <p></p>
+
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].id%>">
+                    <%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -236,9 +307,15 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[4]
                 && slotData[i].slot === "afternoonSlot") {%>
+                <p></p>
+
+                <p></p>
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -248,9 +325,13 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[4]
                 && slotData[i].slot === "eveningSlot") {%>
+                <p></p>
                 <li>
-                  <%= moment(slotData[i].time, "HH:mm").format("hh:mm A")%>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -261,9 +342,14 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[5]
                 && slotData[i].slot === "morningSlot") {%>
+                <p></p>
+
                 <li>
-                  <%= moment(slots[i].startTime, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].id%>">
+                    <%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -273,9 +359,15 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[5]
                 && slotData[i].slot === "afternoonSlot") {%>
+                <p></p>
+
+                <p></p>
                 <li>
-                  <%= moment(slots[i].startTime, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
@@ -285,52 +377,172 @@
               <ul>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[5]
                 && slotData[i].slot === "eveningSlot") {%>
+                <p></p>
                 <li>
-                  <%= moment(slots[i].startTime, "HH:mm").format("hh:mm A") %>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
                 </li>
+                <p></p>
                 <%}} %>
               </ul>
             </div>
           </div>
           <div class="slot-details" id="slot-details6" style="display: none;">
-            <ul>
-              <% for(i in slots) {%>
-              <p></p>
-              <% if(moment(slots[i].date).format("Do MMMM YYYY") === days[6])
-              {%>
-              <li><%= slots[i].startTime%></li>
-              <% } %> <% } %>
-            </ul>
+            <div class="morning_slots">
+              <h3>Morning Slot</h3>
+              <ul>
+                <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[6]
+                && slotData[i].slot === "morningSlot") {%>
+                <p></p>
+
+                <li>
+                  <a href="/appointmentDetails/<%=slotData[i].id%>">
+                    <%= slotData[i].subSlotTime%></a
+                  >
+                </li>
+                <p></p>
+                <%}} %>
+              </ul>
+            </div>
+            <hr />
+            <div class="afternoon_slots">
+              <h3>Afternoon Slot</h3>
+              <ul>
+                <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[6]
+                && slotData[i].slot === "afternoonSlot") {%>
+                <p></p>
+
+                <p></p>
+                <li>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
+                </li>
+                <p></p>
+                <%}} %>
+              </ul>
+            </div>
+            <hr />
+            <div class="evening_Slots">
+              <h3>Evening Slots</h3>
+              <ul>
+                <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[6]
+                && slotData[i].slot === "eveningSlot") {%>
+                <p></p>
+                <li>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
+                </li>
+                <p></p>
+                <%}} %>
+              </ul>
+            </div>
           </div>
           <div class="slot-details" id="slot-details7" style="display: none;">
-            <ul>
-              <% for(i in slots) {%>
-              <p></p>
-              <% if(moment(slots[i].date).format("Do MMMM YYYY") === days[7])
-              {%>
-              <li><%= slots[i].startTime%></li>
-              <% } %> <% } %>
-            </ul>
+            <div class="morning_slots">
+              <h3>Morning Slot</h3>
+              <ul>
+                <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[7]
+                && slotData[i].slot === "morningSlot") {%>
+                <p></p>
+
+                <li>
+                  <a href="/appointmentDetails/<%=slotData[i].id%>">
+                    <%= slotData[i].subSlotTime%></a
+                  >
+                </li>
+                <p></p>
+                <%}} %>
+              </ul>
+            </div>
+            <hr />
+            <div class="afternoon_slots">
+              <h3>Afternoon Slot</h3>
+              <ul>
+                <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[7]
+                && slotData[i].slot === "afternoonSlot") {%>
+                <p></p>
+
+                <p></p>
+                <li>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
+                </li>
+                <p></p>
+                <%}} %>
+              </ul>
+            </div>
+            <hr />
+            <div class="evening_Slots">
+              <h3>Evening Slots</h3>
+              <ul>
+                <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[7]
+                && slotData[i].slot === "eveningSlot") {%>
+                <p></p>
+                <li>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
+                </li>
+                <p></p>
+                <%}} %>
+              </ul>
+            </div>
           </div>
           <div class="slot-details" id="slot-details8" style="display: none;">
-            <ul>
-              <% for(i in slots) {%>
-              <p></p>
-              <% if(moment(slots[i].date).format("Do MMMM YYYY") === days[8])
-              {%>
-              <li><%= slots[i].startTime%></li>
-              <% } %> <% } %>
-            </ul>
-          </div>
-          <div class="slot-details" id="slot-details9" style="display: none;">
-            <ul>
-              <% for(i in slots) {%>
-              <p></p>
-              <% if(moment(slots[i].date).format("Do MMMM YYYY") === days[9])
-              {%>
-              <li><%= slots[i].startTime%></li>
-              <% } %> <% } %>
-            </ul>
+            <div class="morning_slots">
+              <h3>Morning Slot</h3>
+              <ul>
+                <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[8]
+                && slotData[i].slot === "morningSlot") {%>
+                <p></p>
+
+                <li>
+                  <a href="/appointmentDetails/<%=slotData[i].id%>">
+                    <%= slotData[i].subSlotTime%></a
+                  >
+                </li>
+                <p></p>
+                <%}} %>
+              </ul>
+            </div>
+            <hr />
+            <div class="afternoon_slots">
+              <h3>Afternoon Slot</h3>
+              <ul>
+                <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[8]
+                && slotData[i].slot === "afternoonSlot") {%>
+                <p></p>
+
+                <p></p>
+                <li>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
+                </li>
+                <p></p>
+                <%}} %>
+              </ul>
+            </div>
+            <hr />
+            <div class="evening_Slots">
+              <h3>Evening Slots</h3>
+              <ul>
+                <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[8]
+                && slotData[i].slot === "eveningSlot") {%>
+                <p></p>
+                <li>
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
+                    ><%= slotData[i].subSlotTime%></a
+                  >
+                </li>
+                <p></p>
+                <%}} %>
+              </ul>
+            </div>
           </div>
         </div>
         <!-- <h3>Available slots</h3>

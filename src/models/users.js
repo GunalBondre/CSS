@@ -1,6 +1,4 @@
 const mongoose = require("mongoose");
-const docSchema = require("../models/doctor.model").model("Doctor").schema;
-var deepPopulate = require("mongoose-deep-populate")(mongoose);
 
 const UserSchema = new mongoose.Schema(
   {
@@ -46,14 +44,6 @@ const UserSchema = new mongoose.Schema(
   { toJSON: { virtuals: true }, toObject: { virtuals: true } },
   { timestamps: {} }
 );
-
-UserSchema.virtual("slots", {
-  ref: "slot",
-  foreignField: "docdetail",
-  localField: "_id",
-});
-
-UserSchema.plugin(deepPopulate);
 
 const User = mongoose.model("User", UserSchema);
 

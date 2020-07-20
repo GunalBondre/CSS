@@ -6,9 +6,30 @@ const passport = require("passport");
 const crypto = require("crypto");
 const { ensureAuthenticated } = require("../models/auth");
 const mongoose = require("mongoose");
-var deepPopulate = require("mongoose-deep-populate")(mongoose);
 const { LoggedIn } = require("../models/auth");
 const Nexmo = require("nexmo");
+var moment = require("moment");
+const multer = require("multer");
+const storage = multer.diskStorage({
+  destination: function (req, file, cb) {
+    cb(null, "./uploads/");
+  },
+  filename: function (req, file, cb) {
+    cb(null, new Date().toISOString().replace(/:/g, "-") + file.originalname);
+  },
+});
+const fileFilter = (req, file, cb) => {
+  if (
+    file.mimetype === "image/jpeg" ||
+    file.mimetype === "image/png" ||
+    file.mimetype === "image/jpg"
+  ) {
+    cb(null, true);
+  } else {
+    cb(null, false);
+  }
+};
+const upload = multer({ storage: storage, fileFilter: fileFilter });
 var nodemailer = require("nodemailer");
 const toastr = require("toastr");
 const doc = require("../models/doctor.model");
@@ -17,12 +38,33 @@ const { model } = require("../models/doctor.model");
 const User = require("../models/users");
 const ObjectId = require("mongodb").ObjectID;
 require("../models/passport");
-const docSchema = require("../models/doctor.model").model("Doctor").schema;
+const booking = require("../models/appointment.model");
+const subSlotBooking = require("../models/slotBooking.model");
 const nexmo = new Nexmo({
   apiKey: "1d5a96be",
   apiSecret: "zRAxmYIvV0aDBDWV",
 });
+var passwordValidator = require("password-validator");
+var schema = new passwordValidator();
 
+// Add properties to it
+schema
+  .is()
+  .min(6) // Minimum length 8
+  .is()
+  .max(100) // Maximum length 100
+  .has()
+  .uppercase() // Must have uppercase letters
+  .has()
+  .lowercase() // Must have lowercase letters
+  .has()
+  .digits() // Must have digits
+  .has()
+  .not()
+  .spaces() // Should not have spaces
+  .is()
+  .not()
+  .oneOf(["Passw0rd", "Password123"]); // Blacklist these values
 // signin page
 
 router.get("/signin", LoggedIn, (req, res) => {
@@ -69,6 +111,12 @@ router.post("/signup", (req, res) => {
   // check pass length
   if (password.length < 6) {
     errors.push({ msg: "password should be at least 6 characters" });
+  }
+  if (!schema.validate(password)) {
+    errors.push({
+      msg:
+        "Please match the pattern one uppercase,one lowercase, minimum 6 digits, no spaces",
+    });
   }
 
   if (errors.length > 0) {
@@ -376,53 +424,16 @@ router.get("/resetPass/:token", (req, res) => {
   );
 });
 
-router.post("/doctorDetails", (req, res) => {
-  const _id = ObjectId(req.session.passport.user._id);
-  const slot = req.session.slot_id;
-  console.log(_id);
-
-  const {
-    bio,
-    speciality,
-    education,
-    treatment,
-    location,
-    hospitalList,
-    achievement,
-    awards,
-    experience,
-    fee,
-    avatar,
-  } = req.body;
-  let errors = [];
-  //check req fields
-
-  if (
-    !bio ||
-    !speciality ||
-    !education ||
-    !treatment ||
-    !location ||
-    !hospitalList ||
-    !experience ||
-    !fee
-  ) {
-    errors.push({ msg: "please fill all details" });
-  }
-  if (errors.length > 0) {
-    res.render("doctorDetails", {
-      errors,
-      bio,
-      speciality,
-      education,
-      treatment,
-      location,
-      hospitalList,
-    });
-  } else {
-    const newDoc = new doc({
-      createdBy: _id,
-      slot: slot,
+router.post(
+  "/doctorDetails",
+  upload.single("avatar"),
+  ensureAuthenticated,
+  async (req, res) => {
+    console.log(req.file);
+    const _id = ObjectId(req.session.passport.user._id);
+    const slot = req.session.slot_id;
+    const user = await USer.findById(_id);
+    const {
       bio,
       speciality,
       education,
@@ -431,20 +442,63 @@ router.post("/doctorDetails", (req, res) => {
       hospitalList,
       achievement,
       awards,
-      avatar,
-      fee,
       experience,
-    });
-    newDoc.save().then((docdetails) => {
-      if (docdetails) {
-        req.session.doc_id = docdetails._id;
-        console.log(req.session.doc_id);
-        req.flash("success_msg", "Details saved successfully");
-        res.redirect("/");
-      }
-    });
+      fee,
+    } = req.body;
+    const avatar = req.file.filename;
+    let errors = [];
+    //check req fields
+
+    if (
+      !bio ||
+      !speciality ||
+      !education ||
+      !treatment ||
+      !location ||
+      !hospitalList ||
+      !experience ||
+      !fee
+    ) {
+      errors.push({ msg: "please fill all details" });
+    }
+    if (errors.length > 0) {
+      res.render("doctorDetails", {
+        errors,
+        bio,
+        speciality,
+        education,
+        treatment,
+        location,
+        hospitalList,
+      });
+    } else {
+      const newDoc = new doc({
+        name: user.name,
+        createdBy: _id,
+        slot: slot,
+        bio,
+        speciality,
+        education,
+        treatment,
+        location,
+        hospitalList,
+        achievement,
+        awards,
+        avatar: avatar,
+        fee,
+        experience,
+      });
+      newDoc.save().then((docdetails) => {
+        if (docdetails) {
+          req.session.doc_id = docdetails._id;
+          console.log(req.session.doc_id);
+          req.flash("success_msg", "Details saved successfully");
+          res.redirect("/");
+        }
+      });
+    }
   }
-});
+);
 
 // Dashboard get routes
 
@@ -468,28 +522,35 @@ router.post("/dashboard", (req, res) => {
 // });
 
 // profile get route
-router.get("/profile", ensureAuthenticated, (req, res) => {
-  const _id = ObjectId(req.session.passport.user._id);
+router.get(
+  "/profile",
+  upload.single("avatar"),
+  ensureAuthenticated,
+  (req, res) => {
+    const _id = ObjectId(req.session.passport.user._id);
 
-  USer.findOne({ _id: _id })
-    .then((user, err) => {
-      if (user) {
-        res.render("profile", {
-          name: user.name,
-          phone: user.phone,
-          email: user.email,
-          select: user.select,
-          dob: user.date,
-          city: user.city,
-          state: user.state,
-        });
-      }
-    })
-    .catch((err) => console.log(err));
-});
+    USer.findOne({ _id: _id })
+      .then((user, err) => {
+        if (user) {
+          res.render("profile", {
+            name: user.name,
+            phone: user.phone,
+            email: user.email,
+            select: user.select,
+            dob: user.date,
+            city: user.city,
+            state: user.state,
+            user: user,
+          });
+        }
+      })
+      .catch((err) => console.log(err));
+  }
+);
 
-router.post("/profile", (req, res) => {
+router.post("/profile", upload.single("avatar"), (req, res) => {
   const { name, email, select, dob, phone, city, state } = req.body;
+  const avatar = req.file.path;
   const _id = ObjectId(req.session.passport.user._id);
 
   USer.findOne({ _id: _id })
@@ -507,6 +568,7 @@ router.post("/profile", (req, res) => {
           dob: dob,
           city: city,
           state: state,
+          avatar: req.file.path,
         })) {
           if (typeof val !== "undefined") {
             console.info("changed user." + prop + " to " + val);
@@ -593,6 +655,18 @@ router.post("/professional_profile", (req, res) => {
 });
 router.get("/doctor-profile", ensureAuthenticated, (req, res) => {
   res.render("doctor-profile");
+});
+
+router.get("/upcomingAppointments", ensureAuthenticated, async (req, res) => {
+  let query = [{ path: "createdBy" }, { path: "slots" }, { path: "docdetail" }];
+
+  const email = req.session.passport.user.email;
+  const id = ObjectId(req.session.passport.user._id);
+  const docs = await booking.find({ patient_email: email }).populate(query);
+  res.render("upcomingAppointments", {
+    docs: docs,
+    moment: moment,
+  });
 });
 // profile post route
 

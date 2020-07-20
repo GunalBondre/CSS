@@ -261,6 +261,12 @@ html {
           box-sizing: border-box;
 }
 
+h6 {
+  font-family: nexa-bold;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
 @font-face {
   font-family: nexa-bold;
   src: url(/Nexa-Bold.otf);
@@ -583,6 +589,12 @@ html {
           box-sizing: border-box;
 }
 
+h6 {
+  font-family: nexa-bold;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
 @font-face {
   font-family: nexa-bold;
   src: url(/Nexa-Bold.otf);
@@ -721,7 +733,14 @@ html {
 
 @media (min-width: 1200px) {
   .card-img-top {
-    height: 200px;
+    height: 275px;
+    max-height: 300px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   .main {
     width: 100%;

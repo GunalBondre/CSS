@@ -1,0 +1,68 @@
+@import "../font";
+@import "../theme/config";
+
+.appointment_page {
+  display: flex;
+  padding: 30px;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-evenly;
+  .appointment_page__left__section {
+    max-height: 400px;
+    margin-top: 5%;
+    width: 40%;
+    padding: 10px;
+    border: 1px solid black;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    .appointment_page__left__section__time__date {
+      display: flex;
+      justify-content: space-between;
+      .appointment_date_display {
+        padding: 20px;
+        span {
+          font-family: nexa-bold;
+        }
+      }
+      .appointment_time_display {
+        padding: 20px;
+        span {
+          font-family: nexa-bold;
+        }
+      }
+    }
+    .appointment_page_doctor_details {
+      display: flex;
+      .doctor_image {
+        padding-right: 10px;
+      }
+    }
+    .appointment_page_hospital_details {
+      padding-top: 20px;
+      display: flex;
+      .appointment_page__hospital__image {
+        padding-right: 10px;
+      }
+    }
+  }
+  .appointment_page__right__section {
+    i {
+      color: green;
+    }
+    .appointment_info_title {
+      font-family: nexa-bold;
+      font-size: 1rem;
+      padding: 15px 0px;
+    }
+    .patient_info {
+      color: $button-blue;
+      font-family: nexa-bold;
+    }
+    label {
+      color: $button-blue;
+      font-family: nexa-bold;
+    }
+    button {
+      width: 100%;
+    }
+  }
+}

@@ -28,6 +28,8 @@ app.use(express.static(path.join(__dirname, "/src/public/images/")));
 app.use(express.static(path.join(__dirname, "/src/public/css/")));
 app.use(express.static(path.join(__dirname, "/src/public/js/")));
 app.use(express.static(path.join(__dirname, "/src/public/font/")));
+app.use(express.static(path.join(__dirname, "/src/public/uploads/")));
+app.use(express.static(path.join(__dirname, "uploads")));
 
 app.use(cookieParser(""));
 

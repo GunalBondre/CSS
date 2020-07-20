@@ -28,7 +28,11 @@
 
     <!-- form starts -->
     <div class="form-wrapper">
-      <form action="/users/doctorDetails" method="post">
+      <form
+        action="/users/doctorDetails"
+        method="post"
+        enctype="multipart/form-data"
+      >
         <div class="form-group">
           <header>Welcome <%= name %></header>
           <p>One step away from becoming part of indias best medical portal</p>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/dashboard/dashboard.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="/userAppointment/userAppointment.css"
+      type="text/css"
+    />
+
+    <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
+
+    <script type="text/javascript" src="/flashMessages.js"></script>
+
+    <%- include('partials/bootstrap') %>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <div class="wrapper">
+      <div class="left-panel">
+        <header>Dashboard</header>
+        <div class="profile">
+          <a href="/users/profile">General Details</a>
+        </div>
+        <hr />
+        <% if(user.role==='user') {%>
+        <div class="appointments">
+          <a href="/users/upcomingAppointments">Appointments</a>
+        </div>
+        <hr />
+        <%}%> <% if(user.role==='doctor') {%>
+        <div class="docprofile">
+          <a href="/users/professional_profile">Professional Details</a>
+        </div>
+        <hr />
+        <div class="appointments">
+          <a href="/viewAppointmentByUser">User Appointments</a>
+        </div>
+        <hr />
+        <div class="create/edit">
+          <a href="/createSchedule">Create/edit appointments</a>
+        </div>
+        <hr />
+        <%}%>
+        <div class="setting">
+          <a href="#">Settings</a>
+        </div>
+      </div>
+      <div class="right-panel">
+        <div class="patient_appointment_info_main_wrapper">
+          <% for(i in booking_data){ %>
+          <div class="patient_info_inner_wrapper">
+            <div class="patient_appointment_date_time">
+              <div class="patient_date">
+                <i class="fas fa-calendar-day"></i>
+
+                <%= moment(booking_data[i].Date).format("Do MMMM YYYY") %>
+              </div>
+              <div class="patient_slot_timing">
+                <i class="far fa-clock"></i>
+
+                <%= booking_data[i].slotTime%>
+              </div>
+            </div>
+
+            <div class="patient_name_phone_img">
+              <!-- <div class="patient_photo">
+                <img
+                  src="https://images.unsplash.com/photo-1464863979621-258859e62245?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=333&q=80"
+                  alt=""
+                  style="width: 60px;"
+                />
+              </div> -->
+              <div class="name_mobile_wrapper">
+                <div class="patient_name">
+                  <h6><%= booking_data[i].patient_name %></h6>
+                </div>
+                <div class="patient_phone">
+                  <i class="fas fa-phone"></i>
+
+                  <%= booking_data[i].patient_mobile %>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <%} %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

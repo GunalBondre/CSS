@@ -1,0 +1,331 @@
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
+.m-1 {
+  margin: 1rem;
+}
+
+.my-1 {
+  margin: 1rem 0;
+}
+
+.mx-1 {
+  margin: 0 1rem;
+}
+
+.p-1 {
+  padding: 1rem;
+}
+
+.py-1 {
+  padding: 1rem 0;
+}
+
+.px-1 {
+  padding: 0 1rem;
+}
+
+.m-2 {
+  margin: 2rem;
+}
+
+.my-2 {
+  margin: 2rem 0;
+}
+
+.mx-2 {
+  margin: 0 2rem;
+}
+
+.p-2 {
+  padding: 2rem;
+}
+
+.py-2 {
+  padding: 2rem 0;
+}
+
+.px-2 {
+  padding: 0 2rem;
+}
+
+.m-3 {
+  margin: 3rem;
+}
+
+.my-3 {
+  margin: 3rem 0;
+}
+
+.mx-3 {
+  margin: 0 3rem;
+}
+
+.p-3 {
+  padding: 3rem;
+}
+
+.py-3 {
+  padding: 3rem 0;
+}
+
+.px-3 {
+  padding: 0 3rem;
+}
+
+.m-4 {
+  margin: 4rem;
+}
+
+.my-4 {
+  margin: 4rem 0;
+}
+
+.mx-4 {
+  margin: 0 4rem;
+}
+
+.p-4 {
+  padding: 4rem;
+}
+
+.py-4 {
+  padding: 4rem 0;
+}
+
+.px-4 {
+  padding: 0 4rem;
+}
+
+.m-5 {
+  margin: 5rem;
+}
+
+.my-5 {
+  margin: 5rem 0;
+}
+
+.mx-5 {
+  margin: 0 5rem;
+}
+
+.p-5 {
+  padding: 5rem;
+}
+
+.py-5 {
+  padding: 5rem 0;
+}
+
+.px-5 {
+  padding: 0 5rem;
+}
+
+.m-6 {
+  margin: 6rem;
+}
+
+.my-6 {
+  margin: 6rem 0;
+}
+
+.mx-6 {
+  margin: 0 6rem;
+}
+
+.p-6 {
+  padding: 6rem;
+}
+
+.py-6 {
+  padding: 6rem 0;
+}
+
+.px-6 {
+  padding: 0 6rem;
+}
+
+.m-7 {
+  margin: 7rem;
+}
+
+.my-7 {
+  margin: 7rem 0;
+}
+
+.mx-7 {
+  margin: 0 7rem;
+}
+
+.p-7 {
+  padding: 7rem;
+}
+
+.py-7 {
+  padding: 7rem 0;
+}
+
+.px-7 {
+  padding: 0 7rem;
+}
+
+.m-8 {
+  margin: 8rem;
+}
+
+.my-8 {
+  margin: 8rem 0;
+}
+
+.mx-8 {
+  margin: 0 8rem;
+}
+
+.p-8 {
+  padding: 8rem;
+}
+
+.py-8 {
+  padding: 8rem 0;
+}
+
+.px-8 {
+  padding: 0 8rem;
+}
+
+header {
+  font-family: nexa-bold;
+  font-size: 1.6rem;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  header {
+    font-size: 1.8rem !important;
+  }
+}
+
+p {
+  font-family: nexa-light;
+  font-size: 1.1rem;
+  line-height: 1.4;
+}
+
+h2 {
+  font-family: nexa-bold;
+  font-size: 1.4rem;
+  color: #0066cc;
+  padding: 1rem 0rem;
+}
+
+@media (min-width: 767px) {
+  h2 {
+    font-size: 1.6rem;
+  }
+}
+
+input {
+  font-family: nexa-light;
+}
+
+label {
+  font-family: nexa-light;
+}
+
+h1 {
+  font-family: nexa-bold;
+  font-size: 2rem;
+  font-weight: bold;
+  padding: 1rem 0rem;
+}
+
+input {
+  font-family: nexa-light;
+}
+
+h3 {
+  font-family: nexa-bold;
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+h6 {
+  font-family: nexa-bold;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
+@font-face {
+  font-family: nexa-bold;
+  src: url(/Nexa-Bold.otf);
+}
+
+@font-face {
+  font-family: nexa-light;
+  src: url(/Nexa-light.otf);
+}
+
+.patient_info_inner_wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-left: 10px solid;
+  border-radius: 10px;
+  border-color: #0066cc;
+  margin-bottom: 10px;
+  padding: 10px;
+  -webkit-box-shadow: 10px 10px 5px 0px #f5f0f0;
+          box-shadow: 10px 10px 5px 0px #f5f0f0;
+}
+
+.patient_info_inner_wrapper:nth-of-type(odd) {
+  border-color: #629677;
+}
+
+.patient_info_inner_wrapper i {
+  color: #0066cc;
+  padding-top: 5px;
+}
+
+.patient_info_inner_wrapper .patient_appointment_date_time {
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.patient_info_inner_wrapper .patient_name_phone_img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-left: 30px;
+}
+
+.patient_info_inner_wrapper .patient_name_phone_img .patient_photo {
+  padding-right: 20px;
+}
+
+.patient_info_inner_wrapper .patient_name_phone_img .patient_name {
+  padding-left: 17px;
+  text-transform: capitalize;
+}
+
+.patient_info_inner_wrapper .patient_name_phone_img img {
+  height: 60px;
+  border-radius: 50%;
+}
+
+.patient_info_inner_wrapper .name_mobile_wrapper {
+  padding-top: 10px;
+}
+/*# sourceMappingURL=userAppointment.css.map */

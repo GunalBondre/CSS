@@ -112,7 +112,10 @@
 
 @media (min-width: 1200px) {
   .card-img-top {
-    height: 200px;
+    height: 275px;
+    max-height: 300px;
+    align-items: center;
+    justify-content: center;
   }
   .main {
     width: 100%;

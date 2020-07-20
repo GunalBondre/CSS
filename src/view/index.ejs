@@ -10,7 +10,14 @@
     <script type="text/javascript" src="/index.js"></script>
     <script type="text/javascript" src="/hiw-mob.js"></script>
     <script type="text/javascript" src="/flashMessages.js"></script>
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
 
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <%- include('partials/bootstrap') %>
     <script type="text/javascript" src="/glocation.js"></script>
     <script type="text/javascript" src="/docSearch.js"></script>
@@ -264,7 +271,7 @@
           mecca for patients
         </p>
       </div>
-      <div class="row">
+      <!-- <div class="row">
         <div class="card-group">
           <div class="card">
             <img
@@ -335,7 +342,194 @@
             </div>
           </div>
         </div>
+      </div> -->
+      <!-- bootstrap cards carousel starts -->
+      <!--Carousel Wrapper-->
+      <div
+        id="multi-item-example"
+        class="carousel slide carousel-multi-item"
+        data-ride="carousel"
+      >
+        <!--Controls-->
+        <div class="controls-top">
+          <a class="btn-floating" href="#multi-item-example" data-slide="prev"
+            ><i class="fas fa-chevron-left"></i
+          ></a>
+          <a class="btn-floating" href="#multi-item-example" data-slide="next"
+            ><i class="fas fa-chevron-right"></i
+          ></a>
+        </div>
+        <!--/.Controls-->
+
+        <!--Indicators-->
+
+        <!--/.Indicators-->
+
+        <!--Slides-->
+        <div class="carousel-inner" role="listbox">
+          <!--First slide-->
+          <div class="carousel-item active">
+            <div class="col-md-3" style="float: left;">
+              <div class="card mb-2">
+                <img
+                  class="card-img-top"
+                  src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--003.jpg"
+                  class="img-fluid w-100"
+                  style="height: 18rem;"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title"><h2>Charlie Moon</h2></h5>
+                  <div class="card-text">
+                    <p>Cardiac Surgeon</p>
+                    <p>MBBS MD FRCP MRCP</p>
+                    <p>New Delhi India</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3" style="float: left;">
+              <div class="card mb-2">
+                <img
+                  class="card-img-top"
+                  src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--005.jpg"
+                  class="img-fluid w-100"
+                  style="height: 18rem;"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title"><h2>Georgia Peter</h2></h5>
+                  <div class="card-text">
+                    <p>Brest cancer surgeon</p>
+                    <p>Director. UT. Southwest</p>
+                    <p>London</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3" style="float: left;">
+              <div class="card mb-2">
+                <img
+                  class="card-img-top"
+                  src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--004.jpg"
+                  class="img-fluid w-100"
+                  style="height: 16.5rem;"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title"><h2>Rose Moon</h2></h5>
+                  <div class="card-text">
+                    <p>Plastic Surgeon</p>
+                    <p>Department of plastic and reconstructive surgery</p>
+                    <p>Dubai</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3" style="float: left;">
+              <div class="card mb-2">
+                <img
+                  class="card-img-top"
+                  src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg"
+                  class="img-fluid w-100"
+                  style="height: 18rem;"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h5 class="card-title"><h2>Duke sanson</h2></h5>
+                  <div class="card-text">
+                    <p>Neuro surgeon</p>
+                    <p>chain department of neurology</p>
+                    <p>Australia</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--/.First slide-->
+
+          <!--Second slide-->
+          <!-- <div class="carousel-item">
+            <div class="col-md-3" style="float: left;">
+              <div class="card mb-2">
+                <img
+                  class="card-img-top"
+                  src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(60).jpg"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3" style="float: left;">
+              <div class="card mb-2">
+                <img
+                  class="card-img-top"
+                  src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3" style="float: left;">
+              <div class="card mb-2">
+                <img
+                  class="card-img-top"
+                  src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(48).jpg"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-3" style="float: left;">
+              <div class="card mb-2">
+                <img
+                  class="card-img-top"
+                  src="https://mdbootstrap.com/img/Photos/Horizontal/City/4-col/img%20(47).jpg"
+                  alt="Card image cap"
+                />
+                <div class="card-body">
+                  <h4 class="card-title">Card title</h4>
+                  <p class="card-text">
+                    Some quick example text to build on the card title and make
+                    up the bulk of the card's content.
+                  </p>
+                  <a class="btn btn-primary">Button</a>
+                </div>
+              </div>
+            </div>
+          </div> -->
+          <!--/.Second slide-->
+        </div>
+        <!--/.Slides-->
       </div>
+      <!--/.Carousel Wrapper-->
     </section>
     <div class="FMT Features-medical-treatment p-3">
       <header>Featured Medical Treatment</header>

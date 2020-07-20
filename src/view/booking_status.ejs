@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
+
+    <link
+      rel="stylesheet"
+      href="/appointmentDetails/appointment.css"
+      type="text/css"
+    />
+
+    <script type="text/javascript" src="/flashMessages.js"></script>
+
+    <%- include('partials/bootstrap') %>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <section class="appointment_page">
+      <div class="appointment_page__left__section">
+        <h4>In Clinic appointment</h4>
+        <hr />
+
+        <div class="appointment_page__left__section__time__date">
+          <div class="appointment_date_display">
+            <i class="far fa-calendar-plus"></i>
+
+            On
+            <span><%=moment(data.slots.date).format("Do MMMM YYYY")%></span>
+          </div>
+          <div class="appointment_time_display">
+            <i class="far fa-clock"></i>
+
+            At <span><%=(data.startTime)%></span>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="appointment_page_doctor_details">
+          <div class="doctor_image">
+            <img
+              class="card-img-top"
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg"
+              style="width: 100px;"
+            />
+          </div>
+          <div class="doctor_info">
+            <div class="doctor_name">
+              <h6><%= data.createdBy.name%></h6>
+            </div>
+            <div class="doctor_hospital">
+              <%= data.docdetail.hospitalList %>
+            </div>
+            <div class="doctor_speciality">
+              <%= data.docdetail.speciality %>
+            </div>
+            <div class="doctor_education">
+              <%= data.docdetail.education %>
+            </div>
+          </div>
+        </div>
+        <div class="appointment_page_hospital_details">
+          <div class="appointment_page__hospital__image">
+            <img src="/download.jpg" style="width: 100px;" />
+          </div>
+          <div class="appointment_page__hospital_name_location">
+            <div class="appointment_page__hospital__name">
+              <%= data.docdetail.hospitalList %>
+            </div>
+            <div class="appointment_page__hospital__location">
+              <%= data.docdetail.location %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="appointment_page__right__section" style="padding-top: 10%;">
+        <i class="fas fa-check-circle"></i>
+
+        <%= title %>
+        <h6>We have sent you a sms with details</h6>
+        <span>Patient Name</span>
+        <h6><%= data.createdBy.name %></h6>
+        <span>Mobile</span>
+        <h6><%= data.createdBy.phone %></h6>
+        <div class="apoointment_cancel_reschedle_button" style="display: flex;">
+          <a href="/cancelAppointment/<%=data._id%>">
+            <button
+              type="submit"
+              class="btn btn-outline-primary"
+              style="margin: 10px;"
+            >
+              Cancel Appointment
+            </button></a
+          >
+          <button
+            type="submit"
+            class="btn btn-outline-primary"
+            style="margin: 10px;"
+          >
+            Reschedule Appointment
+          </button>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

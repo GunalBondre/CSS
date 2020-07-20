@@ -21,13 +21,18 @@
           <a href="/users/profile">General Details</a>
         </div>
         <hr />
-        <% if(role==='doctor') {%>
+        <% if(role==='user') {%>
+        <div class="appointments">
+          <a href="/users/upcomingAppointments">Appointments</a>
+        </div>
+        <hr />
+        <%}%> <% if(role==='doctor') {%>
         <div class="docprofile">
           <a href="/users/professional_profile">Professional Details</a>
         </div>
         <hr />
         <div class="appointments">
-          <a href="#">Appointments</a>
+          <a href="/viewAppointmentByUser">User Appointments</a>
         </div>
         <hr />
         <div class="create/edit">

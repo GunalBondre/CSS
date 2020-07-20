@@ -5,6 +5,12 @@ var mongoosePaginate = require("mongoose-paginate");
 
 const DocSchema = new mongoose.Schema(
   {
+    avatar: {
+      type: String,
+    },
+    name: {
+      type: String,
+    },
     bio: {
       type: String,
       required: true,

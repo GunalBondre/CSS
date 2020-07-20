@@ -7,31 +7,24 @@ const ObjectId = require("mongodb").ObjectID;
 var moment = require("moment");
 const MomentRange = require("moment-range");
 var _ = require("underscore");
-
-const Moment = MomentRange.extendMoment(moment);
 const flash = require("connect-flash");
 const doc = require("../models/doctor.model");
 docSchema = require("../models/doctor.model");
 const USer = require("../models/users");
-const Booking = require("../models/appointment.model");
-const slotBooking = require("../models/slotBooking.model");
-const timeStop = [{}];
-router.get("/", (req, res) => {
-  res.render("index", {
-    success_msg: req.flash("success_msg"),
-    mainTitle: "Medical App",
-  });
-});
+const booking = require("../models/appointment.model");
+const subSlotBooking = require("../models/slotBooking.model");
+
 function getTimeStops(start, end, interval) {
   var startTime = moment(start, "hh:mm");
   var endTime = moment(end, "hh:mm");
+  const timeStop = [];
 
   if (endTime.isBefore(startTime)) {
     endTime.add(1, "day");
   }
 
   while (startTime <= endTime) {
-    timeStop.push(new moment(startTime).format("hh:mm"));
+    timeStop.push(new moment(startTime).format("hh:mm A"));
     startTime.add(interval, "minutes");
   }
   return timeStop;
@@ -80,6 +73,16 @@ function getTimeStops(start, end, interval) {
 //   });
 // });
 
+router.get("/", ensureAuthenticated, async (req, res) => {
+  const docList = await doc.find().populate("createdBy");
+  console.log(docList);
+  res.render("index", {
+    docdetail: docList,
+    success_msg: req.flash("success_msg"),
+    mainTitle: "Medical App",
+  });
+});
+
 router.get("/doctors/hospital", ensureAuthenticated, async (req, res) => {
   const { searchFilter, searchTreatment, searchHospital } = req.query;
   let days = [];
@@ -94,34 +97,33 @@ router.get("/doctors/hospital", ensureAuthenticated, async (req, res) => {
   let totalItems;
   let hasPreviousPage, hasNextPage;
   let queryString = {
-    hospitalList: {
-      $in: searchHospital,
-    },
+    hospitalList: { $regex: req.query.searchHospital, $options: "i" },
   };
   var query = [{ path: "createdBy" }, { path: "slots" }];
   const docdetail = await doc.find().populate(query);
   const slots = await slot.find();
 
-  doc.find(queryString, (err, docs) => {
-    if (!err) {
-      res.render("doctors", {
-        slots: slots,
-        searchFilter: searchFilter,
-        docdetail: docdetail,
-        list: docs,
-        moment: moment,
-        currentPage: page,
-        hasNextPage: per_page * page < totalItems,
-        hasPreviousPage: page > 1,
-        nextPage: page + 1,
-        previousPage: page - 1,
-        lastPage: Math.ceil(totalItems / per_page),
-        days: days,
-      });
-    } else {
-      console.log("error");
-    }
-  });
+  doc
+    .find({ hospitalList: { $regex: req.query.searchHospital, $options: "i" } })
+    .populate(query)
+    .exec((err, docs) => {
+      if (!err) {
+        res.render("doctors", {
+          slots: slots,
+          list: docs,
+          moment: moment,
+          currentPage: page,
+          hasNextPage: per_page * page < totalItems,
+          hasPreviousPage: page > 1,
+          nextPage: page + 1,
+          previousPage: page - 1,
+          lastPage: Math.ceil(totalItems / per_page),
+          days: days,
+        });
+      } else {
+        console.log("error");
+      }
+    });
 });
 
 router.get("/doctors/search", ensureAuthenticated, async (req, res) => {
@@ -375,11 +377,12 @@ router.get("/bookSlot/:id", ensureAuthenticated, async (req, res) => {
     days.push(moment().add(i, "days").format("Do MMMM YYYY"));
   }
   slotsArray = await slot.find({ createdBy: id });
-
   //  categorize time into morning afternoon evening
   var split_afternoon = 12; //24hr time to split the afternoon
   var split_evening = 17; //24hr time to split the evening
+
   for (i in slotsArray) {
+    const subSlot = await subSlotBooking.find({ slots: slotsArray[i]._id });
     slot_time = moment(slotsArray[i].startTime, "hh:mm a").format("HH:mm");
 
     if (
@@ -394,51 +397,61 @@ router.get("/bookSlot/:id", ensureAuthenticated, async (req, res) => {
     }
 
     for (let j in days) {
-      if (
-        moment(slotsArray[i].date).format("Do MMMM YYYY") === days[j] &&
-        afternoon_slots.includes(slot_time)
-      ) {
-        slotAndDateObj = {
-          slotDate: days[j],
-          time: slotsArray[i].startTime,
-          slotEndTime: slotsArray[i].endtime,
-          slot: "afternoonSlot",
-          id: slotsArray[i]._id,
-          interval: slotsArray[i].interval,
-        };
-        slotData.push(slotAndDateObj);
-      }
-      if (
-        moment(slotsArray[i].date).format("Do MMMM YYYY") === days[j] &&
-        morning_slots.includes(slot_time)
-      ) {
-        slotAndDateObj = {
-          slotDate: days[j],
-          time: slotsArray[i].startTime,
-          slotEndTime: slotsArray[i].endtime,
-          slot: "morningSlot",
-          id: slotsArray[i]._id,
-          interval: slotsArray[i].interval,
-        };
-        slotData.push(slotAndDateObj);
-      }
-      if (
-        moment(slotsArray[i].date).format("Do MMMM YYYY") === days[j] &&
-        evening_slots.includes(slot_time)
-      ) {
-        slotAndDateObj = {
-          slotDate: days[j],
-          time: slotsArray[i].startTime,
-          slotEndTime: slotsArray[i].endtime,
-          slot: "eveningSlot",
-          id: slotsArray[i]._id,
-          interval: slotsArray[i].interval,
-        };
-        slotData.push(slotAndDateObj);
+      for (k in subSlot) {
+        if (
+          moment(slotsArray[i].date).format("Do MMMM YYYY") === days[j] &&
+          afternoon_slots.includes(slot_time)
+        ) {
+          slotAndDateObj = {
+            timeSlotWithInterval: slotsArray[i].timeSlotWithInterval,
+            slotDate: days[j],
+            time: slotsArray[i].startTime,
+            slotEndTime: slotsArray[i].endtime,
+            slot: "afternoonSlot",
+            id: slotsArray[i]._id,
+            interval: slotsArray[i].interval,
+            subSlotTime: subSlot[k].startTime,
+            subId: subSlot[k]._id,
+          };
+          slotData.push(slotAndDateObj);
+        }
+        if (
+          moment(slotsArray[i].date).format("Do MMMM YYYY") === days[j] &&
+          morning_slots.includes(slot_time)
+        ) {
+          slotAndDateObj = {
+            slotDate: days[j],
+            time: slotsArray[i].startTime,
+            slotEndTime: slotsArray[i].endtime,
+            slot: "morningSlot",
+            id: slotsArray[i]._id,
+            interval: slotsArray[i].interval,
+            timeSlotWithInterval: slotsArray[i].timeSlotWithInterval,
+            subSlotTime: subSlot[k].startTime,
+            subId: subSlot[k]._id,
+          };
+          slotData.push(slotAndDateObj);
+        }
+        if (
+          moment(slotsArray[i].date).format("Do MMMM YYYY") === days[j] &&
+          evening_slots.includes(slot_time)
+        ) {
+          slotAndDateObj = {
+            slotDate: days[j],
+            time: slotsArray[i].startTime,
+            slotEndTime: slotsArray[i].endtime,
+            slot: "eveningSlot",
+            id: slotsArray[i]._id,
+            interval: slotsArray[i].interval,
+            timeSlotWithInterval: slotsArray[i].timeSlotWithInterval,
+            subSlotTime: subSlot[k].startTime,
+            subId: subSlot[k]._id,
+          };
+          slotData.push(slotAndDateObj);
+        }
       }
     }
   }
-
   // var query = [{ path: "createdBy" }, { path: "slots" }];
   var query1 = [{ path: "createdBy" }, { path: "docdetail" }];
 
@@ -461,7 +474,6 @@ router.get("/bookSlot/:id", ensureAuthenticated, async (req, res) => {
             evening_slots: evening_slots,
             slotData: slotData,
             getTimeStops: getTimeStops,
-            timeStop: timeStop,
           });
         });
     }
@@ -553,6 +565,8 @@ router.post("/createSchedule", async (req, res) => {
 
       // time slot interval
       const timeSlotWithInterval = getTimeStops(startTime, endtime, interval);
+      const splitArray = chunk(timeSlotWithInterval, 1);
+
       // time slot interval end
 
       if (errors.length > 0) {
@@ -579,7 +593,19 @@ router.post("/createSchedule", async (req, res) => {
 
         newSlot.save().then((slotsdetail) => {
           if (slotsdetail) {
-            console.log(slotsdetail.timeSlotWithInterval);
+            for (m in splitArray) {
+              const subSlot = new subSlotBooking({
+                startTime: splitArray[m],
+                slots: slotsdetail._id,
+                createdBy: createdBy,
+                docdetail: docdetail,
+              });
+              subSlot.save().then((err, data) => {
+                if (!err) {
+                  req.session.subslot_id = data._id;
+                }
+              });
+            }
             doc.findByIdAndUpdate(
               docdetail,
               { $push: { slots: slotsdetail._id } },
@@ -680,6 +706,12 @@ router.post("/editSlot/:id", (req, res) => {
 router.get("/deleteSlot/:id", (req, res) => {
   slot.findByIdAndRemove(req.params.id, (err, doc) => {
     if (!err) {
+      subSlotBooking.deleteMany({ slots: req.params.id }, (err, docs) => {
+        if (!err) {
+          console.log("docs deleted successfully");
+        }
+      });
+
       res.redirect("/displaySlot");
     } else {
       req.flash("error_msg", "Failed to delete");
@@ -687,7 +719,150 @@ router.get("/deleteSlot/:id", (req, res) => {
   });
 });
 
-router.get("/slotBookingDetails/:id", (req, res) => {
-  res.render("slotBookingDetails");
+router.get("/appointmentDetails/:id", ensureAuthenticated, async (req, res) => {
+  let query = [{ path: "createdBy" }, { path: "slots" }, { path: "docdetail" }];
+  const _id = ObjectId(req.session.passport.user._id);
+
+  const userDetail = await USer.findOne({ _id: _id });
+  subSlotBooking
+    .find({ _id: req.params.id })
+    .populate(query)
+    .exec((err, data) => {
+      if (!err) {
+        data.forEach((el) => console.log(el));
+        req.session.slot_id = req.params.id;
+        res.render("appointmentDetails", {
+          data: data,
+          moment: moment,
+          userDetail: userDetail,
+        });
+      }
+    });
 });
+router.post("/appointmentDetails/:id", async (req, res) => {
+  const Id = ObjectId(req.session.passport.user._id);
+  let query = [{ path: "createdBy" }, { path: "slots" }, { path: "docdetail" }];
+
+  const time = await (
+    await subSlotBooking.findOne({ _id: req.params.id })
+  ).populate(query);
+
+  const docdetail = await doc.findById(time.docdetail);
+
+  const {
+    patient_name,
+    patient_email,
+    patient_mobile,
+    patient_phone,
+  } = req.body;
+
+  let errors = [];
+  //check req fields
+
+  if (!patient_name || !patient_email || !patient_mobile) {
+    errors.push({ msg: "please fill all details" });
+  }
+  // check pass length
+
+  if (errors.length > 0) {
+    res.render("signup", {
+      errors,
+      patient_name,
+      patient_email,
+      patient_mobile,
+    });
+  } else {
+    const newBooking = new booking({
+      patient_name,
+      patient_email,
+      patient_mobile,
+      patient_phone,
+      createdBy: Id,
+      slotTime: time.startTime,
+      subSlots: time._id,
+      slots: time.slots._id,
+      docdetail: docdetail._id,
+    });
+
+    //hash password
+
+    newBooking
+      .save()
+      .then((booking_data) => {
+        time.isBooked = true;
+        time.bookedBy = patient_email;
+        time.save();
+        // req.flash("success_msg", "booking confirmed");
+        req.session.booking_id = booking_data._id;
+        res.redirect("/booking_status");
+      })
+      .catch((err) => console.log(err));
+  }
+});
+
+router.get("/booking_status", ensureAuthenticated, async (req, res) => {
+  let query = [{ path: "createdBy" }, { path: "slots" }, { path: "docdetail" }];
+
+  const id = ObjectId(req.session.passport.user._id);
+  slot_id = req.session.slot_id;
+  const userDetail = await USer.findOne({ _id: id });
+  const subSlot = await subSlotBooking
+    .findOne({ _id: slot_id })
+    .populate(query)
+    .exec((err, data) => {
+      if (!err) {
+        res.render("booking_status", {
+          data: data,
+          title: "Booking confirmed",
+          moment: moment,
+          userDetail: userDetail,
+        });
+      }
+    });
+});
+// router.get("/cancelAppointment", async (req, res) => {
+//   const id = req.session.booking_id;
+//   const subSlotId = req.session.subslot_id;
+//   const subSlot = await subSlotBooking.findOne({ _id: subSlotId });
+//   const doc = await booking.findOne({ _id: id });
+//   doc.status = "Cancelled";
+//   doc.save().then((docs) => {
+//     res.redirect("/");
+//   });
+// });
+
+router.get("/cancelAppointment/:id", (req, res) => {
+  booking.findByIdAndRemove(req.params.id, (err, doc) => {
+    if (!err) {
+      res.redirect("/users/upcomingAppointments");
+    } else {
+      req.flash("error_msg", "Failed to delete");
+    }
+  });
+});
+
+router.get("/viewAppointmentByUser", ensureAuthenticated, async (req, res) => {
+  _id = ObjectId(req.session.passport.user._id);
+  const user = await USer.findById(_id);
+  const doc_data = await doc.find({ createdBy: _id });
+  for (i in doc_data) {
+    const booking_data = await booking.find({ docdetail: doc_data[i]._id });
+    res.render("viewAppointmentByUser", {
+      user: user,
+      booking_data: booking_data,
+      moment: moment,
+    });
+  }
+});
+
+const chunk = (arr, len) => {
+  let chunks = [];
+  let m = 0,
+    n = arr.length;
+  while (m < n) {
+    chunks.push(arr.slice(m, (m += len)));
+  }
+  return chunks;
+};
+
 module.exports = router;

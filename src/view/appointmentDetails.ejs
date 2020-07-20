@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
+
+    <link
+      rel="stylesheet"
+      href="/appointmentDetails/appointment.css"
+      type="text/css"
+    />
+
+    <script type="text/javascript" src="/flashMessages.js"></script>
+
+    <%- include('partials/bootstrap') %>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <section class="appointment_page">
+      <div class="appointment_page__left__section">
+        <h4>In Clinic appointment</h4>
+        <hr />
+        <%for(i in data){%>
+        <div class="appointment_page__left__section__time__date">
+          <div class="appointment_date_display">
+            <i class="far fa-calendar-plus"></i>
+            On
+            <span><%=moment(data[i].slots.date).format("Do MMMM YYYY")%></span>
+          </div>
+          <div class="appointment_time_display">
+            <i class="far fa-clock"></i>
+
+            At <span><%=(data[i].startTime)%></span>
+            <p></p>
+          </div>
+        </div>
+
+        <div class="appointment_page_doctor_details">
+          <div class="doctor_image">
+            <img
+              class="card-img-top"
+              src="https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/image--002.jpg"
+              style="width: 100px;"
+            />
+          </div>
+          <div class="doctor_info">
+            <div class="doctor_name">
+              <h6><%= data[i].createdBy.name%></h6>
+            </div>
+            <div class="doctor_hospital">
+              <%= data[i].docdetail.hospitalList %>
+            </div>
+            <div class="doctor_speciality">
+              <%= data[i].docdetail.speciality %>
+            </div>
+            <div class="doctor_education">
+              <%= data[i].docdetail.education %>
+            </div>
+          </div>
+        </div>
+        <div class="appointment_page_hospital_details">
+          <div class="appointment_page__hospital__image">
+            <img src="/download.jpg" style="width: 100px;" />
+          </div>
+          <div class="appointment_page__hospital_name_location">
+            <div class="appointment_page__hospital__name">
+              <%= data[i].docdetail.hospitalList %>
+            </div>
+            <div class="appointment_page__hospital__location">
+              <%= data[i].docdetail.location %>
+            </div>
+          </div>
+        </div>
+      </div>
+      <%} %>
+      <div class="appointment_page__right__section">
+        <h6>Patients Details</h6>
+
+        <span class="appointment_info_title">This appointment is for</span>
+        <form action="/appointmentDetails/<%= data[i]._id %>" method="POST">
+          <div class="book_appointment_patient_info">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="exampleRadios1"
+                name="option1"
+                value="<%= userDetail.name%>"
+                checked
+              />
+              <label class="form-check-label" for="exampleRadios1">
+                <span class="patient_info"><%= userDetail.name%></span>
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                id="exampleRadios2"
+                name="option2"
+                value="option2"
+              />
+              <label class="form-check-label" for="exampleRadios1">
+                <span class="patient_info">for someone else</span>
+              </label>
+            </div>
+            <span class="appointment_info_title"
+              >Please provide the following information</span
+            >
+            <div class="form-group">
+              <label for="exampleInputEmail1">Patients full name</label>
+              <input
+                type="text"
+                name="patient_name"
+                value="<%= userDetail.name%> "
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email address</label>
+              <input
+                type="email"
+                name="patient_email"
+                value="<%=userDetail.email%>"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter email"
+              />
+              <small id="emailHelp" class="form-text text-muted"
+                >We'll never share your email with anyone else.</small
+              >
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Mobile number</label>
+              <input
+                type="tel"
+                name="patient_mobile"
+                value="<%= userDetail.phone%>"
+                class="form-control"
+                id="exampleInputEmail1"
+                aria-describedby="emailHelp"
+                placeholder="Enter Mobile"
+              />
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Patients mobile</label>
+              <input
+                type="tel"
+                name="patient_phone"
+                class="form-control"
+                id="exampleInputEmail1"
+                placeholder="enter phone"
+              />
+            </div>
+            <button type="submit" class="btn btn-primary">
+              Book appointment <i class="fas fa-sign-in-alt"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+    <script>
+      $("#exampleRadios2").click(function () {
+        $(this)
+          .closest("form")
+          .find("input[type=text],input[type=email],input[type=tel]")
+          .val("");
+      });
+    </script>
+  </body>
+</html>

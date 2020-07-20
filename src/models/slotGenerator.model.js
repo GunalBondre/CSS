@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 const { mongo } = require("mongoose");
-var mongoosePaginate = require("mongoose-paginate");
+const subSlotBooking = require("../models/slotBooking.model");
 
 const slotSchema = new mongoose.Schema(
   {
@@ -36,8 +36,12 @@ const slotSchema = new mongoose.Schema(
   },
   { timestamps: {} }
 );
-slotSchema.plugin(mongoosePaginate);
-
+slotSchema.pre("remove", function (next) {
+  // 'this' is the client being removed. Provide callbacks here if you want
+  // to be notified of the calls' result.
+  subSlotBooking.remove({ slots: this._id }).exec();
+  next();
+});
 const slot = mongoose.model("slot", slotSchema);
 
 module.exports = slot;

@@ -261,6 +261,12 @@ html {
           box-sizing: border-box;
 }
 
+h6 {
+  font-family: nexa-bold;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
 .bg-white {
   background-color: #fff;
   color: #333;

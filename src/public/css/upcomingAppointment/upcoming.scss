@@ -1,0 +1,112 @@
+@import "../theme/config";
+@import "../font";
+
+.appointment_detail_for_patient {
+  margin: 10px;
+  padding: 10px;
+  border-left: 10px solid;
+  border-color: $button-blue;
+  box-shadow: 10px 10px 5px 0px rgba(245, 240, 240, 1);
+  &:nth-of-type(odd) {
+    border-color: #629677;
+  }
+  i {
+    color: $button-blue;
+    padding-top: 10px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 150px;
+    border-radius: 15%;
+    padding-top: 10px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .appointment_detail_for_patient {
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+    .doctor_image {
+      display: block;
+    }
+
+    .appointment_detail_wrapper_for_date_time_hosp {
+      padding: 30px 20px;
+      border-radius: 10px;
+      margin-left: 10px;
+      display: flex;
+      .appointment_detail_for_patient_date_time {
+        padding-left: 40px;
+      }
+    }
+    .appointment_detail_main_wrapper {
+      display: flex;
+      justify-content: space-between;
+    }
+    .appointment_action_buttons {
+      text-align: right;
+      display: flex;
+      flex-direction: column;
+      margin: 15px;
+      .btn-dark {
+        margin: 5px;
+        width: 100%;
+      }
+    }
+  }
+}
+@media (max-width: 599px) {
+  .appointment_detail_for_patient {
+    border-right: 10px solid;
+
+    justify-content: space-between;
+    border-radius: 10px;
+
+    display: block;
+    .appointment_detail_main_wrapper {
+      display: block;
+      text-align: center;
+    }
+    .doctor_image {
+      display: block;
+    }
+    .appointment_detail_wrapper_for_date_time_hosp {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      padding-left: 5% !important;
+    }
+  }
+  .appointment_action_buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    .btn {
+      width: 100%;
+      margin: 5px;
+    }
+  }
+}
+
+@media (min-width: 600px) {
+  .appointment_detail_for_patient {
+    border-right: 10px solid;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px;
+  }
+  .doctor_image {
+    display: none;
+  }
+  .appointment_action_buttons {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    .btn {
+      margin: 5px;
+      width: 100%;
+    }
+  }
+}

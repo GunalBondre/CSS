@@ -2,9 +2,10 @@
 @import "../theme/config";
 
 .slot_parent {
+  background-color: $bg-light-grey;
+  overflow-y: auto;
   width: 100%;
   height: 100vh;
-  background-color: $bg-light-grey;
   padding-top: 30px;
   .card-img-top {
     max-width: 100px;
@@ -83,11 +84,21 @@
   .display_slot__details {
     ul {
       display: flex;
+      flex-wrap: wrap;
 
       li {
+        flex: 1 0 15%;
         padding: 10px;
         border: 1px solid green;
         margin: 5px;
+        text-align: center;
+        max-width: 15%;
+        text-decoration: none;
+        color: green;
+      }
+      a {
+        text-decoration: none;
+        color: green;
       }
     }
   }

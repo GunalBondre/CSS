@@ -271,6 +271,12 @@ html {
           box-sizing: border-box;
 }
 
+h6 {
+  font-family: nexa-bold;
+  font-size: 1.2rem;
+  line-height: 1.3;
+}
+
 .container-fluid {
   background-image: -webkit-gradient(linear, left top, right top, from(skyblue), to(transparent)), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist_hero_image.jpg);
   background-image: linear-gradient(to right, skyblue, transparent), url(https://s3.ap-south-1.amazonaws.com/appdev.konfinity.com/css/tasks/dentist_hero_image.jpg);

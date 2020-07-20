@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/reset.css" type="text/css" />
+    <link rel="stylesheet" href="/dashboard/dashboard.css" type="text/css" />
+    <link rel="stylesheet" href="/theme/theme.css" type="text/css" />
+    <link
+      rel="stylesheet"
+      href="/upcomingAppointment/upcoming.css"
+      type="text/css"
+    />
+
+    <script type="text/javascript" src="/flashMessages.js"></script>
+
+    <%- include('partials/bootstrap') %>
+  </head>
+  <body>
+    <%- include('partials/navbar') %>
+
+    <div class="wrapper">
+      <div class="left-panel">
+        <header>Dashboard</header>
+        <div class="profile">
+          <a href="/users/profile">General Details</a>
+        </div>
+        <hr />
+        <div class="appointments">
+          <a href="/users/upcomingAppointments">Appointments</a>
+        </div>
+        <hr />
+        <% if(role==='doctor') {%>
+        <div class="docprofile">
+          <a href="/users/professional_profile">Professional Details</a>
+        </div>
+        <hr />
+        <div class="appointments">
+          <a href="#">Appointments</a>
+        </div>
+        <hr />
+        <div class="create/edit">
+          <a href="/createSchedule">Create/edit appointments</a>
+        </div>
+        <hr />
+        <%}%>
+        <div class="setting">
+          <a href="#">Settings</a>
+        </div>
+      </div>
+      <div class="right-panel">
+        <h1>Upcoming Appointments</h1>
+        <% for (i in docs){ %>
+        <div class="appointment_detail_for_patient">
+          <div class="appointment_detail_main_wrapper">
+            <div class="doctor_image">
+              <img src="/<%= docs[i].docdetail.avatar %>" alt="" />
+            </div>
+            <div class="appointment_detail_wrapper_for_date_time_hosp">
+              <div
+                class="appointment_detail_for_patient_doctor_name_hospital_name"
+              >
+                <div class="appointment_detail_doctor_name">
+                  <i class="fas fa-briefcase-medical"></i>
+
+                  <span> <%=docs[i].docdetail.name%></span>
+                </div>
+                <div class="appointment_detail_doctor_hospital">
+                  <i class="fas fa-clinic-medical"></i>
+
+                  <%=docs[i].slots.selecthospital%>
+                </div>
+              </div>
+              <div class="appointment_detail_for_patient_date_time">
+                <div class="appointment_date">
+                  <i class="fas fa-calendar-day"></i>
+                  <%= moment(docs[i].slots.date).format("Do MMMM YYYY ") %>
+                </div>
+
+                <div class="appointment time">
+                  <i class="far fa-clock"></i>
+                  <%= (docs[i].slotTime) %>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="appointment_action_buttons">
+            <a href="/cancelAppointment/<%=docs[i]._id %>">
+              <button type="submit" class="btn btn-dark">Cancel</button></a
+            >
+            <a href="/rescheduleAppointment/<%=docs[i]._id %>">
+              <button type="submit" class="btn btn-dark">Reschedule</button></a
+            >
+          </div>
+        </div>
+        <%} %>
+      </div>
+    </div>
+  </body>
+</html>

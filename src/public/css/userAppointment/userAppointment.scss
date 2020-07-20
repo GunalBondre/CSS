@@ -1,0 +1,42 @@
+@import "../theme/config";
+@import "../font";
+
+.patient_info_inner_wrapper {
+  display: flex;
+  border-left: 10px solid;
+  border-radius: 10px;
+  border-color: $button-blue;
+  margin-bottom: 10px;
+  padding: 10px;
+  box-shadow: 10px 10px 5px 0px rgba(245, 240, 240, 1);
+  &:nth-of-type(odd) {
+    border-color: #629677;
+  }
+  i {
+    color: $button-blue;
+    padding-top: 5px;
+  }
+  .patient_appointment_date_time {
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+
+  .patient_name_phone_img {
+    display: flex;
+    padding-left: 30px;
+    .patient_photo {
+      padding-right: 20px;
+    }
+    .patient_name {
+      padding-left: 17px;
+      text-transform: capitalize;
+    }
+    img {
+      height: 60px;
+      border-radius: 50%;
+    }
+  }
+  .name_mobile_wrapper {
+    padding-top: 10px;
+  }
+}
