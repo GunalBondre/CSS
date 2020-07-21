@@ -45,7 +45,6 @@ app.use(
       ttl: 2 * 24 * 60 * 60,
     }),
     cookie: {
-      maxAge: TWO_HOUR,
       sameSite: true,
     },
   })

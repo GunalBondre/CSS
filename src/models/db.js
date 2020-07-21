@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
+const uri =
+  "mongodb+srv://admin:TfnTS213qRD7WNiC@cluster0-dxajh.mongodb.net/<dbname>?retryWrites=true&w=majority";
 mongoose.connect(
-  "mongodb://localhost:27017/Tvstra",
+  uri,
   { useNewUrlParser: true, useUnifiedTopology: true },
   (err) => {
     if (!err) {
@@ -12,3 +14,4 @@ mongoose.connect(
 );
 
 require("./users");
+// "mongodb://localhost:27017/Tvstra" ||
