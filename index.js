@@ -8,6 +8,8 @@ const mainRoutes = require("./src/routes/routes");
 const userRoutes = require("./src/routes/users");
 const TWO_HOUR = 1000 * 60 * 60 * 2;
 const session = require("express-session");
+const MongoStore = require("connect-mongo")(session);
+
 const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const passport = require("passport");
@@ -38,6 +40,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     secret: "ninadisaqws",
+    store: new MongoStore(options),
     cookie: {
       maxAge: TWO_HOUR,
       sameSite: true,
