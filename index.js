@@ -40,7 +40,10 @@ app.use(
     resave: false,
     saveUninitialized: false,
     secret: "ninadisaqws",
-    store: new MongoStore(options),
+    store: new MongoStore({
+      mongooseConnection: mongoose.connection,
+      ttl: 2 * 24 * 60 * 60,
+    }),
     cookie: {
       maxAge: TWO_HOUR,
       sameSite: true,
