@@ -6,7 +6,7 @@
     <title>Signup</title>
     <%- include('partials/bootstrap') %>
     <link rel="stylesheet" href="/reset.css" type="text/css" />
-    <link rel="stylesheet" href="/registration/signin.css" type="text/css" />
+    <link rel="stylesheet" href="/forgot/forgot.css" type="text/css" />
   </head>
   <body>
     <!-- navbar included -->
@@ -16,28 +16,30 @@
     <!-- navbar included -->
 
     <!-- signup form -->
-    <section class="signin">
-      <div class="form-wrapper">
-        <div class="form-group">
-          <header>Reset Password</header>
-          <hr />
-          <form action="/users/forgotPass" method="POST">
-            <input
-              type="email"
-              class="form-control my-2"
-              id="email"
-              aria-describedby="emailHelp"
-              placeholder="Enter Email"
-              name="email"
-            />
+    <div class="main">
+      <section class="signin forgot-pass">
+        <div class="form-wrapper">
+          <div class="form-group">
+            <header>Reset Password</header>
+            <hr />
+            <form action="/users/forgotPass" method="POST">
+              <input
+                type="email"
+                class="form-control my-2"
+                id="email"
+                aria-describedby="emailHelp"
+                placeholder="Enter Email"
+                name="email"
+              />
 
-            <button type="submit" class="btn btn-primary my-2" id="btn">
-              Reset Password <i class="fas fa-sign-in-alt"></i>
-            </button>
-          </form>
+              <button type="submit" class="btn btn-primary my-2" id="btn">
+                Reset Password <i class="fas fa-sign-in-alt"></i>
+              </button>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
-    <footer>All rights reserved &copy; Tvstra.com</footer>
+      </section>
+      <footer>All rights reserved &copy; Tvstra.com</footer>
+    </div>
   </body>
 </html>

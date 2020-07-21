@@ -3,8 +3,12 @@
   "version": "1.0.0",
   "description": "## This is the wiki file to read about the tasks",
   "main": "index.js",
+  "engines": {
+    "node": "12.16.1",
+    "npm": "6.13.4"
+  },
   "scripts": {
-    "dev": "nodemon index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

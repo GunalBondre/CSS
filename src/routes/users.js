@@ -663,6 +663,7 @@ router.get("/upcomingAppointments", ensureAuthenticated, async (req, res) => {
   const email = req.session.passport.user.email;
   const id = ObjectId(req.session.passport.user._id);
   const docs = await booking.find({ patient_email: email }).populate(query);
+  docs.forEach((el) => console.log(el.slots.selecthospital));
   res.render("upcomingAppointments", {
     docs: docs,
     moment: moment,

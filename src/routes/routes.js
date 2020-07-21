@@ -13,6 +13,7 @@ docSchema = require("../models/doctor.model");
 const USer = require("../models/users");
 const booking = require("../models/appointment.model");
 const subSlotBooking = require("../models/slotBooking.model");
+const { set } = require("../..");
 
 function getTimeStops(start, end, interval) {
   var startTime = moment(start, "hh:mm");
@@ -29,6 +30,20 @@ function getTimeStops(start, end, interval) {
   }
   return timeStop;
 }
+
+// const getUniqueList = async (searchFilter, searchHospital) => {
+//   let locationList = [];
+//   const docList = await doc.find({
+//     location: { $regex: req.query.searchLocation, $options: "i" },
+//     hospitalList: { $regex: req.query.searchHospital, $options: "i" },
+//   });
+//   for (let m in docList) {
+//     locationList.push(docList[m].location.toLowerCase());
+//     locationList.push(docList[m].searchHospital.toLowerCase());
+//   }
+//   return locationList;
+// };
+
 // router.get("/doctors/search", ensureAuthenticated, async (req, res) => {
 //   const { searchFilter, searchTreatment } = req.query;
 //   let days = [];
@@ -72,10 +87,11 @@ function getTimeStops(start, end, interval) {
 //     }
 //   });
 // });
+let uniqueHospitalList = [];
+let uniqueLocationList = [];
 
 router.get("/", ensureAuthenticated, async (req, res) => {
   const docList = await doc.find().populate("createdBy");
-  console.log(docList);
   res.render("index", {
     docdetail: docList,
     success_msg: req.flash("success_msg"),
@@ -85,20 +101,26 @@ router.get("/", ensureAuthenticated, async (req, res) => {
 
 router.get("/doctors/hospital", ensureAuthenticated, async (req, res) => {
   const { searchFilter, searchTreatment, searchHospital } = req.query;
+  let hospitalNames = [];
   let days = [];
   let daysRequired = 7;
   for (let i = 0; i <= daysRequired; i++) {
     days.push(moment().add(i, "days").format("dddd,Do MMMM YYYY"));
   }
+  // const docList = await doc.find({
+  //   hospitalList: { $regex: req.query.searchHospital, $options: "i" },
+  // });
+  // for (let m in docList) {
+  //   hospitalNames.push(docList[m].hospitalList.toLowerCase());
+  // }
+  // uniqueHospitalList.push([...new Set(hospitalNames)]);
 
   per_page = parseInt(req.query.per_page) || 3;
   page_no = parseInt(req.query.page_no) || 1;
   const page = +req.query.page || 1;
   let totalItems;
   let hasPreviousPage, hasNextPage;
-  let queryString = {
-    hospitalList: { $regex: req.query.searchHospital, $options: "i" },
-  };
+
   var query = [{ path: "createdBy" }, { path: "slots" }];
   const docdetail = await doc.find().populate(query);
   const slots = await slot.find();
@@ -128,6 +150,7 @@ router.get("/doctors/hospital", ensureAuthenticated, async (req, res) => {
 
 router.get("/doctors/search", ensureAuthenticated, async (req, res) => {
   const { searchLocation } = req.query;
+  let locationList = [];
   let days = [];
   let daysRequired = 7;
   for (let i = 0; i <= daysRequired; i++) {
@@ -142,6 +165,12 @@ router.get("/doctors/search", ensureAuthenticated, async (req, res) => {
 
   var query = [{ path: "createdBy" }, { path: "slots" }];
   const slots = await slot.find();
+  // const docList = await doc.find({
+  //   location: { $regex: req.query.searchLocation, $options: "i" },
+  // });
+  // for (let m in docList) {
+  //   locationList.push(docList[m].location.toLowerCase());
+  // }
 
   doc
     .find({ location: { $regex: req.query.searchLocation, $options: "i" } })
@@ -250,7 +279,7 @@ router.post("/doctors", ensureAuthenticated, async (req, res) => {
     });
 });
 
-router.get("/doctors", ensureAuthenticated, (req, res) => {
+router.get("/doctors", ensureAuthenticated, async (req, res) => {
   const createdBy = ObjectId(req.session.passport.user._id);
   let days = [];
   let daysRequired = 7;
@@ -288,6 +317,8 @@ router.get("/doctors", ensureAuthenticated, (req, res) => {
               .exec((err, slotsData) => {
                 if (!err) {
                   res.render("doctors", {
+                    uniqueLocationList: uniqueLocationList,
+                    uniqueHospitalList: uniqueHospitalList,
                     list: docs,
                     moment: moment,
                     currentPage: page,
@@ -729,7 +760,6 @@ router.get("/appointmentDetails/:id", ensureAuthenticated, async (req, res) => {
     .populate(query)
     .exec((err, data) => {
       if (!err) {
-        data.forEach((el) => console.log(el));
         req.session.slot_id = req.params.id;
         res.render("appointmentDetails", {
           data: data,
@@ -789,6 +819,7 @@ router.post("/appointmentDetails/:id", async (req, res) => {
     newBooking
       .save()
       .then((booking_data) => {
+        req.session.bookId = booking_data._id;
         time.isBooked = true;
         time.bookedBy = patient_email;
         time.save();
@@ -806,6 +837,7 @@ router.get("/booking_status", ensureAuthenticated, async (req, res) => {
   const id = ObjectId(req.session.passport.user._id);
   slot_id = req.session.slot_id;
   const userDetail = await USer.findOne({ _id: id });
+  const bookedSlot = await booking.findOne({ _id: req.session.booking_id });
   const subSlot = await subSlotBooking
     .findOne({ _id: slot_id })
     .populate(query)
@@ -816,6 +848,7 @@ router.get("/booking_status", ensureAuthenticated, async (req, res) => {
           title: "Booking confirmed",
           moment: moment,
           userDetail: userDetail,
+          bookedSlot: bookedSlot,
         });
       }
     });
