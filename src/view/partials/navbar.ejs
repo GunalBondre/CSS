@@ -32,47 +32,35 @@
         <a class="nav-link" href="/aboutUs">About</a>
       </li>
     </ul>
-
+    <div class="login">
+      <button class="btn btn-dark" type="button">
+        Get a Quote
+      </button>
+    </div>
     <span class="navbar-text" id="toggler">
       <% if(isAuthenticated || locals.isVerified || otp ) { %>
 
-      <!-- <button class="btn btn-outline-primary" type="button">
-          Logout
-        </button> -->
-      <div class="dropdown">
-        <button
-          class="btn btn-primary dropdown-toggle"
-          type="button"
-          id="dropdownMenuButton"
-          data-toggle="dropdown"
-          aria-haspopup="true"
-          aria-expanded="false"
-        >
-          <%= currentUser.name %>
-        </button>
-        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-          <a class="dropdown-item" href="/users/dashboard">Dashboard</a>
-          <a class="dropdown-item" href="#">settings</a>
-          <a class="dropdown-item" href="/users/logout">logout</a>
-        </div>
-      </div>
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item dropdown">
+          <a
+            class="nav-link dropdown-toggle"
+            id="drp"
+            data-toggle="dropdown"
+            href="#"
+            role="button"
+            aria-haspopup="true"
+            aria-expanded="false"
+            ><%= currentUser.name%></a
+          >
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Settings</a>
+            <a class="dropdown-item" href="/users/dashboard">Dashboard</a>
+            <a class="dropdown-item" href="/users/logout">Logout</a>
+          </div>
+        </li>
+      </ul>
 
-      <% } else { %>
-      <a href="/users/emailsignin">
-        <button
-          class="btn btn-outline-primary"
-          type="button"
-          id="dropdownMenuButton"
-        >
-          Login/Signup
-        </button></a
-      >
       <% } %>
-      <div class="login">
-        <button class="btn btn-dark" type="button">
-          Get a Quote
-        </button>
-      </div>
     </span>
   </div>
 </nav>

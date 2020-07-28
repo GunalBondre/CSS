@@ -812,6 +812,13 @@ h6 {
 
 .expert-doc .card {
   border-bottom: 5px solid #99ccff;
+  -webkit-transition: 200ms ease-in-out;
+  transition: 200ms ease-in-out;
+}
+
+.expert-doc .card:hover {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
 }
 
 .expert-doc .card-text {
@@ -892,7 +899,7 @@ h6 {
 
 @media (min-width: 767px) {
   .card-group .card {
-    width: 15rem;
+    width: 18rem;
     margin: 0 auto;
   }
 }

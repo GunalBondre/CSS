@@ -1,6 +1,24 @@
 @import "../theme/config";
 @import "../font";
 
+.left-panel {
+  position: relative;
+  .create-btn {
+    position: absolute;
+    left: 30%;
+    bottom: 10%;
+    border-radius: 50%;
+    transition: 500ms ease-in-out;
+    border: none;
+
+    &:hover {
+      background-color: $bg-light-blue;
+      border: none;
+      outline: none;
+    }
+  }
+}
+
 .form-wrapper {
   background-color: $bg-light-blue;
   padding-top: 20px;
@@ -60,4 +78,12 @@
   .inner-wrapper {
     width: 60%;
   }
+}
+
+.new-form {
+  position: absolute;
+  left: 40%;
+  top: 30%;
+  width: 30%;
+  background-color: $bg-light-blue;
 }

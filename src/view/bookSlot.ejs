@@ -72,18 +72,24 @@
             <div class="morning_slots">
               <h3>Morning Slot</h3>
               <ul>
+                <% var today = new Date(); var time = today.getHours(); %>
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[0]
                 && slotData[i].slot === "morningSlot") {%>
                 <p></p>
-
-                <p></p>
-                <% if(parseInt(slotData[i].subSlotTime) >=
-                parseInt(moment(Date.now()).format("hh:mm"))){ %>
+                <% if(!slotData[i].subSlotIsBooked){ %>
                 <li>
+                  <% let x = slotData[i].subSlotTime %> <% if(x < 12) {%> <%
+                  x=x+12 %> <%} %> <% if(x > time){%>
                   <a href="/appointmentDetails/<%=slotData[i].subId%>">
                     <%= slotData[i].subSlotTime%></a
                   >
+                  <%} %>
                 </li>
+                <% } %>
+                <p></p>
+                <% if(parseInt(slotData[i].subSlotTime) >=
+                parseInt(moment(Date.now()).format("hh:mm"))){ %>
+
                 <p></p>
                 <%}}} %>
               </ul>
@@ -114,8 +120,8 @@
                 && slotData[i].slot === "eveningSlot") {%>
                 <p></p>
                 <li>
-                  <a href="/appointmentDetails/<%=slotData[i].subId%>"
-                    ><%= slotData[i].subSlotTime%></a
+                  <a href="/appointmentDetails/<%=slotData[i].subId%>">
+                    <%= slotData[i].subSlotTime%></a
                   >
                 </li>
                 <p></p>
@@ -130,14 +136,14 @@
                 <%for(i in slotData){ %> <% if(slotData[i].slotDate === days[1]
                 && slotData[i].slot === "morningSlot") {%>
                 <p></p>
-                <% if(parseInt(slotData[i].subSlotTime) >=
-                parseInt(moment(Date.now()).format("hh:mm A"))){ %>%>
+                <% if(!slotData[i].subSlotIsBooked){ %>
                 <li>
                   <a href="/appointmentDetails/<%=slotData[i].subId%>">
                     <%= slotData[i].subSlotTime%></a
                   >
                 </li>
-                <%}%>
+                <% } %> <% if(parseInt(slotData[i].subSlotTime) >=
+                parseInt(moment(Date.now()).format("hh:mm A"))){ %>%> <%}%>
                 <p></p>
                 <%}} %>
               </ul>

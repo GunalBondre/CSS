@@ -1,0 +1,177 @@
+<div class="right-panel">
+  <!-- <% if(slots.length>=1){ %> <% for(slot in slots) { %>
+
+    <div class="appointmentSlot">
+      <div class="left">
+        <div class="date">
+   
+          <i class="fas fa-calendar-day"></i> <%=
+          moment(slots[slot].date).format('LL') %>
+        </div>
+        <div class="time">
+          <div class="hosp">
+            <i class="fas fa-clinic-medical"></i><%=
+            slots[slot].selecthospital %>
+          </div>
+          <div class="timeInfo">
+            <i class="far fa-clock"></i>
+            <%= moment(slots[slot].startTime, "HH:mm").format("hh:mm A") %>
+          </div>
+        </div>
+      </div>
+      <div class="right">
+        <a href="/editSlot/<%=slots[slot].id%>"
+          ><button class="edit btn btn-dark">
+            Edit
+          </button></a
+        >
+        <a href="/deleteSlot/<%=slots[slot].id%>"
+          ><button class="cancel btn btn-dark">Remove</button></a
+        >
+        <a href="/displaySlot"
+          ><button class="view btn btn-dark">View</button></a
+        >
+      </div>
+    </div>
+    <% }} else { %> -->
+  <div class="form-wrapper">
+    <div class="inner-wrapper" id="myform">
+      <form action="/createSchedule" method="POST">
+        <div class="form-group">
+          <label for="date">Select date </label>
+          <input type="date" name="date" id="date" />
+        </div>
+        <!-- <div class="form-group">
+                  <label for="exampleFormControlSelect2"
+                    ><h3>Choose available days</h3></label
+                  >
+                  <select
+                    multiple
+                    class="form-control"
+                    id="exampleFormControlSelect2"
+                    name="dayselect"
+                  >
+                    <option>monday</option>
+                    <option>tuesday</option>
+                    <option>wednesday</option>
+                    <option>thursday</option>
+                    <option>friday</option>
+                    <option>saturday</option>
+                    <option>sunday</option>
+                  </select>
+                </div> -->
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">
+            <h3>Select Hospital</h3></label
+          >
+          <select
+            class="form-control"
+            id="exampleFormControlSelect1"
+            name="selecthospital"
+          >
+            <option>Sahyadri</option>
+          </select>
+        </div>
+
+        <div class="time-wrapper">
+          <div class="form-group">
+            <label for="ExampleTime"><h3>Select start time</h3></label>
+            <br />
+            <input type="time" name="startTime" id="time" />
+          </div>
+          <div class="form-group">
+            <label for="ExampleTime"><h3>Select end time</h3></label>
+            <br />
+            <input type="time" name="endtime" id="endtime" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for=""><h3>Enter Interval in minuit</h3></label>
+          <input type="number" name="interval" id="interval" />
+        </div>
+        <button type="submit" class="btn btn-dark" id="addSchedule">
+          Add Schedule
+        </button>
+        <a href="/displaySlot"
+          ><button class="btn btn-dark my-2" id="viewSchedule" type="button">
+            View Scheduled appointment
+          </button></a
+        >
+      </form>
+    </div>
+  </div>
+  <!-- <% }%> -->
+
+  <!-- <div class="inner-wrapper new-form" id="myform" style="display: none;">
+      <form action="/createSchedule" method="POST">
+        <div class="form-group">
+          <label for="date">Select date </label>
+          <input type="date" name="date" id="date" />
+        </div>
+        <div class="form-group">
+                <label for="exampleFormControlSelect2"
+                  ><h3>Choose available days</h3></label
+                >
+                <select
+                  multiple
+                  class="form-control"
+                  id="exampleFormControlSelect2"
+                  name="dayselect"
+                >
+                  <option>monday</option>
+                  <option>tuesday</option>
+                  <option>wednesday</option>
+                  <option>thursday</option>
+                  <option>friday</option>
+                  <option>saturday</option>
+                  <option>sunday</option>
+                </select>
+              </div>
+
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">
+            <h3>Select Hospital</h3></label
+          >
+          <select
+            class="form-control"
+            id="exampleFormControlSelect1"
+            name="selecthospital"
+          >
+            <option>Sahyadri</option>
+          </select>
+        </div>
+
+        <div class="time-wrapper">
+          <div class="form-group" id="datetimepicker">
+            <label for="ExampleTime"><h3>Select start time</h3></label>
+            <br />
+            <input type="time" name="startTime" id="time" />
+          </div>
+          <div class="form-group">
+            <label for="ExampleTime"><h3>Select end time</h3></label>
+            <br />
+            <input type="time" name="endtime" id="endtime" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for=""><h3>Enter Interval in minuit</h3></label>
+          <input type="number" name="interval" id="interval" />
+        </div>
+        <button type="submit" class="btn btn-dark" id="addSchedule">
+          Add Schedule
+        </button>
+        <a href="/displaySlot"
+          ><button
+            class="btn btn-dark my-2"
+            id="viewSchedule"
+            type="button"
+          >
+            View Scheduled appointment
+          </button></a
+        >
+      </form>
+    </div>
+  </div>
+</div> -->
+</div>

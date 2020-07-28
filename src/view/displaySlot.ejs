@@ -59,12 +59,20 @@
         <div class="appointmentSlot">
           <div class="left">
             <div class="date">
-              <%= moment(slots[slot].date).format('dddd') %> <%=
+              <!-- <%= moment(slots[slot].date).format('dddd') %>
+              <p></p> -->
+              <i class="fas fa-calendar-day"></i> <%=
               moment(slots[slot].date).format('LL') %>
             </div>
             <div class="time">
-              <div class="hosp"><%= slots[slot].selecthospital %></div>
-              <%= moment(slots[slot].startTime, "HH:mm").format("hh:mm A") %>
+              <div class="hosp">
+                <i class="fas fa-clinic-medical"></i><%=
+                slots[slot].selecthospital %>
+              </div>
+              <div class="timeInfo">
+                <i class="far fa-clock"></i>
+                <%= moment(slots[slot].startTime, "HH:mm").format("hh:mm A") %>
+              </div>
             </div>
           </div>
           <div class="right">

@@ -8,3 +8,19 @@
 .nav-parent {
   text-align: center;
 }
+
+.left {
+  li {
+    display: flex;
+    text-decoration: none;
+    list-style-type: none;
+    padding: 10px;
+    width: max-content;
+    margin: 30px 5px;
+    border-radius: 10px;
+    border: 1px solid black;
+    i {
+      padding-left: 5px;
+    }
+  }
+}

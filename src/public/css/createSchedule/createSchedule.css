@@ -277,6 +277,26 @@ h6 {
   src: url(/Nexa-light.otf);
 }
 
+.left-panel {
+  position: relative;
+}
+
+.left-panel .create-btn {
+  position: absolute;
+  left: 30%;
+  bottom: 10%;
+  border-radius: 50%;
+  -webkit-transition: 500ms ease-in-out;
+  transition: 500ms ease-in-out;
+  border: none;
+}
+
+.left-panel .create-btn:hover {
+  background-color: #99ccff;
+  border: none;
+  outline: none;
+}
+
 .form-wrapper {
   background-color: #99ccff;
   padding-top: 20px;
@@ -348,5 +368,13 @@ h6 {
   .inner-wrapper {
     width: 60%;
   }
+}
+
+.new-form {
+  position: absolute;
+  left: 40%;
+  top: 30%;
+  width: 30%;
+  background-color: #99ccff;
 }
 /*# sourceMappingURL=createSchedule.css.map */

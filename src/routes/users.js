@@ -506,6 +506,7 @@ router.get("/dashboard", ensureAuthenticated, (req, res) => {
   const _id = ObjectId(req.session.passport.user._id);
   USer.findOne({ _id: _id }).then((user) => {
     if (user) {
+      console.log(user.role);
       res.render("dashboard", { user: req.user, role: user.role });
     }
   });
@@ -646,7 +647,6 @@ router.post("/professional_profile", (req, res) => {
         } else console.log("property " + prop + " is undefined");
       }
       docs.save().then((doc) => {
-        console.log(doc);
         req.flash("success_msg", "details updated successfully");
         res.redirect("/users/professional_profile");
       });
@@ -661,13 +661,21 @@ router.get("/upcomingAppointments", ensureAuthenticated, async (req, res) => {
   let query = [{ path: "createdBy" }, { path: "slots" }, { path: "docdetail" }];
 
   const email = req.session.passport.user.email;
+  console.log(email);
   const id = ObjectId(req.session.passport.user._id);
-  const docs = await booking.find({ patient_email: email }).populate(query);
-  docs.forEach((el) => console.log(el.slots.selecthospital));
-  res.render("upcomingAppointments", {
-    docs: docs,
-    moment: moment,
-  });
+  booking
+    .find({ patient_email: email })
+    .populate(query)
+    .exec((err, docs) => {
+      if (!err) {
+        res.render("upcomingAppointments", {
+          docs: docs,
+          moment: moment,
+        });
+      } else {
+        console.log("err");
+      }
+    });
 });
 // profile post route
 

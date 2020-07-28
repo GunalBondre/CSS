@@ -11,14 +11,17 @@
       href="/createSchedule/createSchedule.css"
       type="text/css"
     />
-
+    <link
+      rel="stylesheet"
+      href="/displaySlot/displayslot.css"
+      type="text/css"
+    />
     <script type="text/javascript" src="/flashMessages.js"></script>
 
     <%- include('partials/bootstrap') %>
   </head>
   <body>
-    <%- include('partials/navbar') %>
-
+    <%- include('partials/navbar') %> <%- include('partials/messages') %>
     <div class="wrapper">
       <div class="left-panel">
         <header>Dashboard</header>
@@ -42,40 +45,47 @@
         <div class="setting">
           <a href="#">Settings</a>
         </div>
+        <button
+          class="btn btn-dark create-btn"
+          type="submit"
+          onclick="openform()"
+        >
+          <i class="fas fa-plus fa-4x"></i>
+        </button>
         <!-- <div class="popup-button-schedule-appointment">
           <button class="btn btn-dark open-form" onclick="openForm()">+</button>
         </div> -->
       </div>
 
       <div class="right-panel">
+    
         <div class="form-wrapper">
-          <div class="inner-wrapper">
-            <%- include('partials/messages') %>
-
-            <form action="/createSchedule" method="POST" id="myform">
+          <div class="inner-wrapper" id="myform">
+            <form action="/createSchedule" method="POST">
               <div class="form-group">
                 <label for="date">Select date </label>
                 <input type="date" name="date" id="date" />
               </div>
               <!-- <div class="form-group">
-                <label for="exampleFormControlSelect2"
-                  ><h3>Choose available days</h3></label
-                >
-                <select
-                  multiple
-                  class="form-control"
-                  id="exampleFormControlSelect2"
-                  name="dayselect"
-                >
-                  <option>monday</option>
-                  <option>tuesday</option>
-                  <option>wednesday</option>
-                  <option>thursday</option>
-                  <option>friday</option>
-                  <option>saturday</option>
-                  <option>sunday</option>
-                </select>
-              </div> -->
+                      <label for="exampleFormControlSelect2"
+                        ><h3>Choose available days</h3></label
+                      >
+                      <select
+                        multiple
+                        class="form-control"
+                        id="exampleFormControlSelect2"
+                        name="dayselect"
+                      >
+                        <option>monday</option>
+                        <option>tuesday</option>
+                        <option>wednesday</option>
+                        <option>thursday</option>
+                        <option>friday</option>
+                        <option>saturday</option>
+                        <option>sunday</option>
+                      </select>
+                    </div> -->
+
               <div class="form-group">
                 <label for="exampleFormControlSelect1">
                   <h3>Select Hospital</h3></label
@@ -120,7 +130,26 @@
             </form>
           </div>
         </div>
-      </div>
-    </div>
+
+
+    <script>
+      // function openform() {
+      //   let x = document.getElementById("myform");
+      //   if (x.style.display === "none") {
+      //     x.style.display = "block";
+      //   } else {
+      //     x.style.display = "none";
+      //   }
+      // }
+
+      $(document).ready(function () {
+        $(".create-btn").click(function () {
+          $("#myform").toggle();
+        });
+      });
+    </script>
+
+    <script type="text/javascript" src="/dateValidation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
   </body>
 </html>

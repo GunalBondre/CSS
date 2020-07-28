@@ -10,6 +10,10 @@
   overflow: hidden;
   .card {
     border-bottom: 5px solid $bg-light-blue;
+    transition: 200ms ease-in-out;
+    &:hover {
+      transform: scale(0.8);
+    }
   }
 
   .card-text {
@@ -86,7 +90,7 @@
 .card-group {
   @include md {
     .card {
-      width: 15rem;
+      width: 18rem;
       margin: 0 auto;
     }
   }

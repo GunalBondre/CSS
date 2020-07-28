@@ -2,9 +2,30 @@
 @import "../theme/config";
 
 .right-panel {
+  .right {
+    padding-top: 7px;
+  }
+
   .appointmentSlot {
-    padding: 10px;
-    background-color: $teal-blue;
+    position: relative;
+    border-left: 10px solid;
+    border-color: $button-blue;
+    border-radius: 10px;
+    box-shadow: 10px 10px 5px 0px rgba(245, 240, 240, 1);
+    &:nth-of-type(odd) {
+      border-color: #629677;
+    }
+    i {
+      color: $button-blue;
+      padding-right: 10px;
+    }
+
+    .hosp,
+    .timeInfo {
+      color: black;
+      padding-left: 20px;
+    }
+    padding: 15px;
     // background: linear-gradient(
     //   90deg,
     //   rgba(2, 0, 36, 1) 0%,
@@ -65,4 +86,10 @@
   background-color: $white;
   min-width: 100px;
   text-align: center;
+  border-radius: 10px;
+}
+.pagination {
+  position: fixed;
+  bottom: 0;
+  left: 65%;
 }
