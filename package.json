@@ -45,7 +45,7 @@
     "passport-local": "^1.0.0",
     "password-validator": "^5.0.3",
     "toastr": "^2.1.4",
-    "underscore": "^1.10.2"
+    "underscore": "^1.12.1"
   },
   "devDependencies": {
     "nodemon": "^2.0.4"
