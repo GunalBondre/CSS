@@ -32,7 +32,7 @@
     "express-toastr": "^2.0.2",
     "messagebird": "^3.5.0",
     "method-override": "^3.0.0",
-    "moment": "^2.27.0",
+    "moment": "^2.29.4",
     "moment-range": "^4.0.2",
     "mongoose": "^5.9.16",
     "mongoose-deep-populate": "^3.2.0",
